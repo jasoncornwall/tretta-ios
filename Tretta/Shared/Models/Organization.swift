@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Organization: Codable, CustomStringConvertible {
+    let name: String
+    let website: String?
+}
