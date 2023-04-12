@@ -23,6 +23,8 @@
 		9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7BC29E4AD4300BBECE0 /* User.swift */; };
 		9239B7BF29E4AE6A00BBECE0 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7BE29E4AE6A00BBECE0 /* Organization.swift */; };
 		9239B7C129E4B2A400BBECE0 /* HexColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C029E4B2A400BBECE0 /* HexColorExtension.swift */; };
+		9239B7C329E5114300BBECE0 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C229E5114300BBECE0 /* FloatingTextField.swift */; };
+		9239B7C529E667B400BBECE0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C429E667B400BBECE0 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		9239B7BC29E4AD4300BBECE0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9239B7BE29E4AE6A00BBECE0 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		9239B7C029E4B2A400BBECE0 /* HexColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColorExtension.swift; sourceTree = "<group>"; };
+		9239B7C229E5114300BBECE0 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
+		9239B7C429E667B400BBECE0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				9239B7B329E3B1BC00BBECE0 /* AppContainerView.swift */,
+				9239B7C229E5114300BBECE0 /* FloatingTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				9239B7B729E4AB3500BBECE0 /* CustomStringConvertible.swift */,
 				9239B7BA29E4AC8F00BBECE0 /* SnakeCaseJSONDecoder.swift */,
 				9239B7C029E4B2A400BBECE0 /* HexColorExtension.swift */,
+				9239B7C429E667B400BBECE0 /* Colors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -371,6 +377,8 @@
 				9239B7B029E3AC8A00BBECE0 /* Route.swift in Sources */,
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,
 				9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */,
+				9239B7C329E5114300BBECE0 /* FloatingTextField.swift in Sources */,
+				9239B7C529E667B400BBECE0 /* Colors.swift in Sources */,
 				9239B7C129E4B2A400BBECE0 /* HexColorExtension.swift in Sources */,
 				9239B7B829E4AB3500BBECE0 /* CustomStringConvertible.swift in Sources */,
 				9239B7BF29E4AE6A00BBECE0 /* Organization.swift in Sources */,

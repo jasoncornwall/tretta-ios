@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct SignInScreen: View {
+    @State private var text = ""
     var body: some View {
-        Text("Sign In")
+        FloatingTextField(title: "EMAIL", text: $text)
+            .onChange(of: text) { newValue in
+                print("New Value: \(newValue)")
+            }
     }
 }
 
