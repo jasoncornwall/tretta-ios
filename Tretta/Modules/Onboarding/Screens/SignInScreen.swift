@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SignInScreen: View {
+    @EnvironmentObject private var navigationState: NavigationState
+    
     @State private var emailText = ""
     @State private var passwordText = ""
     
@@ -35,7 +37,7 @@ struct SignInScreen: View {
                 Spacer()
                     .frame(height: 48)
                 Button("SIGN IN") {
-                    print("Sign In tapped.")
+                    navigationState.routes.append(.rootMain)
                 }
                 .buttonStyle(PillButton())
                 Button("Forgot password?") {
@@ -46,6 +48,7 @@ struct SignInScreen: View {
             Spacer()
             Button("New here? Register instead.") {
                 print("Register tapped.")
+                navigationState.routes.append(.onboarding(.signUpName))
             }
             .buttonStyle(ClearButton())
         }

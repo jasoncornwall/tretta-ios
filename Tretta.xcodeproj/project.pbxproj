@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B77C29E3656600BBECE0 /* TrettaApp.swift */; };
-		9239B77F29E3656600BBECE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B77E29E3656600BBECE0 /* ContentView.swift */; };
 		9239B78129E3656700BBECE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78029E3656700BBECE0 /* Assets.xcassets */; };
 		9239B78429E3656700BBECE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78329E3656700BBECE0 /* Preview Assets.xcassets */; };
 		9239B78E29E3656700BBECE0 /* TrettaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B78D29E3656700BBECE0 /* TrettaTests.swift */; };
@@ -27,6 +26,7 @@
 		9239B7C529E667B400BBECE0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C429E667B400BBECE0 /* Colors.swift */; };
 		9239B7C729E66AE400BBECE0 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C629E66AE400BBECE0 /* PillButton.swift */; };
 		9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C829E745A500BBECE0 /* ClearButton.swift */; };
+		9239B7CB29E755FD00BBECE0 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7CA29E755FD00BBECE0 /* NavigationState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,6 @@
 /* Begin PBXFileReference section */
 		9239B77929E3656600BBECE0 /* Tretta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tretta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9239B77C29E3656600BBECE0 /* TrettaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrettaApp.swift; sourceTree = "<group>"; };
-		9239B77E29E3656600BBECE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9239B78029E3656700BBECE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9239B78329E3656700BBECE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9239B78929E3656700BBECE0 /* TrettaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrettaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +69,7 @@
 		9239B7C429E667B400BBECE0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9239B7C629E66AE400BBECE0 /* PillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
 		9239B7C829E745A500BBECE0 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
+		9239B7CA29E755FD00BBECE0 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,6 @@
 				9239B7A629E388D200BBECE0 /* Modules */,
 				9239B7A729E388E800BBECE0 /* Services */,
 				9239B77C29E3656600BBECE0 /* TrettaApp.swift */,
-				9239B77E29E3656600BBECE0 /* ContentView.swift */,
 				9239B78029E3656700BBECE0 /* Assets.xcassets */,
 				9239B78229E3656700BBECE0 /* Preview Content */,
 			);
@@ -220,6 +219,7 @@
 				9239B7AF29E3AC8A00BBECE0 /* Route.swift */,
 				9239B7BC29E4AD4300BBECE0 /* User.swift */,
 				9239B7BE29E4AE6A00BBECE0 /* Organization.swift */,
+				9239B7CA29E755FD00BBECE0 /* NavigationState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -377,10 +377,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9239B7B429E3B1BC00BBECE0 /* AppContainerView.swift in Sources */,
-				9239B77F29E3656600BBECE0 /* ContentView.swift in Sources */,
 				9239B7B229E3AF3900BBECE0 /* OnboardingRouter.swift in Sources */,
 				9239B7BB29E4AC8F00BBECE0 /* SnakeCaseJSONDecoder.swift in Sources */,
 				9239B7B029E3AC8A00BBECE0 /* Route.swift in Sources */,
+				9239B7CB29E755FD00BBECE0 /* NavigationState.swift in Sources */,
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,
 				9239B7C729E66AE400BBECE0 /* PillButton.swift in Sources */,
 				9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */,

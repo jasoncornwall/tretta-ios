@@ -11,7 +11,7 @@ struct OnboardingRouter {
     let route: Route.OnboardingRoute
     
     @ViewBuilder
-    func setUp() -> some View {
+    func setup() -> some View {
         switch route {
         case .signIn:
             Text("Sign In")
