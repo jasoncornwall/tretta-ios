@@ -15,21 +15,20 @@ struct FloatingTextField: View {
     var body: some View {
         ZStack(alignment: .leading) {
             Text(title)
-                .font(.system(size: 15))
-                .foregroundColor(text.wrappedValue.isEmpty ? Color(.placeholderText) : .accentColor)
+                .font(.system(size: 15, weight: .bold))
+                .foregroundColor(text.wrappedValue.isEmpty ? .white : .trettaGold)
                 .offset(y: text.wrappedValue.isEmpty ? 0 : -25)
                 .scaleEffect(text.wrappedValue.isEmpty ? 1 : 0.75, anchor: .leading)
                 .padding(.bottom, 14)
             VStack {
                 TextField("", text: text)
                     .padding(.bottom, 4)
+                    .foregroundColor(.white)
                 Rectangle()
                     .frame(height: 2)
-                    .foregroundColor(.black)
+                    .foregroundColor(.trettaGold)
             }
         }
-        .padding(.top, 15)
-        .padding(.horizontal, 56)
         .animation(.spring(response: 0.3, dampingFraction: 0.7), value: text.wrappedValue)
     }
 }

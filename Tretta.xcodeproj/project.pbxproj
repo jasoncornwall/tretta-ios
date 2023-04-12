@@ -25,6 +25,8 @@
 		9239B7C129E4B2A400BBECE0 /* HexColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C029E4B2A400BBECE0 /* HexColorExtension.swift */; };
 		9239B7C329E5114300BBECE0 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C229E5114300BBECE0 /* FloatingTextField.swift */; };
 		9239B7C529E667B400BBECE0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C429E667B400BBECE0 /* Colors.swift */; };
+		9239B7C729E66AE400BBECE0 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C629E66AE400BBECE0 /* PillButton.swift */; };
+		9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C829E745A500BBECE0 /* ClearButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		9239B7C029E4B2A400BBECE0 /* HexColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColorExtension.swift; sourceTree = "<group>"; };
 		9239B7C229E5114300BBECE0 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		9239B7C429E667B400BBECE0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		9239B7C629E66AE400BBECE0 /* PillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
+		9239B7C829E745A500BBECE0 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,8 @@
 			children = (
 				9239B7B329E3B1BC00BBECE0 /* AppContainerView.swift */,
 				9239B7C229E5114300BBECE0 /* FloatingTextField.swift */,
+				9239B7C629E66AE400BBECE0 /* PillButton.swift */,
+				9239B7C829E745A500BBECE0 /* ClearButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +382,8 @@
 				9239B7BB29E4AC8F00BBECE0 /* SnakeCaseJSONDecoder.swift in Sources */,
 				9239B7B029E3AC8A00BBECE0 /* Route.swift in Sources */,
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,
+				9239B7C729E66AE400BBECE0 /* PillButton.swift in Sources */,
+				9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */,
 				9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */,
 				9239B7C329E5114300BBECE0 /* FloatingTextField.swift in Sources */,
 				9239B7C529E667B400BBECE0 /* Colors.swift in Sources */,
