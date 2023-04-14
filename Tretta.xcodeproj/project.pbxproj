@@ -28,6 +28,10 @@
 		9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C829E745A500BBECE0 /* ClearButton.swift */; };
 		9239B7CB29E755FD00BBECE0 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7CA29E755FD00BBECE0 /* NavigationState.swift */; };
 		9239B7CD29E9A4A400BBECE0 /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7CC29E9A4A400BBECE0 /* ResetPasswordScreen.swift */; };
+		9239B7CF29E9B5D600BBECE0 /* AddCompanyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7CE29E9B5D600BBECE0 /* AddCompanyScreen.swift */; };
+		9239B7D129E9B75F00BBECE0 /* SignUpNameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7D029E9B75F00BBECE0 /* SignUpNameScreen.swift */; };
+		9239B7D329E9B7A800BBECE0 /* SignUpAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7D229E9B7A800BBECE0 /* SignUpAccountScreen.swift */; };
+		9239B7D529E9C0EF00BBECE0 /* CheckboxToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7D429E9C0EF00BBECE0 /* CheckboxToggle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +76,10 @@
 		9239B7C829E745A500BBECE0 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		9239B7CA29E755FD00BBECE0 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
 		9239B7CC29E9A4A400BBECE0 /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
+		9239B7CE29E9B5D600BBECE0 /* AddCompanyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyScreen.swift; sourceTree = "<group>"; };
+		9239B7D029E9B75F00BBECE0 /* SignUpNameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameScreen.swift; sourceTree = "<group>"; };
+		9239B7D229E9B7A800BBECE0 /* SignUpAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAccountScreen.swift; sourceTree = "<group>"; };
+		9239B7D429E9C0EF00BBECE0 /* CheckboxToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +195,9 @@
 			children = (
 				9239B7B529E3B20400BBECE0 /* SignInScreen.swift */,
 				9239B7CC29E9A4A400BBECE0 /* ResetPasswordScreen.swift */,
+				9239B7CE29E9B5D600BBECE0 /* AddCompanyScreen.swift */,
+				9239B7D029E9B75F00BBECE0 /* SignUpNameScreen.swift */,
+				9239B7D229E9B7A800BBECE0 /* SignUpAccountScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 				9239B7C229E5114300BBECE0 /* FloatingTextField.swift */,
 				9239B7C629E66AE400BBECE0 /* PillButton.swift */,
 				9239B7C829E745A500BBECE0 /* ClearButton.swift */,
+				9239B7D429E9C0EF00BBECE0 /* CheckboxToggle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -379,9 +391,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9239B7D129E9B75F00BBECE0 /* SignUpNameScreen.swift in Sources */,
+				9239B7CF29E9B5D600BBECE0 /* AddCompanyScreen.swift in Sources */,
 				9239B7B429E3B1BC00BBECE0 /* AppContainerView.swift in Sources */,
 				9239B7B229E3AF3900BBECE0 /* OnboardingRouter.swift in Sources */,
+				9239B7D529E9C0EF00BBECE0 /* CheckboxToggle.swift in Sources */,
 				9239B7BB29E4AC8F00BBECE0 /* SnakeCaseJSONDecoder.swift in Sources */,
+				9239B7D329E9B7A800BBECE0 /* SignUpAccountScreen.swift in Sources */,
 				9239B7B029E3AC8A00BBECE0 /* Route.swift in Sources */,
 				9239B7CB29E755FD00BBECE0 /* NavigationState.swift in Sources */,
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,
