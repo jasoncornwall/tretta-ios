@@ -27,4 +27,13 @@ struct TrettaApp: App {
             }.environmentObject(navigationState)
         }
     }
+    
+    init() {
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [
+            .foregroundColor: UIColor(Color.trettaGold),
+            .font: UIFont.systemFont(ofSize: 28, weight: .bold)
+        ]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color.trettaGold)]
+    }
 }

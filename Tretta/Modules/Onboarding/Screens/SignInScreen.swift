@@ -23,14 +23,14 @@ struct SignInScreen: View {
                 .frame(height: 80)
             Group {
                 FloatingTextField(title: "EMAIL", text: $emailText)
-                    .padding(.horizontal, 56)
+                    .padding(.horizontal, 40)
                     .onChange(of: emailText) { newValue in
                         print("New Email Value: \(newValue)")
                     }
                 Spacer()
                     .frame(height: 48)
                 FloatingTextField(title: "PASSWORD", text: $passwordText)
-                    .padding(.horizontal, 56)
+                    .padding(.horizontal, 40)
                     .onChange(of: passwordText) { newValue in
                         print("New Password Value: \(newValue)")
                     }
@@ -51,6 +51,7 @@ struct SignInScreen: View {
                 navigationState.routes.append(.onboarding(.signUpName))
             }
             .buttonStyle(ClearButton())
+            .padding(.bottom, 16)
         }
         .background(Color.backgroundBlue)
     }

@@ -27,6 +27,7 @@
 		9239B7C729E66AE400BBECE0 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C629E66AE400BBECE0 /* PillButton.swift */; };
 		9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7C829E745A500BBECE0 /* ClearButton.swift */; };
 		9239B7CB29E755FD00BBECE0 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7CA29E755FD00BBECE0 /* NavigationState.swift */; };
+		9239B7CD29E9A4A400BBECE0 /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7CC29E9A4A400BBECE0 /* ResetPasswordScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		9239B7C629E66AE400BBECE0 /* PillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
 		9239B7C829E745A500BBECE0 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		9239B7CA29E755FD00BBECE0 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
+		9239B7CC29E9A4A400BBECE0 /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				9239B7B529E3B20400BBECE0 /* SignInScreen.swift */,
+				9239B7CC29E9A4A400BBECE0 /* ResetPasswordScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */,
 				9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */,
 				9239B7C329E5114300BBECE0 /* FloatingTextField.swift in Sources */,
+				9239B7CD29E9A4A400BBECE0 /* ResetPasswordScreen.swift in Sources */,
 				9239B7C529E667B400BBECE0 /* Colors.swift in Sources */,
 				9239B7C129E4B2A400BBECE0 /* HexColorExtension.swift in Sources */,
 				9239B7B829E4AB3500BBECE0 /* CustomStringConvertible.swift in Sources */,
