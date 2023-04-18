@@ -32,6 +32,14 @@
 		9239B7D129E9B75F00BBECE0 /* SignUpNameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7D029E9B75F00BBECE0 /* SignUpNameScreen.swift */; };
 		9239B7D329E9B7A800BBECE0 /* SignUpAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7D229E9B7A800BBECE0 /* SignUpAccountScreen.swift */; };
 		9239B7D529E9C0EF00BBECE0 /* CheckboxToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7D429E9C0EF00BBECE0 /* CheckboxToggle.swift */; };
+		9239B7DB29EA0B1100BBECE0 /* DashboardPipelineProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7DA29EA0B1100BBECE0 /* DashboardPipelineProgress.swift */; };
+		9239B7DD29EA0BDD00BBECE0 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7DC29EA0BDD00BBECE0 /* HomeScreen.swift */; };
+		9239B7DF29EB55DC00BBECE0 /* DashboardProgressSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7DE29EB55DC00BBECE0 /* DashboardProgressSection.swift */; };
+		9239B7E129EB591100BBECE0 /* DashboardMetricsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7E029EB591100BBECE0 /* DashboardMetricsSection.swift */; };
+		9239B7E329EBEC9E00BBECE0 /* RecentDealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7E229EBEC9E00BBECE0 /* RecentDealCard.swift */; };
+		9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */; };
+		9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4429EE1E6100F37CCA /* ContactCircle.swift */; };
+		9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4629EE238E00F37CCA /* DropdownMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +88,14 @@
 		9239B7D029E9B75F00BBECE0 /* SignUpNameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameScreen.swift; sourceTree = "<group>"; };
 		9239B7D229E9B7A800BBECE0 /* SignUpAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAccountScreen.swift; sourceTree = "<group>"; };
 		9239B7D429E9C0EF00BBECE0 /* CheckboxToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggle.swift; sourceTree = "<group>"; };
+		9239B7DA29EA0B1100BBECE0 /* DashboardPipelineProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPipelineProgress.swift; sourceTree = "<group>"; };
+		9239B7DC29EA0BDD00BBECE0 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		9239B7DE29EB55DC00BBECE0 /* DashboardProgressSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProgressSection.swift; sourceTree = "<group>"; };
+		9239B7E029EB591100BBECE0 /* DashboardMetricsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMetricsSection.swift; sourceTree = "<group>"; };
+		9239B7E229EBEC9E00BBECE0 /* RecentDealCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentDealCard.swift; sourceTree = "<group>"; };
+		9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentContactCard.swift; sourceTree = "<group>"; };
+		9241FF4429EE1E6100F37CCA /* ContactCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCircle.swift; sourceTree = "<group>"; };
+		9241FF4629EE238E00F37CCA /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +184,7 @@
 		9239B7A629E388D200BBECE0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9239B7D629E9DF5D00BBECE0 /* Home */,
 				9239B7A829E3891A00BBECE0 /* Onboarding */,
 			);
 			path = Modules;
@@ -259,6 +276,45 @@
 				9239B7C429E667B400BBECE0 /* Colors.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9239B7D629E9DF5D00BBECE0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9239B7D929E9DF7C00BBECE0 /* Models */,
+				9239B7D829E9DF7600BBECE0 /* Views */,
+				9239B7D729E9DF6E00BBECE0 /* Screens */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9239B7D729E9DF6E00BBECE0 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9239B7DC29EA0BDD00BBECE0 /* HomeScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		9239B7D829E9DF7600BBECE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9241FF4429EE1E6100F37CCA /* ContactCircle.swift */,
+				9239B7DE29EB55DC00BBECE0 /* DashboardProgressSection.swift */,
+				9239B7E029EB591100BBECE0 /* DashboardMetricsSection.swift */,
+				9239B7E229EBEC9E00BBECE0 /* RecentDealCard.swift */,
+				9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */,
+				9241FF4629EE238E00F37CCA /* DropdownMenu.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9239B7D929E9DF7C00BBECE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9239B7DA29EA0B1100BBECE0 /* DashboardPipelineProgress.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,12 +450,18 @@
 				9239B7D129E9B75F00BBECE0 /* SignUpNameScreen.swift in Sources */,
 				9239B7CF29E9B5D600BBECE0 /* AddCompanyScreen.swift in Sources */,
 				9239B7B429E3B1BC00BBECE0 /* AppContainerView.swift in Sources */,
+				9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */,
+				9239B7DB29EA0B1100BBECE0 /* DashboardPipelineProgress.swift in Sources */,
+				9239B7E129EB591100BBECE0 /* DashboardMetricsSection.swift in Sources */,
+				9239B7DD29EA0BDD00BBECE0 /* HomeScreen.swift in Sources */,
 				9239B7B229E3AF3900BBECE0 /* OnboardingRouter.swift in Sources */,
+				9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */,
 				9239B7D529E9C0EF00BBECE0 /* CheckboxToggle.swift in Sources */,
 				9239B7BB29E4AC8F00BBECE0 /* SnakeCaseJSONDecoder.swift in Sources */,
 				9239B7D329E9B7A800BBECE0 /* SignUpAccountScreen.swift in Sources */,
 				9239B7B029E3AC8A00BBECE0 /* Route.swift in Sources */,
 				9239B7CB29E755FD00BBECE0 /* NavigationState.swift in Sources */,
+				9239B7DF29EB55DC00BBECE0 /* DashboardProgressSection.swift in Sources */,
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,
 				9239B7C729E66AE400BBECE0 /* PillButton.swift in Sources */,
 				9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */,
@@ -410,7 +472,9 @@
 				9239B7C129E4B2A400BBECE0 /* HexColorExtension.swift in Sources */,
 				9239B7B829E4AB3500BBECE0 /* CustomStringConvertible.swift in Sources */,
 				9239B7BF29E4AE6A00BBECE0 /* Organization.swift in Sources */,
+				9239B7E329EBEC9E00BBECE0 /* RecentDealCard.swift in Sources */,
 				9239B7B629E3B20400BBECE0 /* SignInScreen.swift in Sources */,
+				9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
