@@ -13,13 +13,16 @@ struct DashboardProgressSection: View {
     var body: some View {
         HStack {
             Circle()
+                .foregroundColor(progress.stageColor)
                 .frame(width: 10, height: 10)
                 .padding(.trailing, 4)
             VStack(alignment: .leading) {
                 Text("\(Int(progress.percentage * 100))%")
                     .font(.system(size: 28, weight: .bold))
+                    .foregroundColor(.white)
                 Text("\(progress.stageName)")
                     .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.white)
             }
         }
     }
@@ -30,7 +33,8 @@ struct DashboardProgressSection_Previews: PreviewProvider {
         DashboardProgressSection(progress: DashboardPipelineProgress(
             stageName: "Done",
             stageColor: .red,
-            percentage: 0.41)
+            percentage: 0.41,
+            value: 0)
         )
     }
 }

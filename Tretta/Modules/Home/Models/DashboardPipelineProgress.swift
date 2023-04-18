@@ -11,4 +11,5 @@ struct DashboardPipelineProgress: Hashable {
     let stageName: String
     let stageColor: Color
     let percentage: CGFloat
+    var value: CGFloat
 }

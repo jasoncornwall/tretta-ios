@@ -25,19 +25,22 @@ struct DashboardMetricsSection_Previews: PreviewProvider {
         let metric1 = DashboardPipelineProgress(
             stageName: "Done",
             stageColor: .red,
-            percentage: 0.41
+            percentage: 0.41,
+            value: 0
         )
         
         let metric2 = DashboardPipelineProgress(
             stageName: "Pending",
             stageColor: .blue,
-            percentage: 0.23
+            percentage: 0.23,
+            value: 0
         )
         
         let metric3 = DashboardPipelineProgress(
             stageName: "Todo",
             stageColor: .green,
-            percentage: 0.34
+            percentage: 0.34,
+            value: 0
         )
         
         let metrics = [metric1, metric2, metric3]
