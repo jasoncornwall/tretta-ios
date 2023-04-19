@@ -44,6 +44,14 @@
 		9241FF4B29EE358000F37CCA /* DonutChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4A29EE358000F37CCA /* DonutChart.swift */; };
 		9241FF4D29EF6DF000F37CCA /* RecentDealsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4C29EF6DF000F37CCA /* RecentDealsSection.swift */; };
 		9241FF4F29EF743500F37CCA /* RecentContactsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4E29EF743500F37CCA /* RecentContactsSection.swift */; };
+		9241FF5529F027F600F37CCA /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF5429F027F600F37CCA /* Contact.swift */; };
+		9241FF5729F02BEF00F37CCA /* ContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF5629F02BEF00F37CCA /* ContactScreen.swift */; };
+		9241FF5B29F0496200F37CCA /* ContactRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF5A29F0496200F37CCA /* ContactRouter.swift */; };
+		9241FF5D29F04A7500F37CCA /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF5C29F04A7500F37CCA /* HomeRouter.swift */; };
+		9241FF5F29F04D8300F37CCA /* ContactHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF5E29F04D8300F37CCA /* ContactHeader.swift */; };
+		9241FF6129F04F8F00F37CCA /* ContactMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF6029F04F8F00F37CCA /* ContactMockData.swift */; };
+		9241FF6329F0541800F37CCA /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF6229F0541800F37CCA /* ContactRow.swift */; };
+		9241FF6529F060E800F37CCA /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF6429F060E800F37CCA /* ContactList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +112,14 @@
 		9241FF4A29EE358000F37CCA /* DonutChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChart.swift; sourceTree = "<group>"; };
 		9241FF4C29EF6DF000F37CCA /* RecentDealsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentDealsSection.swift; sourceTree = "<group>"; };
 		9241FF4E29EF743500F37CCA /* RecentContactsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentContactsSection.swift; sourceTree = "<group>"; };
+		9241FF5429F027F600F37CCA /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		9241FF5629F02BEF00F37CCA /* ContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactScreen.swift; sourceTree = "<group>"; };
+		9241FF5A29F0496200F37CCA /* ContactRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRouter.swift; sourceTree = "<group>"; };
+		9241FF5C29F04A7500F37CCA /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		9241FF5E29F04D8300F37CCA /* ContactHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHeader.swift; sourceTree = "<group>"; };
+		9241FF6029F04F8F00F37CCA /* ContactMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMockData.swift; sourceTree = "<group>"; };
+		9241FF6229F0541800F37CCA /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
+		9241FF6429F060E800F37CCA /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +208,7 @@
 		9239B7A629E388D200BBECE0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9241FF5029F0266F00F37CCA /* Contact */,
 				9239B7D629E9DF5D00BBECE0 /* Home */,
 				9239B7A829E3891A00BBECE0 /* Onboarding */,
 			);
@@ -325,6 +342,45 @@
 			children = (
 				9239B7DA29EA0B1100BBECE0 /* DashboardPipelineProgress.swift */,
 				9241FF4829EE319B00F37CCA /* ChartDataContainer.swift */,
+				9241FF5C29F04A7500F37CCA /* HomeRouter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9241FF5029F0266F00F37CCA /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				9241FF5329F026BB00F37CCA /* Models */,
+				9241FF5229F026AA00F37CCA /* Views */,
+				9241FF5129F0269000F37CCA /* Screens */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		9241FF5129F0269000F37CCA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9241FF5629F02BEF00F37CCA /* ContactScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		9241FF5229F026AA00F37CCA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9241FF5E29F04D8300F37CCA /* ContactHeader.swift */,
+				9241FF6229F0541800F37CCA /* ContactRow.swift */,
+				9241FF6429F060E800F37CCA /* ContactList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9241FF5329F026BB00F37CCA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9241FF5429F027F600F37CCA /* Contact.swift */,
+				9241FF5A29F0496200F37CCA /* ContactRouter.swift */,
+				9241FF6029F04F8F00F37CCA /* ContactMockData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -463,10 +519,13 @@
 				9239B7CF29E9B5D600BBECE0 /* AddCompanyScreen.swift in Sources */,
 				9239B7B429E3B1BC00BBECE0 /* AppContainerView.swift in Sources */,
 				9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */,
+				9241FF6529F060E800F37CCA /* ContactList.swift in Sources */,
 				9239B7DB29EA0B1100BBECE0 /* DashboardPipelineProgress.swift in Sources */,
 				9239B7E129EB591100BBECE0 /* DashboardMetricsSection.swift in Sources */,
+				9241FF5529F027F600F37CCA /* Contact.swift in Sources */,
 				9239B7DD29EA0BDD00BBECE0 /* HomeScreen.swift in Sources */,
 				9239B7B229E3AF3900BBECE0 /* OnboardingRouter.swift in Sources */,
+				9241FF5B29F0496200F37CCA /* ContactRouter.swift in Sources */,
 				9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */,
 				9241FF4D29EF6DF000F37CCA /* RecentDealsSection.swift in Sources */,
 				9239B7D529E9C0EF00BBECE0 /* CheckboxToggle.swift in Sources */,
@@ -480,16 +539,21 @@
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,
 				9241FF4929EE319B00F37CCA /* ChartDataContainer.swift in Sources */,
 				9239B7C729E66AE400BBECE0 /* PillButton.swift in Sources */,
+				9241FF6329F0541800F37CCA /* ContactRow.swift in Sources */,
 				9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */,
 				9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */,
+				9241FF5D29F04A7500F37CCA /* HomeRouter.swift in Sources */,
 				9239B7C329E5114300BBECE0 /* FloatingTextField.swift in Sources */,
 				9239B7CD29E9A4A400BBECE0 /* ResetPasswordScreen.swift in Sources */,
+				9241FF5F29F04D8300F37CCA /* ContactHeader.swift in Sources */,
 				9239B7C529E667B400BBECE0 /* Colors.swift in Sources */,
 				9239B7C129E4B2A400BBECE0 /* HexColorExtension.swift in Sources */,
 				9239B7B829E4AB3500BBECE0 /* CustomStringConvertible.swift in Sources */,
 				9239B7BF29E4AE6A00BBECE0 /* Organization.swift in Sources */,
 				9239B7E329EBEC9E00BBECE0 /* RecentDealCard.swift in Sources */,
 				9239B7B629E3B20400BBECE0 /* SignInScreen.swift in Sources */,
+				9241FF5729F02BEF00F37CCA /* ContactScreen.swift in Sources */,
+				9241FF6129F04F8F00F37CCA /* ContactMockData.swift in Sources */,
 				9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

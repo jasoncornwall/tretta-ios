@@ -10,6 +10,8 @@ import Foundation
 enum Route: Hashable {
     case onboarding(OnboardingRoute)
     case rootMain
+    case home(HomeRoute)
+    case contact(ContactRoute)
 }
 
 // MARK: - Onboarding
@@ -19,5 +21,22 @@ extension Route {
         case signIn
         case signUpName
         case signUpEmailPassword
+    }
+}
+
+// MARK: - Home
+
+extension Route {
+    enum HomeRoute: Hashable {
+        case main
+    }
+}
+
+// MARK: - Contact
+
+extension Route {
+    enum ContactRoute: Hashable {
+        case main
+        case detail
     }
 }

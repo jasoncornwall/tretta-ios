@@ -1,0 +1,38 @@
+//
+//  ContactScreen.swift
+//  Tretta
+//
+//  Created by Jason C on 4/19/23.
+//
+
+import SwiftUI
+
+struct ContactScreen: View {
+    @EnvironmentObject private var navigationState: NavigationState
+    @State private var searchText = ""
+    
+    @State private var contacts = ContactMockData.contacts
+    
+    var body: some View {
+        NavigationStack {
+            VStack {
+                Spacer()
+                    .frame(height: 1)
+                ContactHeader()
+                    .padding(.bottom, 8)
+                ContactList(contacts: contacts)
+            }
+            .background(Color.backgroundBlue)
+            .navigationTitle("Contacts")
+        }
+        .searchable(text: $searchText)
+        .tint(.trettaGold)
+        .foregroundColor(.white)
+    }
+}
+
+struct ContactScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        ContactScreen()
+    }
+}

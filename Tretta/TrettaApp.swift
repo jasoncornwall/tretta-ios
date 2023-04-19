@@ -22,6 +22,10 @@ struct TrettaApp: App {
                             OnboardingRouter(route: route).setup()
                         case .rootMain:
                             Text("Root Main")
+                        case let .home(route):
+                            HomeRouter(route: route).setup()
+                        case let .contact(route):
+                            ContactRouter(route: route).setup()
                         }
                     }
             }.environmentObject(navigationState)
@@ -29,11 +33,26 @@ struct TrettaApp: App {
     }
     
     init() {
+        self.navigationStyleSetup()
+    }
+    
+    private func navigationStyleSetup() {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.largeTitleTextAttributes = [
             .foregroundColor: UIColor(Color.trettaGold),
             .font: UIFont.systemFont(ofSize: 30, weight: .bold)
         ]
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color.trettaGold)]
+        
+        let placeholder = NSAttributedString(string: "Search", attributes: [.foregroundColor: UIColor.white.withAlphaComponent(0.5)])
+        
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = UIColor(Color.homeBodySectionBlue)
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = placeholder
+        UISearchBar.appearance().setImage(searchBarImage(), for: .search, state: .normal)
+    }
+    
+    private func searchBarImage() -> UIImage {
+        let image = UIImage(systemName: "magnifyingglass")
+        return image!.withTintColor(.white.withAlphaComponent(0.5), renderingMode: .alwaysOriginal)
     }
 }
