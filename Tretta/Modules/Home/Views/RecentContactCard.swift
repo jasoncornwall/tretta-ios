@@ -10,7 +10,7 @@ import SwiftUI
 struct RecentContactCard: View {
     var body: some View {
         VStack {
-            ContactCircle(contactInitials: "T")
+            ContactCircle(contactInitials: "RD")
                 .foregroundColor(.white)
                 .padding(.bottom, 2)
             Text("Richard Deloite")
@@ -21,7 +21,7 @@ struct RecentContactCard: View {
         .padding(.horizontal, 16)
         .background(Color.cardGray)
         .cornerRadius(12)
-        .shadow(color: .gray, radius: 5, x: 4, y: 4)
+        .shadow(color: .shadowGray, radius: 5, x: 4, y: 4)
     }
 }
 

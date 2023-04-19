@@ -22,7 +22,7 @@ struct DropdownMenu: View {
         .background(Color.cardGray)
         .cornerRadius(12)
         .tint(.white)
-        .shadow(color: Color(0x425570), radius: 5, x: 2, y: 2)
+        .shadow(color: .shadowGray, radius: 5, x: 2, y: 2)
     }
 }
 

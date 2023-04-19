@@ -38,7 +38,7 @@ struct HomeScreen: View {
                 VStack {
                     VStack(alignment: .trailing) {
                        DropdownMenu(selection: "")
-                            .padding(.trailing, 32)
+                            .padding(.trailing, 16)
                             .padding(.bottom, 8)
                         HStack {
                             DonutChart()
@@ -47,13 +47,19 @@ struct HomeScreen: View {
                         }
                         .padding(.horizontal, 32)
                     }
-                    Spacer()
+                    .padding(.bottom, 44)
                 }
                 .padding(.top, 16)
                 .frame(maxWidth: .infinity)
                 .background(Color.backgroundBlue)
                 VStack {
                     Spacer()
+                    ScrollView(showsIndicators: false) {
+                        RecentDealsSection()
+                            .padding(.top, 16)
+                        RecentContactsSection()
+                            .padding(.top, 8)
+                    }
                 }
                 .frame(maxWidth: .infinity)
                 .background(Color.homeBodySectionBlue)

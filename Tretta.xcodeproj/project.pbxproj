@@ -42,6 +42,8 @@
 		9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4629EE238E00F37CCA /* DropdownMenu.swift */; };
 		9241FF4929EE319B00F37CCA /* ChartDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4829EE319B00F37CCA /* ChartDataContainer.swift */; };
 		9241FF4B29EE358000F37CCA /* DonutChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4A29EE358000F37CCA /* DonutChart.swift */; };
+		9241FF4D29EF6DF000F37CCA /* RecentDealsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4C29EF6DF000F37CCA /* RecentDealsSection.swift */; };
+		9241FF4F29EF743500F37CCA /* RecentContactsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4E29EF743500F37CCA /* RecentContactsSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		9241FF4629EE238E00F37CCA /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
 		9241FF4829EE319B00F37CCA /* ChartDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataContainer.swift; sourceTree = "<group>"; };
 		9241FF4A29EE358000F37CCA /* DonutChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChart.swift; sourceTree = "<group>"; };
+		9241FF4C29EF6DF000F37CCA /* RecentDealsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentDealsSection.swift; sourceTree = "<group>"; };
+		9241FF4E29EF743500F37CCA /* RecentContactsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentContactsSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +314,8 @@
 				9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */,
 				9241FF4629EE238E00F37CCA /* DropdownMenu.swift */,
 				9241FF4A29EE358000F37CCA /* DonutChart.swift */,
+				9241FF4C29EF6DF000F37CCA /* RecentDealsSection.swift */,
+				9241FF4E29EF743500F37CCA /* RecentContactsSection.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -462,7 +468,9 @@
 				9239B7DD29EA0BDD00BBECE0 /* HomeScreen.swift in Sources */,
 				9239B7B229E3AF3900BBECE0 /* OnboardingRouter.swift in Sources */,
 				9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */,
+				9241FF4D29EF6DF000F37CCA /* RecentDealsSection.swift in Sources */,
 				9239B7D529E9C0EF00BBECE0 /* CheckboxToggle.swift in Sources */,
+				9241FF4F29EF743500F37CCA /* RecentContactsSection.swift in Sources */,
 				9239B7BB29E4AC8F00BBECE0 /* SnakeCaseJSONDecoder.swift in Sources */,
 				9239B7D329E9B7A800BBECE0 /* SignUpAccountScreen.swift in Sources */,
 				9239B7B029E3AC8A00BBECE0 /* Route.swift in Sources */,
