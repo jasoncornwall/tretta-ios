@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct OnboardingRouter {
-    let route: Route.OnboardingRoute
+    @State var route: Route
     
     @ViewBuilder
     func setup() -> some View {
         switch route {
-        case .signIn:
-            Text("Sign In")
-        case .signUpName:
-            Text("Sign Up Name")
-        case .signUpEmailPassword:
-            Text("Sign Up Email Psswd")
+        case .onboarding(.signIn):
+            SignInScreen(route: $route)
+        case .onboarding(.signUpName):
+            SignUpNameScreen()
+        case .onboarding(.signUpEmailPassword):
+            SignUpAccountScreen()
+        case .onboarding(.resetPassword):
+            ResetPasswordScreen()
+        default:
+            SignInScreen(route: $route)
         }
     }
 }

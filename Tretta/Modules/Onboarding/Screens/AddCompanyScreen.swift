@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AddCompanyScreen: View {
-    @EnvironmentObject private var navigationState: NavigationState
     
     @State private var companyNameText = ""
     @State private var companyWebsiteText = ""
@@ -35,7 +34,7 @@ struct AddCompanyScreen: View {
                 Spacer()
                 Button("NEXT") {
                     print("Reset Password tapped.")
-                    navigationState.routes.removeAll()
+//                    navigationState.routes.removeAll()
                 }
                 .buttonStyle(PillButton())
                 .padding(.bottom, 32)

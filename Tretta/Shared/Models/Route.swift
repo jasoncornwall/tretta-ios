@@ -21,6 +21,7 @@ extension Route {
         case signIn
         case signUpName
         case signUpEmailPassword
+        case resetPassword
     }
 }
 

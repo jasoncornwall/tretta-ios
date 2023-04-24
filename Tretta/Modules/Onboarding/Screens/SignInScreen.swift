@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SignInScreen: View {
-    @EnvironmentObject private var navigationState: NavigationState
     
+    @Binding var route: Route
     @State private var emailText = ""
     @State private var passwordText = ""
     
@@ -37,18 +37,25 @@ struct SignInScreen: View {
                 Spacer()
                     .frame(height: 48)
                 Button("SIGN IN") {
-                    navigationState.routes.append(.rootMain)
+                    withAnimation {
+                        route = .rootMain
+                    }
                 }
                 .buttonStyle(PillButton())
                 Button("Forgot password?") {
                     print("Forgot Pswd tapped.")
+                    withAnimation {
+                        route = .onboarding(.resetPassword)
+                    }
                 }
                 .buttonStyle(ClearButton())
             }
             Spacer()
             Button("New here? Register instead.") {
                 print("Register tapped.")
-                navigationState.routes.append(.onboarding(.signUpName))
+                withAnimation {
+                    route = .onboarding(.signUpName)
+                }
             }
             .buttonStyle(ClearButton())
             .padding(.bottom, 16)
@@ -57,8 +64,9 @@ struct SignInScreen: View {
     }
 }
 
-struct SignInScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        SignInScreen()
-    }
-}
+//struct SignInScreen_Previews: PreviewProvider {
+//    @State private static var show: Route = .onboarding(.signIn)
+//    static var previews: some View {
+//        SignInScreen(route: $show)
+//    }
+//}

@@ -9,26 +9,25 @@ import SwiftUI
 
 @main
 struct TrettaApp: App {
-    
-    @StateObject private var navigationState = NavigationState()
-    
+        
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $navigationState.routes) {
-                AppContainerView()
-                    .navigationDestination(for: Route.self) { selectedRoute in
-                        switch selectedRoute {
-                        case let .onboarding(route):
-                            OnboardingRouter(route: route).setup()
-                        case .rootMain:
-                            Text("Root Main")
-                        case let .home(route):
-                            HomeRouter(route: route).setup()
-                        case let .contact(route):
-                            ContactRouter(route: route).setup()
-                        }
-                    }
-            }.environmentObject(navigationState)
+            AppContainerView()
+//            NavigationStack(path: $navigationState.routes) {
+//                AppContainerView()
+//                    .navigationDestination(for: Route.self) { selectedRoute in
+//                        switch selectedRoute {
+//                        case let .onboarding(route):
+//                            OnboardingRouter(route: route).setup()
+//                        case .rootMain:
+//                            RootMainView()
+//                        case let .home(route):
+//                            HomeRouter(route: route).setup()
+//                        case let .contact(route):
+//                            ContactRouter(route: route).setup()
+//                        }
+//                    }
+//            }.environmentObject(navigationState)
         }
     }
     

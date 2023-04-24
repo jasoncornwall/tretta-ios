@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ResetPasswordScreen: View {
-    @EnvironmentObject private var navigationState: NavigationState
     
     @State private var newPasswordText = ""
     @State private var confirmedPasswordText = ""
@@ -35,7 +34,7 @@ struct ResetPasswordScreen: View {
                 Spacer()
                 Button("RESET PASSWORD") {
                     print("Reset Password tapped.")
-                    navigationState.routes.removeAll()
+//                    navigationState.routes.removeAll()
                 }
                 .buttonStyle(PillButton())
                 .padding(.bottom, 32)

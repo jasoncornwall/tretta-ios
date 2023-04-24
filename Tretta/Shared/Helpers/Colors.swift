@@ -16,4 +16,5 @@ extension Color {
     static let graphGreen = Color(0x7DB545)
     static let homeBodySectionBlue = Color(0x596C87)
     static let shadowGray = Color(0x425570)
+    static let tabBarBackground = Color(0x374355)
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SignUpAccountScreen: View {
-    @EnvironmentObject private var navigationState: NavigationState
     
     @State private var emailText = ""
     @State private var passwordText = ""
@@ -45,7 +44,7 @@ struct SignUpAccountScreen: View {
                 Spacer()
                 Button("COMPLETE") {
                     print("Reset Password tapped.")
-                    navigationState.routes.removeAll()
+//                    navigationState.routes.removeAll()
                 }
                 .buttonStyle(PillButton())
                 .padding(.bottom, 32)

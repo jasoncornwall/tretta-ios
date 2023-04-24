@@ -52,6 +52,7 @@
 		9241FF6129F04F8F00F37CCA /* ContactMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF6029F04F8F00F37CCA /* ContactMockData.swift */; };
 		9241FF6329F0541800F37CCA /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF6229F0541800F37CCA /* ContactRow.swift */; };
 		9241FF6529F060E800F37CCA /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF6429F060E800F37CCA /* ContactList.swift */; };
+		9241FF6729F0D0CD00F37CCA /* RootMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF6629F0D0CD00F37CCA /* RootMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		9241FF6029F04F8F00F37CCA /* ContactMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMockData.swift; sourceTree = "<group>"; };
 		9241FF6229F0541800F37CCA /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
 		9241FF6429F060E800F37CCA /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
+		9241FF6629F0D0CD00F37CCA /* RootMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +290,7 @@
 				9239B7C629E66AE400BBECE0 /* PillButton.swift */,
 				9239B7C829E745A500BBECE0 /* ClearButton.swift */,
 				9239B7D429E9C0EF00BBECE0 /* CheckboxToggle.swift */,
+				9241FF6629F0D0CD00F37CCA /* RootMainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -401,6 +404,8 @@
 			dependencies = (
 			);
 			name = Tretta;
+			packageProductDependencies = (
+			);
 			productName = Tretta;
 			productReference = 9239B77929E3656600BBECE0 /* Tretta.app */;
 			productType = "com.apple.product-type.application";
@@ -473,6 +478,8 @@
 				Base,
 			);
 			mainGroup = 9239B77029E3656600BBECE0;
+			packageReferences = (
+			);
 			productRefGroup = 9239B77A29E3656600BBECE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -532,6 +539,7 @@
 				9241FF4F29EF743500F37CCA /* RecentContactsSection.swift in Sources */,
 				9239B7BB29E4AC8F00BBECE0 /* SnakeCaseJSONDecoder.swift in Sources */,
 				9239B7D329E9B7A800BBECE0 /* SignUpAccountScreen.swift in Sources */,
+				9241FF6729F0D0CD00F37CCA /* RootMainView.swift in Sources */,
 				9239B7B029E3AC8A00BBECE0 /* Route.swift in Sources */,
 				9239B7CB29E755FD00BBECE0 /* NavigationState.swift in Sources */,
 				9239B7DF29EB55DC00BBECE0 /* DashboardProgressSection.swift in Sources */,

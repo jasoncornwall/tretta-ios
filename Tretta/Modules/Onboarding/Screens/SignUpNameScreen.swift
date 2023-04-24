@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SignUpNameScreen: View {
-    @EnvironmentObject private var navigationState: NavigationState
     
     @State private var firstNameText = ""
     @State private var lastNameText = ""
@@ -35,7 +34,7 @@ struct SignUpNameScreen: View {
                 Spacer()
                 Button("NEXT") {
                     print("Reset Password tapped.")
-                    navigationState.routes.removeAll()
+//                    navigationState.routes.removeAll()
                 }
                 .buttonStyle(PillButton())
                 .padding(.bottom, 32)
