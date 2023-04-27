@@ -17,8 +17,8 @@ struct DropdownMenu: View {
                 Text($0)
             }
         }
-        .pickerStyle(.menu)
-        .frame(height: 40)
+        .scaledToFit()
+        .pickerStyle(.automatic)
         .background(Color.cardGray)
         .cornerRadius(12)
         .tint(.white)
