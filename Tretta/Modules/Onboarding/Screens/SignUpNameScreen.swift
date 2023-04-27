@@ -41,6 +41,17 @@ struct SignUpNameScreen: View {
             }
             .background(Color.backgroundBlue)
             .navigationTitle("What's your name?")
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        print("Back button tapped.")
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.trettaGold)
+                    }
+                }
+            }
         }
     }
 }

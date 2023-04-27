@@ -16,6 +16,9 @@ struct ContactList: View {
                 ContactRow(contactName: "\(contact.firstName) \(contact.lastName)", index: index)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
+                    .onTapGesture {
+                        print("Contact tapped: \(contact.firstName) \(contact.lastName)")
+                    }
             }
         }
         .listStyle(.plain)

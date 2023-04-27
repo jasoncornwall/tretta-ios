@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactScreen: View {
-    @EnvironmentObject private var navigationState: NavigationState
+//    @EnvironmentObject private var navigationState: NavigationState
     @State private var searchText = ""
     
     @State private var contacts = ContactMockData.contacts
@@ -24,6 +24,17 @@ struct ContactScreen: View {
             }
             .background(Color.backgroundBlue)
             .navigationTitle("Contacts")
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        print("Plus button tapped.")
+                    } label: {
+                        Image(systemName: "plus")
+                            .foregroundColor(.trettaGold)
+                    }
+                }
+            }
         }
         .searchable(text: $searchText)
         .tint(.trettaGold)

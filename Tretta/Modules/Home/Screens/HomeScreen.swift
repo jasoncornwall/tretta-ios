@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @EnvironmentObject private var navigationState: NavigationState
+//    @EnvironmentObject private var navigationState: NavigationState
     
     private var chartData =
         [

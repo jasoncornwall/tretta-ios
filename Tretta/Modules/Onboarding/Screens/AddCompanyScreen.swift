@@ -41,6 +41,17 @@ struct AddCompanyScreen: View {
             }
             .background(Color.backgroundBlue)
             .navigationTitle("Add your company.")
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        print("Back button tapped.")
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.trettaGold)
+                    }
+                }
+            }
         }
     }
 }

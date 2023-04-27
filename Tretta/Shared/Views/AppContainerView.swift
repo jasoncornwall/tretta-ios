@@ -8,21 +8,9 @@
 import SwiftUI
 
 struct AppContainerView: View {
-//    @State private var showRootTabView = false
     @State private var currentRoute: Route = .onboarding(.signIn)
     
     var body: some View {
-        // This currently functions as the nav root.
-//        ZStack {
-//            if !showRootTabView {
-//                SignInScreen(showRootTabView: $showRootTabView)
-//            } else {
-//                RootMainView()
-//                    .transition(.move(edge: .bottom))
-//                    .zIndex(1)
-//            }
-//        }
-        
         ZStack {
             switch currentRoute {
             case .onboarding(let onboardingRoute):
@@ -53,5 +41,6 @@ struct AppContainerView: View {
             }
         }
         .background(Color.backgroundBlue)
+        .preferredColorScheme(.dark)
     }
 }

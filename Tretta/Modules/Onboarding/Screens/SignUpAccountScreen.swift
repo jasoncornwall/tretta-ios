@@ -51,6 +51,17 @@ struct SignUpAccountScreen: View {
             }
             .background(Color.backgroundBlue)
             .navigationTitle("Create your account.")
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        print("Back button tapped.")
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.trettaGold)
+                    }
+                }
+            }
         }
     }
 }

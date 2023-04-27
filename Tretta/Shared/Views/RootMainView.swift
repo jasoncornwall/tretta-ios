@@ -43,8 +43,8 @@ struct RootMainView: View {
     }
 }
 
-struct RootMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        RootMainView()
-    }
-}
+//struct RootMainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RootMainView()
+//    }
+//}

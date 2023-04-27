@@ -41,6 +41,17 @@ struct ResetPasswordScreen: View {
             }
             .background(Color.backgroundBlue)
             .navigationTitle("Reset your password.")
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        print("Back button tapped.")
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.trettaGold)
+                    }
+                }
+            }
         }
     }
 }
