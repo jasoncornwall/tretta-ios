@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ResetPasswordScreen: View {
-    
+    @Binding var route: Route
     @State private var newPasswordText = ""
     @State private var confirmedPasswordText = ""
     
@@ -33,8 +33,9 @@ struct ResetPasswordScreen: View {
                 }
                 Spacer()
                 Button("RESET PASSWORD") {
-                    print("Reset Password tapped.")
-//                    navigationState.routes.removeAll()
+                    withAnimation {
+                        route = .onboarding(.signIn)
+                    }
                 }
                 .buttonStyle(PillButton())
                 .padding(.bottom, 32)
@@ -45,9 +46,11 @@ struct ResetPasswordScreen: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        print("Back button tapped.")
+                        withAnimation {
+                            route = .onboarding(.signIn)
+                        }
                     } label: {
-                        Image(systemName: "chevron.backward")
+                        Image(systemName: "xmark")
                             .foregroundColor(.trettaGold)
                     }
                 }
@@ -57,7 +60,8 @@ struct ResetPasswordScreen: View {
 }
 
 struct ResetPasswordScreen_Previews: PreviewProvider {
+    @State private static var initialRoute: Route = .onboarding(.resetPassword)
     static var previews: some View {
-        ResetPasswordScreen()
+        ResetPasswordScreen(route: $initialRoute)
     }
 }

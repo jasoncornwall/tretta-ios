@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddCompanyScreen: View {
-    
+    @Binding var route: Route
     @State private var companyNameText = ""
     @State private var companyWebsiteText = ""
     
@@ -33,8 +33,7 @@ struct AddCompanyScreen: View {
                 }
                 Spacer()
                 Button("NEXT") {
-                    print("Reset Password tapped.")
-//                    navigationState.routes.removeAll()
+                    route = .onboarding(.signUpName)
                 }
                 .buttonStyle(PillButton())
                 .padding(.bottom, 32)
@@ -45,7 +44,9 @@ struct AddCompanyScreen: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        print("Back button tapped.")
+                        withAnimation {
+                            route = .onboarding(.signIn)
+                        }
                     } label: {
                         Image(systemName: "chevron.backward")
                             .foregroundColor(.trettaGold)
@@ -57,7 +58,8 @@ struct AddCompanyScreen: View {
 }
 
 struct AddCompanyScreen_Previews: PreviewProvider {
+    @State private static var initialRoute: Route = .onboarding(.addCompany)
     static var previews: some View {
-        AddCompanyScreen()
+        AddCompanyScreen(route: $initialRoute)
     }
 }

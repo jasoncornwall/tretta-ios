@@ -14,11 +14,15 @@ struct AppContainerView: View {
         ZStack {
             switch currentRoute {
             case .onboarding(let onboardingRoute):
-                let screen = OnboardingRouter(route: currentRoute).setup()
+                let screen = OnboardingRouter(route: $currentRoute).setup()
                 
                 switch onboardingRoute {
                 case .signIn:
                     SignInScreen(route: $currentRoute)
+                case .resetPassword:
+                    screen
+                        .transition(.move(edge: .bottom))
+                        .zIndex(1)
                 default:
                     screen
                         .transition(.move(edge: .trailing))

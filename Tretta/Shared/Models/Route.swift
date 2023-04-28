@@ -19,6 +19,7 @@ enum Route: Hashable {
 extension Route {
     enum OnboardingRoute: Hashable {
         case signIn
+        case addCompany
         case signUpName
         case signUpEmailPassword
         case resetPassword
