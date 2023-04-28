@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactScreen: View {
-//    @EnvironmentObject private var navigationState: NavigationState
+    @Binding var route: Route
     @State private var searchText = ""
     
     @State private var contacts = ContactMockData.contacts
@@ -20,7 +20,7 @@ struct ContactScreen: View {
                     .frame(height: 1)
                 ContactHeader()
                     .padding(.bottom, 8)
-                ContactList(contacts: contacts)
+                ContactList(route: $route, contacts: contacts)
             }
             .background(Color.backgroundBlue)
             .navigationTitle("Contacts")
@@ -43,7 +43,8 @@ struct ContactScreen: View {
 }
 
 struct ContactScreen_Previews: PreviewProvider {
+    @State private static var initialRoute: Route = .contact(.main)
     static var previews: some View {
-        ContactScreen()
+        ContactScreen(route: $initialRoute)
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RootMainView: View {
+    private var route: Binding<Route>
     @State private var selection = 0
     
     var body: some View {
@@ -22,7 +23,7 @@ struct RootMainView: View {
                         }
                     }.tag(0)
 
-                ContactScreen()
+                ContactScreen(route: self.route)
                     .tabItem {
                         if selection == 1 {
                             Label("", image: "selected_contacts_icon")
@@ -34,12 +35,13 @@ struct RootMainView: View {
         }
     }
     
-    init() {
+    init(route: Binding<Route>) {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(Color.tabBarBackground)
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().scrollEdgeAppearance = appearance
+        self.route = route
     }
 }
 

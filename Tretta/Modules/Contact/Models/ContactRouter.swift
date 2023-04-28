@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ContactRouter {
-    let route: Route.ContactRoute
+    @Binding var route: Route
     
     @ViewBuilder
     func setup() -> some View {
         switch route {
-        case .main:
-            ContactScreen()
-        case .detail:
+        case .contact(.main):
+            ContactScreen(route: $route)
+        case .contact(.detail):
             Text("Contact Detail View")
+        default:
+            ContactScreen(route: $route)
         }
     }
 }

@@ -29,7 +29,7 @@ struct AppContainerView: View {
                         .zIndex(1)
                 }
             case .rootMain:
-                RootMainView()
+                RootMainView(route: $currentRoute)
                     .transition(.move(edge: .bottom))
                     .zIndex(1)
             case .home(let homeRoute):
@@ -37,8 +37,8 @@ struct AppContainerView: View {
                 screen
                     .transition(.move(edge: .bottom))
                     .zIndex(1)
-            case .contact(let contactRoute):
-                let screen = ContactRouter(route: contactRoute).setup()
+            case .contact:
+                let screen = ContactRouter(route: $currentRoute).setup()
                 screen
                     .transition(.move(edge: .bottom))
                     .zIndex(1)

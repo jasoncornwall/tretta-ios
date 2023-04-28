@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContactList: View {
+    @Binding var route: Route
     @State var contacts: [Contact]
     
     var body: some View {
@@ -18,6 +19,7 @@ struct ContactList: View {
                     .listRowInsets(EdgeInsets())
                     .onTapGesture {
                         print("Contact tapped: \(contact.firstName) \(contact.lastName)")
+                        route = .contact(.detail)
                     }
             }
         }
