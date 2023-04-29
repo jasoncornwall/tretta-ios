@@ -20,14 +20,17 @@ struct ContactDetailActionButton: View {
                 Text("message")
                     .font(.system(size: 11))
                     .foregroundColor(isEnabled ? .trettaGold : .white.opacity(0.3))
+                    .padding(.bottom, 2)
             case .call(let isEnabled):
                 Text("call")
                     .font(.system(size: 11))
                     .foregroundColor(isEnabled ? .trettaGold : .white.opacity(0.3))
+                    .padding(.bottom, 2)
             case .mail(let isEnabled):
                 Text("mail")
                     .font(.system(size: 11))
                     .foregroundColor(isEnabled ? .trettaGold : .white.opacity(0.3))
+                    .padding(.bottom, 2)
             }
         }
         .frame(width: 86, height: 52)

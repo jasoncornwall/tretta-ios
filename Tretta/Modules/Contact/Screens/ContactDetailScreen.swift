@@ -13,27 +13,45 @@ struct ContactDetailScreen: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Image(systemName: "circle")
-                    .resizable()
-                    .scaledToFill()
-                    .clipShape(Circle())
-                    .frame(width: 140, height: 140)
-                    .padding(EdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 15))
-                Text("\(contact.firstName) \(contact.lastName)")
-                    .font(.system(size: 32, weight: .semibold))
-                    .padding(.top, 24)
-                HStack(spacing: 16) {
-                    ContactDetailActionButton(actionType: .message(isEnabled: contact.phoneNumber != nil))
-                    ContactDetailActionButton(actionType: .call(isEnabled: contact.phoneNumber != nil))
-                    ContactDetailActionButton(actionType: .mail(isEnabled: contact.email != nil))
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    Image("")
+                        .resizable()
+                        .scaledToFill()
+                        .clipShape(Circle())
+                        .frame(width: 140, height: 140)
+                        .overlay(Circle().stroke(.black.opacity(0.2), lineWidth: 3))
+                    Text("\(contact.firstName) \(contact.lastName)")
+                        .font(.system(size: 32, weight: .semibold))
+                        .padding(.top, 16)
+                    HStack(spacing: 16) {
+                        ContactDetailActionButton(actionType: .message(isEnabled: contact.phoneNumber != nil))
+                        ContactDetailActionButton(actionType: .call(isEnabled: contact.phoneNumber != nil))
+                        ContactDetailActionButton(actionType: .mail(isEnabled: contact.email != nil))
+                    }
+                    .padding(.top, 4)
+                    if let phoneNumber = contact.phoneNumber {
+                        ContactDetailSubSection(sectionType: .phone(phoneNumber))
+                            .padding(.top, 16)
+                            .padding(.horizontal, 16)
+                    }
+                    if let email = contact.email {
+                        ContactDetailSubSection(sectionType: .email(email))
+                            .padding(.top, 16)
+                            .padding(.horizontal, 16)
+                    }
+                    ContactDetailNoteSection()
+                        .padding(.top, 16)
+                        .padding(.horizontal, 16)
+                    ContactDetailSummarySection(note: "")
+                        .padding(.top, 16)
+                        .padding(.horizontal, 16)
+                    Spacer()
                 }
-                .padding(.top, 16)
-                Spacer()
+                .frame(maxWidth: .infinity)
+                .background(Color.backgroundBlue)
+                .padding(.top, 32)
             }
-            .frame(maxWidth: .infinity)
-            .background(Color.backgroundBlue)
-            .padding(.top, 32)
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -56,6 +74,7 @@ struct ContactDetailScreen: View {
                 }
             }
             .background(Color.backgroundBlue)
+            .toolbarBackground(.hidden, for: .navigationBar)
         }
     }
 }
