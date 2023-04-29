@@ -28,13 +28,13 @@ struct DashboardProgressSection: View {
     }
 }
 
-struct DashboardProgressSection_Previews: PreviewProvider {
-    static var previews: some View {
-        DashboardProgressSection(progress: DashboardPipelineProgress(
-            stageName: "Done",
-            stageColor: .red,
-            percentage: 0.41,
-            value: 0)
-        )
-    }
-}
+//struct DashboardProgressSection_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DashboardProgressSection(progress: DashboardPipelineProgress(
+//            stageName: "Done",
+//            stageColor: .red,
+//            percentage: 0.41,
+//            value: 0)
+//        )
+//    }
+//}

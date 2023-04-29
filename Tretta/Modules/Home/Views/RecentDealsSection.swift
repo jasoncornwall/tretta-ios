@@ -37,8 +37,8 @@ struct RecentDealsSection: View {
     }
 }
 
-struct RecentDealsSection_Previews: PreviewProvider {
-    static var previews: some View {
-        RecentDealsSection()
-    }
-}
+//struct RecentDealsSection_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecentDealsSection()
+//    }
+//}

@@ -48,8 +48,8 @@ struct DonutChart : View {
     }
 }
 
-struct DonutChart_Previews: PreviewProvider {
-    static var previews: some View {
-        DonutChart()
-    }
-}
+//struct DonutChart_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DonutChart()
+//    }
+//}

@@ -55,9 +55,9 @@ struct SignUpNameScreen: View {
     }
 }
 
-struct SignUpNameScreen_Previews: PreviewProvider {
-    @State private static var initialRoute: Route = .onboarding(.signUpName)
-    static var previews: some View {
-        SignUpNameScreen(route: $initialRoute)
-    }
-}
+//struct SignUpNameScreen_Previews: PreviewProvider {
+//    @State private static var initialRoute: Route = .onboarding(.signUpName)
+//    static var previews: some View {
+//        SignUpNameScreen(route: $initialRoute)
+//    }
+//}

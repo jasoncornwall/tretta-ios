@@ -28,8 +28,8 @@ struct AppContainerView: View {
                         .transition(.move(edge: .trailing))
                         .zIndex(1)
                 }
-            case .rootMain:
-                RootMainView(route: $currentRoute)
+            case let .rootMain(tabValue):
+                RootMainView(route: $currentRoute, selection: tabValue ?? 0)
                     .transition(.move(edge: .bottom))
                     .zIndex(1)
             case .home(let homeRoute):

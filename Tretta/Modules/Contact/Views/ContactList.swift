@@ -18,8 +18,9 @@ struct ContactList: View {
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
                     .onTapGesture {
-                        print("Contact tapped: \(contact.firstName) \(contact.lastName)")
-                        route = .contact(.detail)
+                        withAnimation {
+                            route = .contact(.detail(contact))
+                        }
                     }
             }
         }

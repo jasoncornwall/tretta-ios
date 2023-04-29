@@ -42,9 +42,9 @@ struct ContactScreen: View {
     }
 }
 
-struct ContactScreen_Previews: PreviewProvider {
-    @State private static var initialRoute: Route = .contact(.main)
-    static var previews: some View {
-        ContactScreen(route: $initialRoute)
-    }
-}
+//struct ContactScreen_Previews: PreviewProvider {
+//    @State private static var initialRoute: Route = .contact(.main)
+//    static var previews: some View {
+//        ContactScreen(route: $initialRoute)
+//    }
+//}

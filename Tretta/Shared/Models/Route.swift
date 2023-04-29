@@ -9,7 +9,7 @@ import Foundation
 
 enum Route: Hashable {
     case onboarding(OnboardingRoute)
-    case rootMain
+    case rootMain(Int?)
     case home(HomeRoute)
     case contact(ContactRoute)
 }
@@ -39,6 +39,6 @@ extension Route {
 extension Route {
     enum ContactRoute: Hashable {
         case main
-        case detail
+        case detail(Contact)
     }
 }

@@ -15,8 +15,8 @@ struct ContactRouter {
         switch route {
         case .contact(.main):
             ContactScreen(route: $route)
-        case .contact(.detail):
-            Text("Contact Detail View")
+        case .contact(let .detail(contact)):
+            ContactDetailScreen(contact: contact, route: $route)
         default:
             ContactScreen(route: $route)
         }

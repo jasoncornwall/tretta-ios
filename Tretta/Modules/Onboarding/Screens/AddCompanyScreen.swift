@@ -57,9 +57,9 @@ struct AddCompanyScreen: View {
     }
 }
 
-struct AddCompanyScreen_Previews: PreviewProvider {
-    @State private static var initialRoute: Route = .onboarding(.addCompany)
-    static var previews: some View {
-        AddCompanyScreen(route: $initialRoute)
-    }
-}
+//struct AddCompanyScreen_Previews: PreviewProvider {
+//    @State private static var initialRoute: Route = .onboarding(.addCompany)
+//    static var previews: some View {
+//        AddCompanyScreen(route: $initialRoute)
+//    }
+//}

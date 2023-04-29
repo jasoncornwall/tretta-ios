@@ -59,9 +59,9 @@ struct ResetPasswordScreen: View {
     }
 }
 
-struct ResetPasswordScreen_Previews: PreviewProvider {
-    @State private static var initialRoute: Route = .onboarding(.resetPassword)
-    static var previews: some View {
-        ResetPasswordScreen(route: $initialRoute)
-    }
-}
+//struct ResetPasswordScreen_Previews: PreviewProvider {
+//    @State private static var initialRoute: Route = .onboarding(.resetPassword)
+//    static var previews: some View {
+//        ResetPasswordScreen(route: $initialRoute)
+//    }
+//}

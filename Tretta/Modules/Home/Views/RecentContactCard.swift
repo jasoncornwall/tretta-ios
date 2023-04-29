@@ -25,8 +25,8 @@ struct RecentContactCard: View {
     }
 }
 
-struct RecentContactCard_Previews: PreviewProvider {
-    static var previews: some View {
-        RecentContactCard()
-    }
-}
+//struct RecentContactCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecentContactCard()
+//    }
+//}

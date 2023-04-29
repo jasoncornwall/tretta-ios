@@ -26,9 +26,9 @@ struct DropdownMenu: View {
     }
 }
 
-struct DropdownMenu_Previews: PreviewProvider {
-    @State static private var pipeline = "Current Sales"
-    static var previews: some View {
-        DropdownMenu(selection: pipeline)
-    }
-}
+//struct DropdownMenu_Previews: PreviewProvider {
+//    @State static private var pipeline = "Current Sales"
+//    static var previews: some View {
+//        DropdownMenu(selection: pipeline)
+//    }
+//}

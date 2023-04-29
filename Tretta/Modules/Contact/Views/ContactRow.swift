@@ -24,8 +24,8 @@ struct ContactRow: View {
     }
 }
 
-struct ContactRow_Previews: PreviewProvider {
-    static var previews: some View {
-        ContactRow(contactName: "John Doe", index: 0)
-    }
-}
+//struct ContactRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContactRow(contactName: "John Doe", index: 0)
+//    }
+//}

@@ -44,7 +44,7 @@ struct SignUpAccountScreen: View {
                 Spacer()
                 Button("COMPLETE") {
                     withAnimation {
-                        route = .rootMain
+                        route = .rootMain(0)
                     }
                 }
                 .buttonStyle(PillButton())
@@ -67,9 +67,9 @@ struct SignUpAccountScreen: View {
     }
 }
 
-struct SignUpAccountScreen_Previews: PreviewProvider {
-    @State private static var initialRoute: Route = .onboarding(.signUpEmailPassword)
-    static var previews: some View {
-        SignUpAccountScreen(route: $initialRoute)
-    }
-}
+//struct SignUpAccountScreen_Previews: PreviewProvider {
+//    @State private static var initialRoute: Route = .onboarding(.signUpEmailPassword)
+//    static var previews: some View {
+//        SignUpAccountScreen(route: $initialRoute)
+//    }
+//}

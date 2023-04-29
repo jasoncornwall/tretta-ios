@@ -30,8 +30,8 @@ struct RecentDealCard: View {
     }
 }
 
-struct RecentDealCard_Previews: PreviewProvider {
-    static var previews: some View {
-        RecentDealCard()
-    }
-}
+//struct RecentDealCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecentDealCard()
+//    }
+//}

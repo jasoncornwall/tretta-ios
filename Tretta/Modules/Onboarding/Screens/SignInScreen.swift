@@ -38,7 +38,7 @@ struct SignInScreen: View {
                     .frame(height: 48)
                 Button("SIGN IN") {
                     withAnimation {
-                        route = .rootMain
+                        route = .rootMain(0)
                     }
                 }
                 .buttonStyle(PillButton())
@@ -64,9 +64,9 @@ struct SignInScreen: View {
     }
 }
 
-struct SignInScreen_Previews: PreviewProvider {
-    @State private static var initialRoute: Route = .onboarding(.signIn)
-    static var previews: some View {
-        SignInScreen(route: $initialRoute)
-    }
-}
+//struct SignInScreen_Previews: PreviewProvider {
+//    @State private static var initialRoute: Route = .onboarding(.signIn)
+//    static var previews: some View {
+//        SignInScreen(route: $initialRoute)
+//    }
+//}

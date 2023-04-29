@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RootMainView: View {
     private var route: Binding<Route>
-    @State private var selection = 0
+    @State private var selection: Int
     
     var body: some View {
                 TabView(selection: $selection) {
@@ -35,13 +35,14 @@ struct RootMainView: View {
         }
     }
     
-    init(route: Binding<Route>) {
+    init(route: Binding<Route>, selection: Int) {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(Color.tabBarBackground)
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().scrollEdgeAppearance = appearance
         self.route = route
+        self.selection = selection
     }
 }
 
