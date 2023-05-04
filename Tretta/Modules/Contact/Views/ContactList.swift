@@ -23,7 +23,6 @@ struct ContactList: View {
                         }
                     }
             }
-        }
-        .listStyle(.plain)
+        }.listStyle(.plain)
     }
 }

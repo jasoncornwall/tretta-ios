@@ -59,6 +59,13 @@
 		92E0011629FCCE9000603EAB /* ContactDetailSubSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0011529FCCE9000603EAB /* ContactDetailSubSection.swift */; };
 		92E0011829FCDAE800603EAB /* ContactDetailNoteSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0011729FCDAE800603EAB /* ContactDetailNoteSection.swift */; };
 		92E0011A29FCE02800603EAB /* ContactDetailSummarySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0011929FCE02800603EAB /* ContactDetailSummarySection.swift */; };
+		92E001202A01A92F00603EAB /* PipelineScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0011F2A01A92F00603EAB /* PipelineScreen.swift */; };
+		92E001222A01F1BE00603EAB /* DealSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E001212A01F1BE00603EAB /* DealSectionHeader.swift */; };
+		92E001242A0359BF00603EAB /* DealSectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E001232A0359BF00603EAB /* DealSectionList.swift */; };
+		92E001262A0404DB00603EAB /* Pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E001252A0404DB00603EAB /* Pipeline.swift */; };
+		92E001282A04050E00603EAB /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E001272A04050E00603EAB /* Stage.swift */; };
+		92E0012A2A0405DE00603EAB /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E001292A0405DE00603EAB /* Deal.swift */; };
+		92E0012C2A04094000603EAB /* DealRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0012B2A04094000603EAB /* DealRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +141,13 @@
 		92E0011529FCCE9000603EAB /* ContactDetailSubSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailSubSection.swift; sourceTree = "<group>"; };
 		92E0011729FCDAE800603EAB /* ContactDetailNoteSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailNoteSection.swift; sourceTree = "<group>"; };
 		92E0011929FCE02800603EAB /* ContactDetailSummarySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailSummarySection.swift; sourceTree = "<group>"; };
+		92E0011F2A01A92F00603EAB /* PipelineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineScreen.swift; sourceTree = "<group>"; };
+		92E001212A01F1BE00603EAB /* DealSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealSectionHeader.swift; sourceTree = "<group>"; };
+		92E001232A0359BF00603EAB /* DealSectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealSectionList.swift; sourceTree = "<group>"; };
+		92E001252A0404DB00603EAB /* Pipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipeline.swift; sourceTree = "<group>"; };
+		92E001272A04050E00603EAB /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
+		92E001292A0405DE00603EAB /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		92E0012B2A04094000603EAB /* DealRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +236,7 @@
 		9239B7A629E388D200BBECE0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				92E0011B2A00CAE400603EAB /* Pipeline */,
 				9241FF5029F0266F00F37CCA /* Contact */,
 				9239B7D629E9DF5D00BBECE0 /* Home */,
 				9239B7A829E3891A00BBECE0 /* Onboarding */,
@@ -406,6 +421,44 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		92E0011B2A00CAE400603EAB /* Pipeline */ = {
+			isa = PBXGroup;
+			children = (
+				92E0011E2A00CB0A00603EAB /* Models */,
+				92E0011D2A00CAFD00603EAB /* Views */,
+				92E0011C2A00CAF500603EAB /* Screens */,
+			);
+			path = Pipeline;
+			sourceTree = "<group>";
+		};
+		92E0011C2A00CAF500603EAB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				92E0011F2A01A92F00603EAB /* PipelineScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		92E0011D2A00CAFD00603EAB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				92E001212A01F1BE00603EAB /* DealSectionHeader.swift */,
+				92E001232A0359BF00603EAB /* DealSectionList.swift */,
+				92E0012B2A04094000603EAB /* DealRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		92E0011E2A00CB0A00603EAB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92E001252A0404DB00603EAB /* Pipeline.swift */,
+				92E001272A04050E00603EAB /* Stage.swift */,
+				92E001292A0405DE00603EAB /* Deal.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -541,8 +594,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9239B7D129E9B75F00BBECE0 /* SignUpNameScreen.swift in Sources */,
+				92E001242A0359BF00603EAB /* DealSectionList.swift in Sources */,
 				9239B7CF29E9B5D600BBECE0 /* AddCompanyScreen.swift in Sources */,
 				9239B7B429E3B1BC00BBECE0 /* AppContainerView.swift in Sources */,
+				92E0012C2A04094000603EAB /* DealRow.swift in Sources */,
+				92E0012A2A0405DE00603EAB /* Deal.swift in Sources */,
 				9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */,
 				9241FF6529F060E800F37CCA /* ContactList.swift in Sources */,
 				9239B7DB29EA0B1100BBECE0 /* DashboardPipelineProgress.swift in Sources */,
@@ -557,8 +613,10 @@
 				9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */,
 				9241FF4D29EF6DF000F37CCA /* RecentDealsSection.swift in Sources */,
 				92E0011A29FCE02800603EAB /* ContactDetailSummarySection.swift in Sources */,
+				92E001222A01F1BE00603EAB /* DealSectionHeader.swift in Sources */,
 				9239B7D529E9C0EF00BBECE0 /* CheckboxToggle.swift in Sources */,
 				9241FF4F29EF743500F37CCA /* RecentContactsSection.swift in Sources */,
+				92E001262A0404DB00603EAB /* Pipeline.swift in Sources */,
 				9239B7BB29E4AC8F00BBECE0 /* SnakeCaseJSONDecoder.swift in Sources */,
 				9239B7D329E9B7A800BBECE0 /* SignUpAccountScreen.swift in Sources */,
 				9241FF6729F0D0CD00F37CCA /* RootMainView.swift in Sources */,
@@ -575,8 +633,10 @@
 				9241FF5D29F04A7500F37CCA /* HomeRouter.swift in Sources */,
 				9241FF6E29FB545000F37CCA /* ContactDetailActionButton.swift in Sources */,
 				9239B7C329E5114300BBECE0 /* FloatingTextField.swift in Sources */,
+				92E001282A04050E00603EAB /* Stage.swift in Sources */,
 				9239B7CD29E9A4A400BBECE0 /* ResetPasswordScreen.swift in Sources */,
 				9241FF5F29F04D8300F37CCA /* ContactHeader.swift in Sources */,
+				92E001202A01A92F00603EAB /* PipelineScreen.swift in Sources */,
 				9239B7C529E667B400BBECE0 /* Colors.swift in Sources */,
 				9239B7C129E4B2A400BBECE0 /* HexColorExtension.swift in Sources */,
 				9239B7B829E4AB3500BBECE0 /* CustomStringConvertible.swift in Sources */,

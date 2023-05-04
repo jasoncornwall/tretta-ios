@@ -12,7 +12,7 @@ struct RootMainView: View {
     @State private var selection: Int
     
     var body: some View {
-                TabView(selection: $selection) {
+        TabView(selection: $selection) {
             Group {
                 HomeScreen()
                     .tabItem {
@@ -31,6 +31,15 @@ struct RootMainView: View {
                             Label("", image: "contacts_icon")
                         }
                     }.tag(1)
+                
+                PipelineScreen()
+                    .tabItem {
+                        if selection == 2 {
+                            Label("", image: "selected_pipeline_icon")
+                        } else {
+                            Label("", image: "pipeline_icon")
+                        }
+                    }.tag(2)
             }
         }
     }
