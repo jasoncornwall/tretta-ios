@@ -66,6 +66,7 @@
 		92E001282A04050E00603EAB /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E001272A04050E00603EAB /* Stage.swift */; };
 		92E0012A2A0405DE00603EAB /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E001292A0405DE00603EAB /* Deal.swift */; };
 		92E0012C2A04094000603EAB /* DealRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0012B2A04094000603EAB /* DealRow.swift */; };
+		92E0012E2A04180900603EAB /* PipelineMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0012D2A04180900603EAB /* PipelineMockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		92E001272A04050E00603EAB /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		92E001292A0405DE00603EAB /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		92E0012B2A04094000603EAB /* DealRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealRow.swift; sourceTree = "<group>"; };
+		92E0012D2A04180900603EAB /* PipelineMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineMockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +457,7 @@
 				92E001252A0404DB00603EAB /* Pipeline.swift */,
 				92E001272A04050E00603EAB /* Stage.swift */,
 				92E001292A0405DE00603EAB /* Deal.swift */,
+				92E0012D2A04180900603EAB /* PipelineMockData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */,
 				9241FF6529F060E800F37CCA /* ContactList.swift in Sources */,
 				9239B7DB29EA0B1100BBECE0 /* DashboardPipelineProgress.swift in Sources */,
+				92E0012E2A04180900603EAB /* PipelineMockData.swift in Sources */,
 				9239B7E129EB591100BBECE0 /* DashboardMetricsSection.swift in Sources */,
 				9241FF5529F027F600F37CCA /* Contact.swift in Sources */,
 				9239B7DD29EA0BDD00BBECE0 /* HomeScreen.swift in Sources */,

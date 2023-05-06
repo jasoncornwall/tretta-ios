@@ -12,5 +12,4 @@ struct Stage: Codable, Hashable, CustomStringConvertible {
     let name: String
     let pipelineOrderIdx: Int
     let pipelineId: String
-    let pipeline: Pipeline
 }
