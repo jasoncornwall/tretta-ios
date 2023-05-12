@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct DealSectionHeader: View {
-    let deals: [String]
+    let stages: [Stage]
     @Binding var stageSelection: Int
     
     var body: some View {
         VStack(spacing: 14) {
             HStack(spacing: 28) {
-                ForEach(Array(deals.enumerated()), id: \.element) { index, deal in
+                ForEach(Array(stages.enumerated()), id: \.element) { index, stage in
                     VStack {
-                        Text(deal)
+                        Text(stage.name)
                             .font(.system(size: 12))
                             .foregroundColor(
                                 stageSelection == index ? (

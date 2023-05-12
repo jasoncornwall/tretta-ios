@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct DealSectionList: View {
-    @State var deals: [Deal]
+    let deals: [Deal]
     
     var body: some View {
         List {
             ForEach(Array(deals.enumerated()), id: \.element) { index, deal in
                 DealRow(deal: deal)
+                    .padding(.bottom, 8)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
                     .onTapGesture {
@@ -22,6 +23,7 @@ struct DealSectionList: View {
                         }
                     }
             }
+            .background(Color.backgroundBlue)
         }.listStyle(.plain)
     }
 }

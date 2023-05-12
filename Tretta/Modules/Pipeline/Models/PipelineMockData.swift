@@ -8,13 +8,13 @@
 import Foundation
 
 struct PipelineMockData {
-    static let pipelines: [Pipeline] = [
+    private(set) static var pipelines: [Pipeline] = [
         Pipeline(_id: "0", name: "Current Sales"),
         Pipeline(_id: "1", name: "Coffee Shops"),
         Pipeline(_id: "2", name: "Enterprise")
     ]
     
-    static let stages: [Stage] = [
+    private(set) static var stages: [Stage] = [
         Stage(_id: "1", name: "Qualified", pipelineOrderIdx: 0, pipelineId: "0"),
         Stage(_id: "2", name: "Follow Up", pipelineOrderIdx: 1, pipelineId: "0"),
         Stage(_id: "3", name: "In Progress", pipelineOrderIdx: 2, pipelineId: "0"),
@@ -31,7 +31,7 @@ struct PipelineMockData {
         Stage(_id: "14", name: "Snap", pipelineOrderIdx: 3, pipelineId: "2"),
     ]
     
-    static let deals: [Deal] = [
+    private(set) static var deals: [Deal] = [
         Deal(_id: "1", name: "Villa Coworking Space", creatorUserId: "1", stageId: "1", contactId: "1", value: 1000, customerCount: 1, creationDate: "\(Date().description)", pipelineId: "0"),
         Deal(_id: "2", name: "Edgars Smoke Shop", creatorUserId: "1", stageId: "1", contactId: "1", value: 1000, customerCount: 1, creationDate: "\(Date().description)", pipelineId: "0"),
         Deal(_id: "3", name: "Hofstra Digital Agency", creatorUserId: "1", stageId: "2", contactId: "1", value: 1000, customerCount: 1, creationDate: "\(Date().description)", pipelineId: "0"),

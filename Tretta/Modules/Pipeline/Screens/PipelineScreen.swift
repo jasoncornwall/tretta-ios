@@ -8,24 +8,20 @@
 import SwiftUI
 
 struct PipelineScreen: View {
-    let deals: [String] = ["Qualified", "Follow Up", "In Progress", "Closed"]
-    
+    @StateObject var model: PipelineScreenModel
     @State private var searchText = ""
     @State private var stageSelection: Int = 0
     
     var body: some View {
         NavigationStack {
             VStack {
-                DealSectionHeader(deals: deals, stageSelection: $stageSelection)
+                DealSectionHeader(stages: model.stages, stageSelection: $stageSelection)
                 TabView(selection: $stageSelection) {
-                    Text("Qualified")
-                        .tag(0)
-                    Text("Follow Up")
-                        .tag(1)
-                    Text("In Progress")
-                        .tag(2)
-                    Text("Closed")
-                        .tag(3)
+                    ForEach(Array(model.stages.enumerated()), id: \.element) { index, stage in
+                        DealSectionList(deals: model.getDealsByStage(stage._id))
+                            .padding(.top, 4)
+                            .tag(index)
+                    }
                 }.tabViewStyle(.page(indexDisplayMode: .never))
             }
             .background(Color.backgroundBlue)
@@ -50,5 +46,10 @@ struct PipelineScreen: View {
         .searchable(text: $searchText)
         .tint(.trettaGold)
         .foregroundColor(.white)
+        .task {
+            model.loadPipelines()
+            model.loadStages(pipelineId: model.pipelines[0]._id)
+            model.loadDeals(pipelineId: model.pipelines[0]._id)
+        }
     }
 }
