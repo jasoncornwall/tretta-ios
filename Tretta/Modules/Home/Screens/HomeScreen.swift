@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeScreen: View {
 //    @EnvironmentObject private var navigationState: NavigationState
     
+    @State private var currentPipelineSelection = PipelineMockData.pipelines[0]
+    
     private var chartData =
         [
             DashboardPipelineProgress(
@@ -51,7 +53,7 @@ struct HomeScreen: View {
                 .background(Color.backgroundBlue)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        DropdownMenu(selection: "Current Sales")
+                        DropdownMenu(selection: $currentPipelineSelection, pipelines: PipelineMockData.pipelines)
                              .padding(.trailing, 16)
                              .padding(.bottom, 8)
                     }

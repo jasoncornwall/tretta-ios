@@ -11,6 +11,7 @@ struct PipelineScreen: View {
     @StateObject var model: PipelineScreenModel
     @State private var searchText = ""
     @State private var stageSelection: Int = 0
+    @State private var currentPipelineSelection = PipelineMockData.pipelines[0]
     
     var body: some View {
         NavigationStack {
@@ -29,7 +30,7 @@ struct PipelineScreen: View {
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    DropdownMenu(selection: "Current Sales")
+                    DropdownMenu(selection: $currentPipelineSelection.onChange(pipelineSelectionChange(to:)), pipelines: PipelineMockData.pipelines)
                          .padding(.trailing, 16)
                          .padding(.bottom, 8)
                 }
@@ -48,8 +49,15 @@ struct PipelineScreen: View {
         .foregroundColor(.white)
         .task {
             model.loadPipelines()
-            model.loadStages(pipelineId: model.pipelines[0]._id)
-            model.loadDeals(pipelineId: model.pipelines[0]._id)
+            model.loadStages(pipelineId: currentPipelineSelection._id)
+            model.loadDeals(pipelineId: currentPipelineSelection._id)
         }
+    }
+    
+    func pipelineSelectionChange(to value: Pipeline) {
+        print("Current pipeline: \(currentPipelineSelection)")
+        // Reload local pipeline data
+        model.loadStages(pipelineId: currentPipelineSelection._id)
+        model.loadDeals(pipelineId: currentPipelineSelection._id)
     }
 }

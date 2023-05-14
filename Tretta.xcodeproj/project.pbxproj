@@ -68,6 +68,7 @@
 		92E0012C2A04094000603EAB /* DealRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0012B2A04094000603EAB /* DealRow.swift */; };
 		92E0012E2A04180900603EAB /* PipelineMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0012D2A04180900603EAB /* PipelineMockData.swift */; };
 		92E001302A0EB82700603EAB /* PipelineScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0012F2A0EB82600603EAB /* PipelineScreenModel.swift */; };
+		92E001322A10234000603EAB /* BindingOnChangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E001312A10234000603EAB /* BindingOnChangeExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		92E0012B2A04094000603EAB /* DealRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealRow.swift; sourceTree = "<group>"; };
 		92E0012D2A04180900603EAB /* PipelineMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineMockData.swift; sourceTree = "<group>"; };
 		92E0012F2A0EB82600603EAB /* PipelineScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineScreenModel.swift; sourceTree = "<group>"; };
+		92E001312A10234000603EAB /* BindingOnChangeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingOnChangeExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +335,7 @@
 				9239B7BA29E4AC8F00BBECE0 /* SnakeCaseJSONDecoder.swift */,
 				9239B7C029E4B2A400BBECE0 /* HexColorExtension.swift */,
 				9239B7C429E667B400BBECE0 /* Colors.swift */,
+				92E001312A10234000603EAB /* BindingOnChangeExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				92E001302A0EB82700603EAB /* PipelineScreenModel.swift in Sources */,
 				9241FF5F29F04D8300F37CCA /* ContactHeader.swift in Sources */,
 				92E001202A01A92F00603EAB /* PipelineScreen.swift in Sources */,
+				92E001322A10234000603EAB /* BindingOnChangeExtension.swift in Sources */,
 				9239B7C529E667B400BBECE0 /* Colors.swift in Sources */,
 				9239B7C129E4B2A400BBECE0 /* HexColorExtension.swift in Sources */,
 				9239B7B829E4AB3500BBECE0 /* CustomStringConvertible.swift in Sources */,

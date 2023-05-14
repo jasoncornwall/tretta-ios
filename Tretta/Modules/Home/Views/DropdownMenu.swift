@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct DropdownMenu: View {
-    @State var selection: String
-    let pipelines = ["Current Sales", "Coffee Shops", "Enterprise"]
+    @Binding var selection: Pipeline
+    let pipelines: [Pipeline]
     
     var body: some View {
         Picker("Select pipeline", selection: $selection) {
             ForEach(pipelines, id: \.self) {
-                Text($0)
+                Text($0.name)
             }
         }
         .scaledToFit()
