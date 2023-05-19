@@ -69,6 +69,7 @@
 		92E0012E2A04180900603EAB /* PipelineMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0012D2A04180900603EAB /* PipelineMockData.swift */; };
 		92E001302A0EB82700603EAB /* PipelineScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0012F2A0EB82600603EAB /* PipelineScreenModel.swift */; };
 		92E001322A10234000603EAB /* BindingOnChangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E001312A10234000603EAB /* BindingOnChangeExtension.swift */; };
+		92E001342A17C8D900603EAB /* PipelineRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E001332A17C8D900603EAB /* PipelineRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,7 @@
 		92E0012D2A04180900603EAB /* PipelineMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineMockData.swift; sourceTree = "<group>"; };
 		92E0012F2A0EB82600603EAB /* PipelineScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineScreenModel.swift; sourceTree = "<group>"; };
 		92E001312A10234000603EAB /* BindingOnChangeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingOnChangeExtension.swift; sourceTree = "<group>"; };
+		92E001332A17C8D900603EAB /* PipelineRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,6 +466,7 @@
 				92E001292A0405DE00603EAB /* Deal.swift */,
 				92E0012D2A04180900603EAB /* PipelineMockData.swift */,
 				92E0012F2A0EB82600603EAB /* PipelineScreenModel.swift */,
+				92E001332A17C8D900603EAB /* PipelineRouter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				9241FF6729F0D0CD00F37CCA /* RootMainView.swift in Sources */,
 				9239B7B029E3AC8A00BBECE0 /* Route.swift in Sources */,
 				9239B7CB29E755FD00BBECE0 /* NavigationState.swift in Sources */,
+				92E001342A17C8D900603EAB /* PipelineRouter.swift in Sources */,
 				9239B7DF29EB55DC00BBECE0 /* DashboardProgressSection.swift in Sources */,
 				9241FF4B29EE358000F37CCA /* DonutChart.swift in Sources */,
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,

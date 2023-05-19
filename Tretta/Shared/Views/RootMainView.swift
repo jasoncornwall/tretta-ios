@@ -32,7 +32,7 @@ struct RootMainView: View {
                         }
                     }.tag(1)
                 
-                PipelineScreen(model: PipelineScreenModel())
+                PipelineScreen(route: self.route, model: PipelineScreenModel())
                     .tabItem {
                         if selection == 2 {
                             Label("", image: "selected_pipeline_icon")

@@ -42,6 +42,11 @@ struct AppContainerView: View {
                 screen
                     .transition(.move(edge: .bottom))
                     .zIndex(1)
+            case .pipeline:
+                let screen = PipelineRouter(route: $currentRoute, model: PipelineScreenModel()).setup()
+                screen
+                    .transition(.move(edge: .bottom))
+                    .zIndex(1)
             }
         }
         .background(Color.backgroundBlue)

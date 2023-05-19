@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PipelineScreen: View {
+    @Binding var route: Route
     @StateObject var model: PipelineScreenModel
     @State private var searchText = ""
     @State private var stageSelection: Int = 0
@@ -19,7 +20,7 @@ struct PipelineScreen: View {
                 DealSectionHeader(stages: model.stages, stageSelection: $stageSelection)
                 TabView(selection: $stageSelection) {
                     ForEach(Array(model.stages.enumerated()), id: \.element) { index, stage in
-                        DealSectionList(deals: model.getDealsByStage(stage._id))
+                        DealSectionList(route: $route, deals: model.getDealsByStage(stage._id))
                             .padding(.top, 4)
                             .tag(index)
                     }

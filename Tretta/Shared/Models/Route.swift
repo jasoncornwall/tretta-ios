@@ -12,6 +12,7 @@ enum Route: Hashable {
     case rootMain(Int?)
     case home(HomeRoute)
     case contact(ContactRoute)
+    case pipeline(PipelineRoute)
 }
 
 // MARK: - Onboarding
@@ -40,5 +41,14 @@ extension Route {
     enum ContactRoute: Hashable {
         case main
         case detail(Contact)
+    }
+}
+
+// MARK: - Pipeline
+
+extension Route {
+    enum PipelineRoute: Hashable {
+        case main
+        case detail(Deal)
     }
 }
