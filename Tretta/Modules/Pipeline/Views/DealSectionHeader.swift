@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DealSectionHeader: View {
-    let stages: [Stage]
+    let stages: [String]
     @Binding var stageSelection: Int
     
     var body: some View {
@@ -20,7 +20,7 @@ struct DealSectionHeader: View {
                             .frame(width: 4)
                         ForEach(Array(stages.enumerated()), id: \.element) { index, stage in
                             VStack {
-                                Text(stage.name)
+                                Text(stage)
                                     .font(.system(size: 12, weight: .semibold))
                                     .foregroundColor(
                                         stageSelection == index ? (
@@ -29,7 +29,7 @@ struct DealSectionHeader: View {
                                             Color.white
                                         )
                                     )
-                                // Figure out a way to make this gold underline animation work
+                                // TODO: Figure out a way to make this gold underline animation work
 //                                    .background(
 //                                        stageSelection == index ? (
 //                                            Color.trettaGold

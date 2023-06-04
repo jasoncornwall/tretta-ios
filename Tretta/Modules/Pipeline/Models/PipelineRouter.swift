@@ -17,8 +17,8 @@ struct PipelineRouter {
         switch route {
         case .pipeline(.main):
             PipelineScreen(route: $route, model: model)
-        case .pipeline(let .detail(deal)):
-            Text("\(deal.name)")
+        case .pipeline(let .detail(deal, stageName)):
+            DealScreen(route: $route, deal: deal, stageName: stageName)
         default:
             PipelineScreen(route: $route, model: model)
         }

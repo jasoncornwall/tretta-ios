@@ -49,6 +49,6 @@ extension Route {
 extension Route {
     enum PipelineRoute: Hashable {
         case main
-        case detail(Deal)
+        case detail(deal: Deal, stageName: String)
     }
 }

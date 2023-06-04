@@ -10,6 +10,7 @@ import SwiftUI
 struct DealSectionList: View {
     @Binding var route: Route
     let deals: [Deal]
+    let stageName: String
     
     var body: some View {
         List {
@@ -20,7 +21,7 @@ struct DealSectionList: View {
                     .listRowInsets(EdgeInsets())
                     .onTapGesture {
                         withAnimation {
-                            route = .pipeline(.detail(deal))
+                            route = .pipeline(.detail(deal: deal, stageName: stageName))
                         }
                     }
             }

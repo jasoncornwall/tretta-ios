@@ -17,10 +17,10 @@ struct PipelineScreen: View {
     var body: some View {
         NavigationStack {
             VStack {
-                DealSectionHeader(stages: model.stages, stageSelection: $stageSelection)
+                DealSectionHeader(stages: model.stages.map{$0.name}, stageSelection: $stageSelection)
                 TabView(selection: $stageSelection) {
                     ForEach(Array(model.stages.enumerated()), id: \.element) { index, stage in
-                        DealSectionList(route: $route, deals: model.getDealsByStage(stage._id))
+                        DealSectionList(route: $route, deals: model.getDealsByStage(stage._id), stageName: stage.name)
                             .padding(.top, 4)
                             .tag(index)
                     }
