@@ -17,4 +17,5 @@ extension Color {
     static let homeBodySectionBlue = Color(0x596C87)
     static let shadowGray = Color(0x425570)
     static let tabBarBackground = Color(0x374355)
+    static let cancelRed = Color(0xD8737F)
 }

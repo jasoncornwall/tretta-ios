@@ -40,6 +40,15 @@ struct RootMainView: View {
                             Label("", image: "pipeline_icon")
                         }
                     }.tag(2)
+                
+                SettingsScreen(route: self.route)
+                    .tabItem {
+                        if selection == 3 {
+                            Label("", image: "selected_settings_icon")
+                        } else {
+                            Label("", image: "settings_icon")
+                        }
+                    }.tag(3)
             }
         }
         .background(Color.backgroundBlue)

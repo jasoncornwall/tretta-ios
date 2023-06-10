@@ -57,6 +57,8 @@
 		9241FF6E29FB545000F37CCA /* ContactDetailActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF6D29FB545000F37CCA /* ContactDetailActionButton.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
+		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
+		9268069C2A33AFC800B604CF /* SettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268069B2A33AFC800B604CF /* SettingRow.swift */; };
 		926F99E329FC01F000632F61 /* ContactDetailAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926F99E229FC01F000632F61 /* ContactDetailAction.swift */; };
 		92E0011629FCCE9000603EAB /* ContactDetailSubSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0011529FCCE9000603EAB /* ContactDetailSubSection.swift */; };
 		92E0011829FCDAE800603EAB /* ContactDetailNoteSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0011729FCDAE800603EAB /* ContactDetailNoteSection.swift */; };
@@ -146,6 +148,8 @@
 		9241FF6D29FB545000F37CCA /* ContactDetailActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailActionButton.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
+		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		9268069B2A33AFC800B604CF /* SettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRow.swift; sourceTree = "<group>"; };
 		926F99E229FC01F000632F61 /* ContactDetailAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailAction.swift; sourceTree = "<group>"; };
 		92E0011529FCCE9000603EAB /* ContactDetailSubSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailSubSection.swift; sourceTree = "<group>"; };
 		92E0011729FCDAE800603EAB /* ContactDetailNoteSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailNoteSection.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 		9239B7A629E388D200BBECE0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				926806952A33AD2700B604CF /* Settings */,
 				92E0011B2A00CAE400603EAB /* Pipeline */,
 				9241FF5029F0266F00F37CCA /* Contact */,
 				9239B7D629E9DF5D00BBECE0 /* Home */,
@@ -432,6 +437,39 @@
 				9241FF5A29F0496200F37CCA /* ContactRouter.swift */,
 				9241FF6029F04F8F00F37CCA /* ContactMockData.swift */,
 				926F99E229FC01F000632F61 /* ContactDetailAction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		926806952A33AD2700B604CF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				926806982A33AD6900B604CF /* Models */,
+				926806972A33AD5B00B604CF /* Views */,
+				926806962A33AD4B00B604CF /* Screens */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		926806962A33AD4B00B604CF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				926806992A33AE0F00B604CF /* SettingsScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		926806972A33AD5B00B604CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9268069B2A33AFC800B604CF /* SettingRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		926806982A33AD6900B604CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -650,6 +688,7 @@
 				92E001342A17C8D900603EAB /* PipelineRouter.swift in Sources */,
 				9239B7DF29EB55DC00BBECE0 /* DashboardProgressSection.swift in Sources */,
 				9241FF4B29EE358000F37CCA /* DonutChart.swift in Sources */,
+				9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */,
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,
 				9241FF4929EE319B00F37CCA /* ChartDataContainer.swift in Sources */,
 				9239B7C729E66AE400BBECE0 /* PillButton.swift in Sources */,
@@ -675,6 +714,7 @@
 				9241FF5729F02BEF00F37CCA /* ContactScreen.swift in Sources */,
 				9241FF6129F04F8F00F37CCA /* ContactMockData.swift in Sources */,
 				9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */,
+				9268069C2A33AFC800B604CF /* SettingRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
