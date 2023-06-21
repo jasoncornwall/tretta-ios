@@ -20,7 +20,13 @@ struct ContactScreen: View {
                     .frame(height: 1)
                 ContactHeader()
                     .padding(.bottom, 8)
-                ContactList(route: $route, contacts: contacts)
+                if !contacts.isEmpty {
+                    ContactList(route: $route, contacts: contacts)
+                } else {
+                    EmptyStateView()
+                        .padding(.top, 108)
+                    Spacer()
+                }
             }
             .background(Color.backgroundBlue)
             .navigationTitle("Contacts")

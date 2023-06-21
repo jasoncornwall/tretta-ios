@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeScreen: View {
 //    @EnvironmentObject private var navigationState: NavigationState
     
+    @State private var pipelines = PipelineMockData.pipelines
     @State private var currentPipelineSelection = PipelineMockData.pipelines[0]
     
     private var chartData =
@@ -38,33 +39,47 @@ struct HomeScreen: View {
         NavigationStack {
             Group {
                 VStack {
-                    VStack(alignment: .trailing) {
-                        HStack {
-                            DonutChart()
-                            Spacer()
-                            DashboardMetricsSection(metrics: chartData)
+                    if !pipelines.isEmpty {
+                        VStack(alignment: .trailing) {
+                            HStack {
+                                DonutChart()
+                                Spacer()
+                                DashboardMetricsSection(metrics: chartData)
+                            }
+                            .padding(.horizontal, 32)
                         }
-                        .padding(.horizontal, 32)
+                        .padding(.bottom, 44)
+                    } else {
+                        EmptyStateView()
+                            .padding(.bottom, 20)
                     }
-                    .padding(.bottom, 44)
                 }
                 .padding(.top, 16)
                 .frame(maxWidth: .infinity)
                 .background(Color.backgroundBlue)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        DropdownMenu(selection: $currentPipelineSelection, pipelines: PipelineMockData.pipelines)
-                             .padding(.trailing, 16)
-                             .padding(.bottom, 8)
+                        if !pipelines.isEmpty {
+                            DropdownMenu(selection: $currentPipelineSelection, pipelines: pipelines)
+                                 .padding(.trailing, 16)
+                                 .padding(.bottom, 8)
+                        }
                     }
                 }
                 VStack {
-                    Spacer()
-                    ScrollView(showsIndicators: false) {
-                        RecentDealsSection()
-                            .padding(.top, 16)
-                        RecentContactsSection()
-                            .padding(.top, 8)
+                    // Deal and contact data should be fetched on this screen and passed into the child components. Only display the empty state if both sets of data are empty.
+                    if !pipelines.isEmpty {
+                        Spacer()
+                        ScrollView(showsIndicators: false) {
+                            RecentDealsSection()
+                                .padding(.top, 16)
+                            RecentContactsSection()
+                                .padding(.top, 8)
+                        }
+                    } else {
+                        Spacer()
+                        EmptyStateView()
+                        Spacer()
                     }
                 }
                 .frame(maxWidth: .infinity)

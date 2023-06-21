@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921BF3B62A436ECF00AC5909 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BF3B52A436ECF00AC5909 /* EmptyStateView.swift */; };
 		9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B77C29E3656600BBECE0 /* TrettaApp.swift */; };
 		9239B78129E3656700BBECE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78029E3656700BBECE0 /* Assets.xcassets */; };
 		9239B78429E3656700BBECE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78329E3656700BBECE0 /* Preview Assets.xcassets */; };
@@ -95,6 +96,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		921BF3B52A436ECF00AC5909 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		9239B77929E3656600BBECE0 /* Tretta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tretta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9239B77C29E3656600BBECE0 /* TrettaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrettaApp.swift; sourceTree = "<group>"; };
 		9239B78029E3656700BBECE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				9239B7C829E745A500BBECE0 /* ClearButton.swift */,
 				9239B7D429E9C0EF00BBECE0 /* CheckboxToggle.swift */,
 				9241FF6629F0D0CD00F37CCA /* RootMainView.swift */,
+				921BF3B52A436ECF00AC5909 /* EmptyStateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				92E001222A01F1BE00603EAB /* DealSectionHeader.swift in Sources */,
 				9239B7D529E9C0EF00BBECE0 /* CheckboxToggle.swift in Sources */,
 				9241FF4F29EF743500F37CCA /* RecentContactsSection.swift in Sources */,
+				921BF3B62A436ECF00AC5909 /* EmptyStateView.swift in Sources */,
 				92E001262A0404DB00603EAB /* Pipeline.swift in Sources */,
 				9239B7BB29E4AC8F00BBECE0 /* SnakeCaseJSONDecoder.swift in Sources */,
 				9239B7D329E9B7A800BBECE0 /* SignUpAccountScreen.swift in Sources */,
