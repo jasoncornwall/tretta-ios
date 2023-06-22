@@ -29,7 +29,7 @@ struct PipelineScreen: View {
                     }.tabViewStyle(.page(indexDisplayMode: .never))
                 } else {
                     Spacer()
-                    EmptyStateView()
+                    EmptyStateView(type: .deal)
                     Spacer()
                 }
             }

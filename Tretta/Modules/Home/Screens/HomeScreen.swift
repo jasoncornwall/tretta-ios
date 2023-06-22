@@ -50,7 +50,7 @@ struct HomeScreen: View {
                         }
                         .padding(.bottom, 44)
                     } else {
-                        EmptyStateView()
+                        EmptyStateView(type: .homeGraph)
                             .padding(.bottom, 20)
                     }
                 }
@@ -78,7 +78,7 @@ struct HomeScreen: View {
                         }
                     } else {
                         Spacer()
-                        EmptyStateView()
+                        EmptyStateView(type: .homeRecent)
                         Spacer()
                     }
                 }

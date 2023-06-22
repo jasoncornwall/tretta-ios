@@ -22,7 +22,7 @@ struct DealNoteList: View {
                 .background(Color.backgroundBlue)
             }.listStyle(.plain)
         } else {
-            EmptyStateView()
+            EmptyStateView(type: .note)
                 .padding(.bottom, 48)
         }
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		921BF3B62A436ECF00AC5909 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BF3B52A436ECF00AC5909 /* EmptyStateView.swift */; };
+		921BF3B82A43A8E500AC5909 /* EmptyStateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BF3B72A43A8E500AC5909 /* EmptyStateType.swift */; };
 		9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B77C29E3656600BBECE0 /* TrettaApp.swift */; };
 		9239B78129E3656700BBECE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78029E3656700BBECE0 /* Assets.xcassets */; };
 		9239B78429E3656700BBECE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78329E3656700BBECE0 /* Preview Assets.xcassets */; };
@@ -97,6 +98,7 @@
 
 /* Begin PBXFileReference section */
 		921BF3B52A436ECF00AC5909 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		921BF3B72A43A8E500AC5909 /* EmptyStateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateType.swift; sourceTree = "<group>"; };
 		9239B77929E3656600BBECE0 /* Tretta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tretta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9239B77C29E3656600BBECE0 /* TrettaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrettaApp.swift; sourceTree = "<group>"; };
 		9239B78029E3656700BBECE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				9239B7BC29E4AD4300BBECE0 /* User.swift */,
 				9239B7BE29E4AE6A00BBECE0 /* Organization.swift */,
 				9239B7CA29E755FD00BBECE0 /* NavigationState.swift */,
+				921BF3B72A43A8E500AC5909 /* EmptyStateType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				9239B7CD29E9A4A400BBECE0 /* ResetPasswordScreen.swift in Sources */,
 				92E001302A0EB82700603EAB /* PipelineScreenModel.swift in Sources */,
 				9241FF5F29F04D8300F37CCA /* ContactHeader.swift in Sources */,
+				921BF3B82A43A8E500AC5909 /* EmptyStateType.swift in Sources */,
 				92E001202A01A92F00603EAB /* PipelineScreen.swift in Sources */,
 				92E001322A10234000603EAB /* BindingOnChangeExtension.swift in Sources */,
 				9239B7C529E667B400BBECE0 /* Colors.swift in Sources */,
