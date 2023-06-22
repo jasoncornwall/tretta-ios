@@ -79,6 +79,7 @@ struct HomeScreen: View {
                     } else {
                         Spacer()
                         EmptyStateView(type: .homeRecent)
+                            .padding(.bottom, 100)
                         Spacer()
                     }
                 }

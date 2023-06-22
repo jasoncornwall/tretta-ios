@@ -24,7 +24,6 @@ struct ContactScreen: View {
                     ContactList(route: $route, contacts: contacts)
                 } else {
                     EmptyStateView(type: .contact)
-                        .padding(.top, 108)
                     Spacer()
                 }
             }

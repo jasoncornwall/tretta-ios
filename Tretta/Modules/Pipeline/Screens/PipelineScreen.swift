@@ -30,6 +30,7 @@ struct PipelineScreen: View {
                 } else {
                     Spacer()
                     EmptyStateView(type: .deal)
+                        .padding(.bottom, 24)
                     Spacer()
                 }
             }

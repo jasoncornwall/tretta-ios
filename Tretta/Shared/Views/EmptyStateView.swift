@@ -13,11 +13,9 @@ struct EmptyStateView: View {
     
     var body: some View {
         VStack {
-            Image(type.image)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 92, height: 92)
-                .padding(.bottom, 8)
+            LottieView(name: type.image)
+                .scaledToFill()
+                .frame(width: 250, height: 250)
             Text(type.title)
                 .font(.system(size: 20, weight: .bold))
                 .padding(.bottom, 2)

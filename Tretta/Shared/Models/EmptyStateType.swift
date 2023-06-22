@@ -17,15 +17,15 @@ enum EmptyStateType {
     var image: String {
         switch self {
         case .homeGraph:
-            return "contacts_icon"
+            return "home_graph"
         case .homeRecent:
-            return "contacts_icon"
+            return "home_recent"
         case .contact:
-            return "contacts_icon"
+            return "contacts"
         case .deal:
-            return "contacts_icon"
+            return "deals"
         case .note:
-            return "contacts_icon"
+            return "notes"
         }
     }
     
