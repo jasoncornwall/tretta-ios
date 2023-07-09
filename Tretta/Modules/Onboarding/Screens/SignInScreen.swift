@@ -52,9 +52,22 @@ struct SignInScreen: View {
             }
             Spacer()
             Button("New here? Register instead.") {
-                print("Register tapped.")
+                let user = CreateUserDTO(
+                    email: "test9823982734@example.com",
+                    password: "Pass1234",
+                    firstName: "Test",
+                    lastName: "User"
+                )
+                UserService.createUser(user: user) { result in
+                    switch result {
+                    case let .success(user):
+                        print("Created User: \(user)")
+                    case let .failure(error):
+                        print("Create User Error: \(error)")
+                    }
+                }
                 withAnimation {
-                    route = .onboarding(.addCompany)
+//                    route = .onboarding(.addCompany)
                 }
             }
             .buttonStyle(ClearButton())

@@ -13,5 +13,12 @@ struct User: Codable, CustomStringConvertible {
     let password: String?
     let firstName: String
     let lastName: String
-    let orgId: String
+    let orgId: String?
+}
+
+struct CreateUserDTO: Encodable {
+    let email: String
+    let password: String
+    let firstName: String
+    let lastName: String
 }

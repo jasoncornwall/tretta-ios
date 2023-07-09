@@ -64,6 +64,10 @@
 		9241FF6729F0D0CD00F37CCA /* RootMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF6629F0D0CD00F37CCA /* RootMainView.swift */; };
 		9241FF6C29FB4F1300F37CCA /* ContactDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF6B29FB4F1300F37CCA /* ContactDetailScreen.swift */; };
 		9241FF6E29FB545000F37CCA /* ContactDetailActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF6D29FB545000F37CCA /* ContactDetailActionButton.swift */; };
+		924A3F1E2A56103F00F5B7D8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 924A3F1D2A56103F00F5B7D8 /* Alamofire */; };
+		924A3F222A56470E00F5B7D8 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F212A56470E00F5B7D8 /* UserRouter.swift */; };
+		924A3F242A56486F00F5B7D8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F232A56486F00F5B7D8 /* Constants.swift */; };
+		924A3F262A565DD800F5B7D8 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F252A565DD800F5B7D8 /* UserService.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -163,6 +167,9 @@
 		9241FF6629F0D0CD00F37CCA /* RootMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMainView.swift; sourceTree = "<group>"; };
 		9241FF6B29FB4F1300F37CCA /* ContactDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailScreen.swift; sourceTree = "<group>"; };
 		9241FF6D29FB545000F37CCA /* ContactDetailActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailActionButton.swift; sourceTree = "<group>"; };
+		924A3F212A56470E00F5B7D8 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		924A3F232A56486F00F5B7D8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		924A3F252A565DD800F5B7D8 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -191,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				921BF3BB2A44CC1200AC5909 /* Lottie in Frameworks */,
+				924A3F1E2A56103F00F5B7D8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,9 +254,9 @@
 		9239B77B29E3656600BBECE0 /* Tretta */ = {
 			isa = PBXGroup;
 			children = (
+				924A3F1B2A560F1D00F5B7D8 /* Networking */,
 				9239B7AC29E3A11B00BBECE0 /* Shared */,
 				9239B7A629E388D200BBECE0 /* Modules */,
-				9239B7A729E388E800BBECE0 /* Services */,
 				9239B77C29E3656600BBECE0 /* TrettaApp.swift */,
 				9239B78029E3656700BBECE0 /* Assets.xcassets */,
 				9239B78229E3656700BBECE0 /* Preview Content */,
@@ -291,13 +299,6 @@
 				9239B7A829E3891A00BBECE0 /* Onboarding */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		9239B7A729E388E800BBECE0 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		9239B7A829E3891A00BBECE0 /* Onboarding */ = {
@@ -356,6 +357,7 @@
 				9239B7BE29E4AE6A00BBECE0 /* Organization.swift */,
 				9239B7CA29E755FD00BBECE0 /* NavigationState.swift */,
 				921BF3B72A43A8E500AC5909 /* EmptyStateType.swift */,
+				924A3F232A56486F00F5B7D8 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -475,6 +477,31 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		924A3F1B2A560F1D00F5B7D8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				924A3F1F2A56463200F5B7D8 /* Routers */,
+				924A3F202A56463800F5B7D8 /* Services */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		924A3F1F2A56463200F5B7D8 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				924A3F212A56470E00F5B7D8 /* UserRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		924A3F202A56463800F5B7D8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				924A3F252A565DD800F5B7D8 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		926806952A33AD2700B604CF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +597,7 @@
 			name = Tretta;
 			packageProductDependencies = (
 				921BF3BA2A44CC1200AC5909 /* Lottie */,
+				924A3F1D2A56103F00F5B7D8 /* Alamofire */,
 			);
 			productName = Tretta;
 			productReference = 9239B77929E3656600BBECE0 /* Tretta.app */;
@@ -645,6 +673,7 @@
 			mainGroup = 9239B77029E3656600BBECE0;
 			packageReferences = (
 				921BF3B92A44CC1200AC5909 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				924A3F1C2A56103F00F5B7D8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 9239B77A29E3656600BBECE0 /* Products */;
 			projectDirPath = "";
@@ -728,6 +757,7 @@
 				9239B7B029E3AC8A00BBECE0 /* Route.swift in Sources */,
 				9239B7CB29E755FD00BBECE0 /* NavigationState.swift in Sources */,
 				92E001342A17C8D900603EAB /* PipelineRouter.swift in Sources */,
+				924A3F242A56486F00F5B7D8 /* Constants.swift in Sources */,
 				9239B7DF29EB55DC00BBECE0 /* DashboardProgressSection.swift in Sources */,
 				9241FF4B29EE358000F37CCA /* DonutChart.swift in Sources */,
 				9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */,
@@ -745,6 +775,7 @@
 				92E001302A0EB82700603EAB /* PipelineScreenModel.swift in Sources */,
 				9241FF5F29F04D8300F37CCA /* ContactHeader.swift in Sources */,
 				921BF3B82A43A8E500AC5909 /* EmptyStateType.swift in Sources */,
+				924A3F262A565DD800F5B7D8 /* UserService.swift in Sources */,
 				92E001202A01A92F00603EAB /* PipelineScreen.swift in Sources */,
 				921BF3BD2A44CF9300AC5909 /* LottieView.swift in Sources */,
 				92E001322A10234000603EAB /* BindingOnChangeExtension.swift in Sources */,
@@ -753,6 +784,7 @@
 				9239B7B829E4AB3500BBECE0 /* CustomStringConvertible.swift in Sources */,
 				9241FF6C29FB4F1300F37CCA /* ContactDetailScreen.swift in Sources */,
 				9239B7BF29E4AE6A00BBECE0 /* Organization.swift in Sources */,
+				924A3F222A56470E00F5B7D8 /* UserRouter.swift in Sources */,
 				9239B7E329EBEC9E00BBECE0 /* RecentDealCard.swift in Sources */,
 				9239B7B629E3B20400BBECE0 /* SignInScreen.swift in Sources */,
 				9241FF5729F02BEF00F37CCA /* ContactScreen.swift in Sources */,
@@ -1093,6 +1125,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		924A3F1C2A56103F00F5B7D8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1100,6 +1140,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 921BF3B92A44CC1200AC5909 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		924A3F1D2A56103F00F5B7D8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 924A3F1C2A56103F00F5B7D8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
