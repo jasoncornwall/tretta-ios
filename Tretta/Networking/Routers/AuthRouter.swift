@@ -1,27 +1,27 @@
 //
-//  UserRouter.swift
+//  AuthRouter.swift
 //  Tretta
 //
-//  Created by Jason C on 7/5/23.
+//  Created by Jason C on 7/9/23.
 //
 
 import Alamofire
 import Foundation
 
-enum UserRouter: URLRequestConvertible {
-    case createUser(user: CreateUserDTO)
+enum AuthRouter: URLRequestConvertible {
+    case login(email: String, password: String)
     
     var method: HTTPMethod {
         switch self {
-        case .createUser:
+        case .login:
             return .post
         }
     }
     
     var path: String {
         switch self {
-        case .createUser:
-            return "users"
+        case .login:
+            return "auth/login"
         }
     }
     
@@ -31,12 +31,10 @@ enum UserRouter: URLRequestConvertible {
         request.method = method
         
         switch self {
-        case let .createUser(user):
+        case let .login(email, password):
             let params = [
-                "email": user.email,
-                "first_name": user.firstName,
-                "last_name": user.lastName,
-                "password": user.password
+                "email": email,
+                "password": password
             ]
             do {
                 request.httpBody = try JSONEncoder().encode(params)

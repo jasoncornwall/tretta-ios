@@ -37,8 +37,16 @@ struct SignInScreen: View {
                 Spacer()
                     .frame(height: 48)
                 Button("SIGN IN") {
+                    AuthService.login(email: emailText, password: passwordText) { result in
+                        switch result {
+                        case let .success(response):
+                            print("Access Token: \(response.accessToken)")
+                        case let .failure(error):
+                            print("Login Error: \(error)")
+                        }
+                    }
                     withAnimation {
-                        route = .rootMain(0)
+//                        route = .rootMain(0)
                     }
                 }
                 .buttonStyle(PillButton())
@@ -53,8 +61,8 @@ struct SignInScreen: View {
             Spacer()
             Button("New here? Register instead.") {
                 let user = CreateUserDTO(
-                    email: "test9823982734@example.com",
-                    password: "Pass1234",
+                    email: "",
+                    password: "",
                     firstName: "Test",
                     lastName: "User"
                 )
