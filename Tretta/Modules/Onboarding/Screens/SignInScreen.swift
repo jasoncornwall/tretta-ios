@@ -40,6 +40,7 @@ struct SignInScreen: View {
                     AuthService.login(email: emailText, password: passwordText) { result in
                         switch result {
                         case let .success(response):
+                            // Save access token to keychain here
                             print("Access Token: \(response.accessToken)")
                         case let .failure(error):
                             print("Login Error: \(error)")

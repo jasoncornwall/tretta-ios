@@ -71,6 +71,8 @@
 		924A3F282A5B486B00F5B7D8 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F272A5B486B00F5B7D8 /* AuthRouter.swift */; };
 		924A3F2A2A5B4A7C00F5B7D8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F292A5B4A7C00F5B7D8 /* AuthService.swift */; };
 		924A3F2D2A5B857C00F5B7D8 /* SuccessfulLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F2C2A5B857C00F5B7D8 /* SuccessfulLoginResponse.swift */; };
+		924A3F2F2A6773F700F5B7D8 /* KeyStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F2E2A6773F700F5B7D8 /* KeyStorage.swift */; };
+		924A3F322A67743000F5B7D8 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 924A3F312A67743000F5B7D8 /* KeychainAccess */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -176,6 +178,7 @@
 		924A3F272A5B486B00F5B7D8 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		924A3F292A5B4A7C00F5B7D8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		924A3F2C2A5B857C00F5B7D8 /* SuccessfulLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulLoginResponse.swift; sourceTree = "<group>"; };
+		924A3F2E2A6773F700F5B7D8 /* KeyStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyStorage.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -205,6 +208,7 @@
 			files = (
 				921BF3BB2A44CC1200AC5909 /* Lottie in Frameworks */,
 				924A3F1E2A56103F00F5B7D8 /* Alamofire in Frameworks */,
+				924A3F322A67743000F5B7D8 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +395,7 @@
 				9239B7C029E4B2A400BBECE0 /* HexColorExtension.swift */,
 				9239B7C429E667B400BBECE0 /* Colors.swift */,
 				92E001312A10234000603EAB /* BindingOnChangeExtension.swift */,
+				924A3F2E2A6773F700F5B7D8 /* KeyStorage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -615,6 +620,7 @@
 			packageProductDependencies = (
 				921BF3BA2A44CC1200AC5909 /* Lottie */,
 				924A3F1D2A56103F00F5B7D8 /* Alamofire */,
+				924A3F312A67743000F5B7D8 /* KeychainAccess */,
 			);
 			productName = Tretta;
 			productReference = 9239B77929E3656600BBECE0 /* Tretta.app */;
@@ -691,6 +697,7 @@
 			packageReferences = (
 				921BF3B92A44CC1200AC5909 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				924A3F1C2A56103F00F5B7D8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				924A3F302A67743000F5B7D8 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 9239B77A29E3656600BBECE0 /* Products */;
 			projectDirPath = "";
@@ -760,6 +767,7 @@
 				92E0011829FCDAE800603EAB /* ContactDetailNoteSection.swift in Sources */,
 				92E0011629FCCE9000603EAB /* ContactDetailSubSection.swift in Sources */,
 				9241FF5B29F0496200F37CCA /* ContactRouter.swift in Sources */,
+				924A3F2F2A6773F700F5B7D8 /* KeyStorage.swift in Sources */,
 				9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */,
 				9241FF4D29EF6DF000F37CCA /* RecentDealsSection.swift in Sources */,
 				92E0011A29FCE02800603EAB /* ContactDetailSummarySection.swift in Sources */,
@@ -1153,6 +1161,14 @@
 				minimumVersion = 5.7.0;
 			};
 		};
+		924A3F302A67743000F5B7D8 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1165,6 +1181,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 924A3F1C2A56103F00F5B7D8 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		924A3F312A67743000F5B7D8 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 924A3F302A67743000F5B7D8 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

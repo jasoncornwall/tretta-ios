@@ -10,4 +10,5 @@ import Foundation
 struct Constants {
     static let baseURL = URL(string: "https://tretta-api-staging.herokuapp.com/")!
     static let jsonContentType = "application/json"
+    static let keychainService = "com.tretta-crm.keystorage"
 }
