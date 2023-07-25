@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct HomeRouter {
-    let route: Route.HomeRoute
+    @Binding var route: Route
+    let model: HomeScreenModel
     
     @ViewBuilder
     func setup() -> some View {
         switch route {
-        case .main:
-            HomeScreen()
+        case .home(.main):
+            HomeScreen(route: $route, model: model)
+        default:
+            HomeScreen(route: $route, model: model)
         }
     }
 }

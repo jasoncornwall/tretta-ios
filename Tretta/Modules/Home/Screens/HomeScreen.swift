@@ -9,42 +9,19 @@ import SwiftUI
 
 struct HomeScreen: View {
 //    @EnvironmentObject private var navigationState: NavigationState
-    
-    @State private var pipelines = PipelineMockData.pipelines
-    @State private var currentPipelineSelection = PipelineMockData.pipelines[0]
-    
-    private var chartData =
-        [
-            DashboardPipelineProgress(
-            stageName: "Done",
-            stageColor: .graphLightBlue,
-            percentage: 0.41,
-            value: 0
-            ),
-            DashboardPipelineProgress(
-             stageName: "Pending",
-             stageColor: .graphYellow,
-             percentage: 0.25,
-             value: 0
-            ),
-            DashboardPipelineProgress(
-                stageName: "Todo",
-                stageColor: .graphGreen,
-                percentage: 0.34,
-                value: 0
-            )
-        ]
+    @Binding var route: Route
+    @StateObject var model: HomeScreenModel
     
     var body: some View {
         NavigationStack {
             Group {
                 VStack {
-                    if !pipelines.isEmpty {
+                    if !model.pipelines.isEmpty {
                         VStack(alignment: .trailing) {
                             HStack {
                                 DonutChart()
                                 Spacer()
-                                DashboardMetricsSection(metrics: chartData)
+                                DashboardMetricsSection(metrics: model.chartData)
                             }
                             .padding(.horizontal, 32)
                         }
@@ -59,8 +36,8 @@ struct HomeScreen: View {
                 .background(Color.backgroundBlue)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        if !pipelines.isEmpty {
-                            DropdownMenu(selection: $currentPipelineSelection, pipelines: pipelines)
+                        if !model.pipelines.isEmpty {
+                            DropdownMenu(selection: $model.pipelines[0], pipelines: model.pipelines)
                                  .padding(.trailing, 16)
                                  .padding(.bottom, 8)
                         }
@@ -68,7 +45,7 @@ struct HomeScreen: View {
                 }
                 VStack {
                     // Deal and contact data should be fetched on this screen and passed into the child components. Only display the empty state if both sets of data are empty.
-                    if !pipelines.isEmpty {
+                    if !model.pipelines.isEmpty {
                         Spacer()
                         ScrollView(showsIndicators: false) {
                             RecentDealsSection()

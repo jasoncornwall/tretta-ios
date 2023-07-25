@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct PipelineRouter {
     @Binding var route: Route
     let model: PipelineScreenModel

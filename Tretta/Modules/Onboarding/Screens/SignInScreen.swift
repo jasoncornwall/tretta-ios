@@ -40,8 +40,8 @@ struct SignInScreen: View {
                     AuthService.login(email: emailText, password: passwordText) { result in
                         switch result {
                         case let .success(response):
-                            // Save access token to keychain here
                             print("Access Token: \(response.accessToken)")
+                            KeyStorage.shared.set(response.accessToken, forKey: Constants.accessToken)
                         case let .failure(error):
                             print("Login Error: \(error)")
                         }
@@ -71,6 +71,7 @@ struct SignInScreen: View {
                     switch result {
                     case let .success(user):
                         print("Created User: \(user)")
+                        KeyStorage.shared.set(user._id, forKey: Constants.accountIdKey)
                     case let .failure(error):
                         print("Create User Error: \(error)")
                     }

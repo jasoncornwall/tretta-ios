@@ -32,8 +32,8 @@ struct AppContainerView: View {
                 RootMainView(route: $currentRoute, selection: tabValue ?? 0)
                     .transition(.move(edge: .bottom))
                     .zIndex(1)
-            case .home(let homeRoute):
-                let screen = HomeRouter(route: homeRoute).setup()
+            case .home:
+                let screen = HomeRouter(route: $currentRoute, model: HomeScreenModel()).setup()
                 screen
                     .transition(.move(edge: .bottom))
                     .zIndex(1)

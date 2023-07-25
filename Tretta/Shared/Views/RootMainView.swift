@@ -14,7 +14,7 @@ struct RootMainView: View {
     var body: some View {
         TabView(selection: $selection) {
             Group {
-                HomeScreen()
+                HomeScreen(route: self.route, model: HomeScreenModel())
                     .tabItem {
                         if selection == 0 {
                             Label("", image: "selected_home_icon")
