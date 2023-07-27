@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-
+@MainActor
 class ChartDataContainer : ObservableObject {
     @Published var chartData =
         [

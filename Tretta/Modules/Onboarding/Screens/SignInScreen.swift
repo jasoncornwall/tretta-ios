@@ -47,7 +47,7 @@ struct SignInScreen: View {
                         }
                     }
                     withAnimation {
-//                        route = .rootMain(0)
+                        route = .rootMain(0)
                     }
                 }
                 .buttonStyle(PillButton())

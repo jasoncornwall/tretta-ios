@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 class HomeScreenModel: ObservableObject {
     @Published var pipelines: [Pipeline] = []
     

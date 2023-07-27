@@ -74,6 +74,7 @@
 		924A3F2F2A6773F700F5B7D8 /* KeyStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F2E2A6773F700F5B7D8 /* KeyStorage.swift */; };
 		924A3F322A67743000F5B7D8 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 924A3F312A67743000F5B7D8 /* KeychainAccess */; };
 		924A3F342A69FAC000F5B7D8 /* HomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F332A69FAC000F5B7D8 /* HomeScreenModel.swift */; };
+		924A3F362A71B60A00F5B7D8 /* ContactScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F352A71B60A00F5B7D8 /* ContactScreenModel.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -181,6 +182,7 @@
 		924A3F2C2A5B857C00F5B7D8 /* SuccessfulLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulLoginResponse.swift; sourceTree = "<group>"; };
 		924A3F2E2A6773F700F5B7D8 /* KeyStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyStorage.swift; sourceTree = "<group>"; };
 		924A3F332A69FAC000F5B7D8 /* HomeScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenModel.swift; sourceTree = "<group>"; };
+		924A3F352A71B60A00F5B7D8 /* ContactScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactScreenModel.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 				9241FF5A29F0496200F37CCA /* ContactRouter.swift */,
 				9241FF6029F04F8F00F37CCA /* ContactMockData.swift */,
 				926F99E229FC01F000632F61 /* ContactDetailAction.swift */,
+				924A3F352A71B60A00F5B7D8 /* ContactScreenModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -761,6 +764,7 @@
 				9241FF6529F060E800F37CCA /* ContactList.swift in Sources */,
 				9239B7DB29EA0B1100BBECE0 /* DashboardPipelineProgress.swift in Sources */,
 				92E0012E2A04180900603EAB /* PipelineMockData.swift in Sources */,
+				924A3F362A71B60A00F5B7D8 /* ContactScreenModel.swift in Sources */,
 				9239B7E129EB591100BBECE0 /* DashboardMetricsSection.swift in Sources */,
 				9241FF5529F027F600F37CCA /* Contact.swift in Sources */,
 				9239B7DD29EA0BDD00BBECE0 /* HomeScreen.swift in Sources */,

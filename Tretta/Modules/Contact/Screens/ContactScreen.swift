@@ -9,9 +9,7 @@ import SwiftUI
 
 struct ContactScreen: View {
     @Binding var route: Route
-    @State private var searchText = ""
-    
-    @State private var contacts = ContactMockData.contacts
+    @StateObject var model: ContactScreenModel
     
     var body: some View {
         NavigationStack {
@@ -20,8 +18,8 @@ struct ContactScreen: View {
                     .frame(height: 1)
                 ContactHeader()
                     .padding(.bottom, 8)
-                if !contacts.isEmpty {
-                    ContactList(route: $route, contacts: contacts)
+                if !model.contacts.isEmpty {
+                    ContactList(route: $route, contacts: model.contacts)
                 } else {
                     EmptyStateView(type: .contact)
                     Spacer()
@@ -41,7 +39,7 @@ struct ContactScreen: View {
                 }
             }
         }
-        .searchable(text: $searchText)
+        .searchable(text: $model.searchText)
         .tint(.trettaGold)
         .foregroundColor(.white)
     }

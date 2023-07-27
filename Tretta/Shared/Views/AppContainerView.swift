@@ -38,7 +38,7 @@ struct AppContainerView: View {
                     .transition(.move(edge: .bottom))
                     .zIndex(1)
             case .contact:
-                let screen = ContactRouter(route: $currentRoute).setup()
+                let screen = ContactRouter(route: $currentRoute, model: ContactScreenModel()).setup()
                 screen
                     .transition(.move(edge: .bottom))
                     .zIndex(1)

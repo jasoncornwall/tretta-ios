@@ -23,7 +23,7 @@ struct RootMainView: View {
                         }
                     }.tag(0)
 
-                ContactScreen(route: self.route)
+                ContactScreen(route: self.route, model: ContactScreenModel())
                     .tabItem {
                         if selection == 1 {
                             Label("", image: "selected_contacts_icon")

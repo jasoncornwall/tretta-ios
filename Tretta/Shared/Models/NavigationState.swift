@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 class NavigationState: ObservableObject {
     @Published var routes: [Route] = []
 }
