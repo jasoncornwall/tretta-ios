@@ -9,6 +9,10 @@ import SwiftUI
 
 @MainActor
 class PipelineScreenModel: ObservableObject {
+    @Published var searchText = ""
+    @Published var stageSelection: Int = 0
+    @Published var currentPipelineSelection = PipelineMockData.pipelines[0]
+    
     @Published var pipelines: [Pipeline] = []
     @Published var stages: [Stage] = []
     @Published var deals: [Deal] = []
