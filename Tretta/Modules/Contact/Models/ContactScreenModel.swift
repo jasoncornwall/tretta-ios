@@ -10,5 +10,9 @@ import SwiftUI
 @MainActor
 class ContactScreenModel: ObservableObject {
     @Published var searchText = ""
-    @Published var contacts = ContactMockData.contacts
+    @Published var contacts: [Contact] = []
+    
+    func loadContacts() {
+        contacts = ContactMockData.contacts
+    }
 }

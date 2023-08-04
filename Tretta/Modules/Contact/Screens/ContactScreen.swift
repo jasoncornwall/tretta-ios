@@ -42,6 +42,9 @@ struct ContactScreen: View {
         .searchable(text: $model.searchText)
         .tint(.trettaGold)
         .foregroundColor(.white)
+        .task {
+            model.loadContacts()
+        }
     }
 }
 
