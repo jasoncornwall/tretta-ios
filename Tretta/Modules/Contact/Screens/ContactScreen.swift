@@ -31,7 +31,17 @@ struct ContactScreen: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        print("Plus button tapped.")
+                        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+                        let mockContact = model.getRandomMockContact(userId: accountId)
+                        
+                        ContactApiService.createContact(contact: mockContact) { result in
+                            switch result {
+                            case let .success(contact):
+                                print("Created contact: \(contact)")
+                            case let .failure(error):
+                                print("Create Contact Error: \(error)")
+                            }
+                        }
                     } label: {
                         Image(systemName: "plus")
                             .foregroundColor(.trettaGold)

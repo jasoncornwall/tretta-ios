@@ -10,14 +10,14 @@ import Foundation
 struct Contact: Codable, Hashable {
     let firstName: String
     let lastName: String
-    let email: String?
-    let website: String?
-    let phoneNumber: String?
-    let addressLine1: String?
-    let addressLine2: String?
-    let city: String?
-    let state: String?
-    let zipCode: String?
+    var email: String? = nil
+    var website: String? = nil
+    let phone: String
+    var addressLine1: String? = nil
+    var addressLine2: String? = nil
+    var city: String? = nil
+    var state: String? = nil
+    var zipCode: String? = nil
     let userId: String
-    let orgId: String?
+    var orgId: String? = nil
 }

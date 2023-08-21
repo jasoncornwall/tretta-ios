@@ -25,16 +25,14 @@ struct ContactDetailScreen: View {
                         .font(.system(size: 32, weight: .semibold))
                         .padding(.top, 16)
                     HStack(spacing: 16) {
-                        ContactDetailActionButton(actionType: .message(isEnabled: contact.phoneNumber != nil))
-                        ContactDetailActionButton(actionType: .call(isEnabled: contact.phoneNumber != nil))
+                        ContactDetailActionButton(actionType: .message(isEnabled: contact.phone != nil))
+                        ContactDetailActionButton(actionType: .call(isEnabled: contact.phone != nil))
                         ContactDetailActionButton(actionType: .mail(isEnabled: contact.email != nil))
                     }
                     .padding(.top, 4)
-                    if let phoneNumber = contact.phoneNumber {
-                        ContactDetailSubSection(sectionType: .phone(phoneNumber))
-                            .padding(.top, 16)
-                            .padding(.horizontal, 16)
-                    }
+                    ContactDetailSubSection(sectionType: .phone(contact.phone))
+                        .padding(.top, 16)
+                        .padding(.horizontal, 16)
                     if let email = contact.email {
                         ContactDetailSubSection(sectionType: .email(email))
                             .padding(.top, 16)

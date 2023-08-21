@@ -75,6 +75,8 @@
 		924A3F322A67743000F5B7D8 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 924A3F312A67743000F5B7D8 /* KeychainAccess */; };
 		924A3F342A69FAC000F5B7D8 /* HomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F332A69FAC000F5B7D8 /* HomeScreenModel.swift */; };
 		924A3F362A71B60A00F5B7D8 /* ContactScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F352A71B60A00F5B7D8 /* ContactScreenModel.swift */; };
+		924A3F382A80A7EF00F5B7D8 /* ContactApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F372A80A7EF00F5B7D8 /* ContactApiRouter.swift */; };
+		924A3F3A2A8295B900F5B7D8 /* ContactApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F392A8295B900F5B7D8 /* ContactApiService.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -183,6 +185,8 @@
 		924A3F2E2A6773F700F5B7D8 /* KeyStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyStorage.swift; sourceTree = "<group>"; };
 		924A3F332A69FAC000F5B7D8 /* HomeScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenModel.swift; sourceTree = "<group>"; };
 		924A3F352A71B60A00F5B7D8 /* ContactScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactScreenModel.swift; sourceTree = "<group>"; };
+		924A3F372A80A7EF00F5B7D8 /* ContactApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactApiRouter.swift; sourceTree = "<group>"; };
+		924A3F392A8295B900F5B7D8 /* ContactApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactApiService.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -508,6 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				924A3F272A5B486B00F5B7D8 /* AuthRouter.swift */,
+				924A3F372A80A7EF00F5B7D8 /* ContactApiRouter.swift */,
 				924A3F212A56470E00F5B7D8 /* UserRouter.swift */,
 			);
 			path = Routers;
@@ -518,6 +523,7 @@
 			children = (
 				924A3F292A5B4A7C00F5B7D8 /* AuthService.swift */,
 				924A3F252A565DD800F5B7D8 /* UserService.swift */,
+				924A3F392A8295B900F5B7D8 /* ContactApiService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -796,12 +802,14 @@
 				924A3F342A69FAC000F5B7D8 /* HomeScreenModel.swift in Sources */,
 				9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */,
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,
+				924A3F382A80A7EF00F5B7D8 /* ContactApiRouter.swift in Sources */,
 				9241FF4929EE319B00F37CCA /* ChartDataContainer.swift in Sources */,
 				9239B7C729E66AE400BBECE0 /* PillButton.swift in Sources */,
 				924A3F282A5B486B00F5B7D8 /* AuthRouter.swift in Sources */,
 				9241FF6329F0541800F37CCA /* ContactRow.swift in Sources */,
 				9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */,
 				9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */,
+				924A3F3A2A8295B900F5B7D8 /* ContactApiService.swift in Sources */,
 				9241FF5D29F04A7500F37CCA /* HomeRouter.swift in Sources */,
 				9241FF6E29FB545000F37CCA /* ContactDetailActionButton.swift in Sources */,
 				9239B7C329E5114300BBECE0 /* FloatingTextField.swift in Sources */,
