@@ -80,6 +80,9 @@
 		924A3F3C2AB2B5F700F5B7D8 /* PipelineApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F3B2AB2B5F700F5B7D8 /* PipelineApiRouter.swift */; };
 		924A3F3E2AB2BE7A00F5B7D8 /* PipelineApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F3D2AB2BE7A00F5B7D8 /* PipelineApiService.swift */; };
 		924A3F402AB7CB8100F5B7D8 /* CompletionHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F3F2AB7CB8100F5B7D8 /* CompletionHandlers.swift */; };
+		924A3F462AB7FD0900F5B7D8 /* CalendarScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F452AB7FD0900F5B7D8 /* CalendarScreenModel.swift */; };
+		924A3F482AB8015D00F5B7D8 /* CalendarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F472AB8015D00F5B7D8 /* CalendarScreen.swift */; };
+		924A3F4A2AB803A600F5B7D8 /* CalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F492AB803A600F5B7D8 /* CalendarRouter.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -193,6 +196,9 @@
 		924A3F3B2AB2B5F700F5B7D8 /* PipelineApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineApiRouter.swift; sourceTree = "<group>"; };
 		924A3F3D2AB2BE7A00F5B7D8 /* PipelineApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineApiService.swift; sourceTree = "<group>"; };
 		924A3F3F2AB7CB8100F5B7D8 /* CompletionHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionHandlers.swift; sourceTree = "<group>"; };
+		924A3F452AB7FD0900F5B7D8 /* CalendarScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreenModel.swift; sourceTree = "<group>"; };
+		924A3F472AB8015D00F5B7D8 /* CalendarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreen.swift; sourceTree = "<group>"; };
+		924A3F492AB803A600F5B7D8 /* CalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRouter.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -316,6 +322,7 @@
 		9239B7A629E388D200BBECE0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				924A3F412AB7FBBC00F5B7D8 /* Calendar */,
 				926806952A33AD2700B604CF /* Settings */,
 				92E0011B2A00CAE400603EAB /* Pipeline */,
 				9241FF5029F0266F00F37CCA /* Contact */,
@@ -541,6 +548,40 @@
 			isa = PBXGroup;
 			children = (
 				924A3F2C2A5B857C00F5B7D8 /* SuccessfulLoginResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		924A3F412AB7FBBC00F5B7D8 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				924A3F442AB7FC0100F5B7D8 /* Models */,
+				924A3F432AB7FBFC00F5B7D8 /* Views */,
+				924A3F422AB7FBF500F5B7D8 /* Screens */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		924A3F422AB7FBF500F5B7D8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				924A3F472AB8015D00F5B7D8 /* CalendarScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		924A3F432AB7FBFC00F5B7D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		924A3F442AB7FC0100F5B7D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				924A3F452AB7FD0900F5B7D8 /* CalendarScreenModel.swift */,
+				924A3F492AB803A600F5B7D8 /* CalendarRouter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -788,6 +829,7 @@
 				9239B7B229E3AF3900BBECE0 /* OnboardingRouter.swift in Sources */,
 				92E0011829FCDAE800603EAB /* ContactDetailNoteSection.swift in Sources */,
 				92E0011629FCCE9000603EAB /* ContactDetailSubSection.swift in Sources */,
+				924A3F4A2AB803A600F5B7D8 /* CalendarRouter.swift in Sources */,
 				9241FF5B29F0496200F37CCA /* ContactRouter.swift in Sources */,
 				924A3F2F2A6773F700F5B7D8 /* KeyStorage.swift in Sources */,
 				9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */,
@@ -805,10 +847,12 @@
 				9239B7B029E3AC8A00BBECE0 /* Route.swift in Sources */,
 				9239B7CB29E755FD00BBECE0 /* NavigationState.swift in Sources */,
 				92E001342A17C8D900603EAB /* PipelineRouter.swift in Sources */,
+				924A3F462AB7FD0900F5B7D8 /* CalendarScreenModel.swift in Sources */,
 				924A3F242A56486F00F5B7D8 /* Constants.swift in Sources */,
 				9239B7DF29EB55DC00BBECE0 /* DashboardProgressSection.swift in Sources */,
 				9241FF4B29EE358000F37CCA /* DonutChart.swift in Sources */,
 				924A3F342A69FAC000F5B7D8 /* HomeScreenModel.swift in Sources */,
+				924A3F482AB8015D00F5B7D8 /* CalendarScreen.swift in Sources */,
 				9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */,
 				924A3F3C2AB2B5F700F5B7D8 /* PipelineApiRouter.swift in Sources */,
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,

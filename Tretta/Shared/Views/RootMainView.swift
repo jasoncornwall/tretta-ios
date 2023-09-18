@@ -41,14 +41,23 @@ struct RootMainView: View {
                         }
                     }.tag(2)
                 
-                SettingsScreen(route: self.route)
+                CalendarScreen(route: self.route, model: CalendarScreenModel())
                     .tabItem {
                         if selection == 3 {
+                            Label("", image: "selected calendar icon")
+                        } else {
+                            Label("", image: "calendar icon")
+                        }
+                    }.tag(3)
+                
+                SettingsScreen(route: self.route)
+                    .tabItem {
+                        if selection == 4 {
                             Label("", image: "selected_settings_icon")
                         } else {
                             Label("", image: "settings_icon")
                         }
-                    }.tag(3)
+                    }.tag(4)
             }
         }
         .background(Color.backgroundBlue)

@@ -47,6 +47,11 @@ struct AppContainerView: View {
                 screen
                     .transition(.move(edge: .bottom))
                     .zIndex(1)
+            case .calendar:
+                let screen = CalendarRouter(route: $currentRoute, model: CalendarScreenModel()).setup()
+                screen
+                    .transition(.move(edge: .bottom))
+                    .zIndex(1)
             }
         }
         .background(Color.backgroundBlue)
