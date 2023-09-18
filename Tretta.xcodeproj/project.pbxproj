@@ -83,6 +83,7 @@
 		924A3F462AB7FD0900F5B7D8 /* CalendarScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F452AB7FD0900F5B7D8 /* CalendarScreenModel.swift */; };
 		924A3F482AB8015D00F5B7D8 /* CalendarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F472AB8015D00F5B7D8 /* CalendarScreen.swift */; };
 		924A3F4A2AB803A600F5B7D8 /* CalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F492AB803A600F5B7D8 /* CalendarRouter.swift */; };
+		924A3F4C2AB812EF00F5B7D8 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F4B2AB812EF00F5B7D8 /* CalendarManager.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -199,6 +200,7 @@
 		924A3F452AB7FD0900F5B7D8 /* CalendarScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreenModel.swift; sourceTree = "<group>"; };
 		924A3F472AB8015D00F5B7D8 /* CalendarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreen.swift; sourceTree = "<group>"; };
 		924A3F492AB803A600F5B7D8 /* CalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRouter.swift; sourceTree = "<group>"; };
+		924A3F4B2AB812EF00F5B7D8 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 			children = (
 				921BF3BE2A44D11300AC5909 /* Animations */,
 				9239B7AF29E3AC8A00BBECE0 /* Route.swift */,
+				924A3F4B2AB812EF00F5B7D8 /* CalendarManager.swift */,
 				9239B7BC29E4AD4300BBECE0 /* User.swift */,
 				9239B7BE29E4AE6A00BBECE0 /* Organization.swift */,
 				9239B7CA29E755FD00BBECE0 /* NavigationState.swift */,
@@ -853,6 +856,7 @@
 				9241FF4B29EE358000F37CCA /* DonutChart.swift in Sources */,
 				924A3F342A69FAC000F5B7D8 /* HomeScreenModel.swift in Sources */,
 				924A3F482AB8015D00F5B7D8 /* CalendarScreen.swift in Sources */,
+				924A3F4C2AB812EF00F5B7D8 /* CalendarManager.swift in Sources */,
 				9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */,
 				924A3F3C2AB2B5F700F5B7D8 /* PipelineApiRouter.swift in Sources */,
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,
@@ -1049,9 +1053,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tretta/Preview Content\"";
-				DEVELOPMENT_TEAM = SG6765QWG2;
+				DEVELOPMENT_TEAM = 376DY92YY3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "We use this to sync your calendar events.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "We use this to sync your contact data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1078,9 +1084,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tretta/Preview Content\"";
-				DEVELOPMENT_TEAM = SG6765QWG2;
+				DEVELOPMENT_TEAM = 376DY92YY3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "We use this to sync your calendar events.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "We use this to sync your contact data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

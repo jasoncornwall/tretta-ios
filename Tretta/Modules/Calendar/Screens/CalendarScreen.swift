@@ -16,7 +16,7 @@ struct CalendarScreen: View {
             Text("Calendar")
         }
         .task {
-            
+            model.requestCalendarAccess()
         }
     }
 }

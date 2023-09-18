@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 extension CustomStringConvertible where Self: Codable {
     var description: String {
         var description = "\n \(type(of: self)) \n"

@@ -9,4 +9,8 @@ import SwiftUI
 
 class CalendarScreenModel: ObservableObject {
     
+    func requestCalendarAccess() {
+        CalendarManager.shared.requestAccess()
+    }
+    
 }
