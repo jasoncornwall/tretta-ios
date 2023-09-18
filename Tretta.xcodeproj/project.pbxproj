@@ -84,6 +84,8 @@
 		924A3F482AB8015D00F5B7D8 /* CalendarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F472AB8015D00F5B7D8 /* CalendarScreen.swift */; };
 		924A3F4A2AB803A600F5B7D8 /* CalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F492AB803A600F5B7D8 /* CalendarRouter.swift */; };
 		924A3F4C2AB812EF00F5B7D8 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F4B2AB812EF00F5B7D8 /* CalendarManager.swift */; };
+		924A3F4F2AB8282100F5B7D8 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 924A3F4E2AB8282100F5B7D8 /* ElegantCalendar */; };
+		924A3F512AB830B000F5B7D8 /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 924A3F502AB830B000F5B7D8 /* ElegantCalendar.xcassets */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -201,6 +203,7 @@
 		924A3F472AB8015D00F5B7D8 /* CalendarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreen.swift; sourceTree = "<group>"; };
 		924A3F492AB803A600F5B7D8 /* CalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRouter.swift; sourceTree = "<group>"; };
 		924A3F4B2AB812EF00F5B7D8 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		924A3F502AB830B000F5B7D8 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = ../../../SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets; sourceTree = BUILT_PRODUCTS_DIR; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				921BF3BB2A44CC1200AC5909 /* Lottie in Frameworks */,
+				924A3F4F2AB8282100F5B7D8 /* ElegantCalendar in Frameworks */,
 				924A3F1E2A56103F00F5B7D8 /* Alamofire in Frameworks */,
 				924A3F322A67743000F5B7D8 /* KeychainAccess in Frameworks */,
 			);
@@ -266,6 +270,7 @@
 		9239B77029E3656600BBECE0 = {
 			isa = PBXGroup;
 			children = (
+				924A3F502AB830B000F5B7D8 /* ElegantCalendar.xcassets */,
 				9239B77B29E3656600BBECE0 /* Tretta */,
 				9239B78C29E3656700BBECE0 /* TrettaTests */,
 				9239B79629E3656700BBECE0 /* TrettaUITests */,
@@ -686,6 +691,7 @@
 				921BF3BA2A44CC1200AC5909 /* Lottie */,
 				924A3F1D2A56103F00F5B7D8 /* Alamofire */,
 				924A3F312A67743000F5B7D8 /* KeychainAccess */,
+				924A3F4E2AB8282100F5B7D8 /* ElegantCalendar */,
 			);
 			productName = Tretta;
 			productReference = 9239B77929E3656600BBECE0 /* Tretta.app */;
@@ -763,6 +769,7 @@
 				921BF3B92A44CC1200AC5909 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				924A3F1C2A56103F00F5B7D8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				924A3F302A67743000F5B7D8 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				924A3F4D2AB8282100F5B7D8 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
 			);
 			productRefGroup = 9239B77A29E3656600BBECE0 /* Products */;
 			projectDirPath = "";
@@ -780,6 +787,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				924A3F512AB830B000F5B7D8 /* ElegantCalendar.xcassets in Resources */,
 				921BF3C62A44D12900AC5909 /* contacts.json in Resources */,
 				921BF3C72A44D12900AC5909 /* deals.json in Resources */,
 				9239B78429E3656700BBECE0 /* Preview Assets.xcassets in Resources */,
@@ -1249,6 +1257,14 @@
 				kind = branch;
 			};
 		};
+		924A3F4D2AB8282100F5B7D8 /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ThasianX/ElegantCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1266,6 +1282,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 924A3F302A67743000F5B7D8 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		924A3F4E2AB8282100F5B7D8 /* ElegantCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 924A3F4D2AB8282100F5B7D8 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
+			productName = ElegantCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
