@@ -24,7 +24,7 @@ enum ContactApiRouter: URLRequestConvertible {
     var path: String {
         switch self {
         case let .getContacts(accountId):
-            return "contacts/user/\(accountId)"
+            return "contacts/users/\(accountId)"
         case .createContact:
             return "contacts"
         }
@@ -52,10 +52,10 @@ enum ContactApiRouter: URLRequestConvertible {
             }
         }
         
-        let accesToken = KeyStorage.shared.getStringValue(forKey: Constants.accessToken) ?? ""
+        let accessToken = KeyStorage.shared.getStringValue(forKey: Constants.accessToken) ?? ""
         
         request.headers.add(.contentType(Constants.jsonContentType))
-        request.headers.add(.authorization(bearerToken: accesToken))
+        request.headers.add(.authorization(bearerToken: accessToken))
                 
         return request
     }

@@ -9,9 +9,9 @@ import Foundation
 
 struct PipelineMockData {
     private(set) static var pipelines: [Pipeline] = [
-        Pipeline(_id: "0", name: "Current Sales"),
-        Pipeline(_id: "1", name: "Coffee Shops"),
-        Pipeline(_id: "2", name: "Enterprise")
+        Pipeline(_id: "0", name: "Current Sales", userId: "testuserid"),
+        Pipeline(_id: "1", name: "Coffee Shops", userId: "testuserid"),
+        Pipeline(_id: "2", name: "Enterprise", userId: "testuserid")
     ]
     
     private(set) static var stages: [Stage] = [

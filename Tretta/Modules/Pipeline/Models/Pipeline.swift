@@ -10,4 +10,5 @@ import Foundation
 struct Pipeline: Codable, Hashable, CustomStringConvertible {
     let _id: String
     let name: String
+    let userId: String
 }

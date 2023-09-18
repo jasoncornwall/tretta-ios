@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Contact: Codable, Hashable {
+struct Contact: Codable, Hashable, CustomStringConvertible {
+    let _id: String
     let firstName: String
     let lastName: String
     var email: String? = nil

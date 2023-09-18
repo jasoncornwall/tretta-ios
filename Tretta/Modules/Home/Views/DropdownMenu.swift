@@ -13,8 +13,8 @@ struct DropdownMenu: View {
     
     var body: some View {
         Picker("Select pipeline", selection: $selection) {
-            ForEach(pipelines, id: \.self) {
-                Text($0.name)
+            ForEach(pipelines, id: \.self._id) {
+                Text($0.name).tag($0 as Pipeline)
             }
         }
         .scaledToFit()

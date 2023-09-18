@@ -14,7 +14,7 @@ struct PipelineScreen: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if !model.pipelines.isEmpty {
+                if !model.pipelines.isEmpty, !model.stages.isEmpty, !model.deals.isEmpty {
                     DealSectionHeader(stages: model.stages.map{$0.name}, stageSelection: $model.stageSelection)
                     TabView(selection: $model.stageSelection) {
                         ForEach(Array(model.stages.enumerated()), id: \.element) { index, stage in
@@ -37,7 +37,7 @@ struct PipelineScreen: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     if !model.pipelines.isEmpty {
-                        DropdownMenu(selection: $model.currentPipelineSelection.onChange(pipelineSelectionChange(to:)), pipelines: PipelineMockData.pipelines)
+                        DropdownMenu(selection: $model.currentPipelineSelection.onChange(pipelineSelectionChange(to:)), pipelines: model.pipelines)
                              .padding(.trailing, 16)
                              .padding(.bottom, 8)
                     }
@@ -56,15 +56,18 @@ struct PipelineScreen: View {
         .tint(.trettaGold)
         .foregroundColor(.white)
         .task {
-            model.loadPipelines()
-            model.loadStages(pipelineId: model.currentPipelineSelection._id)
-            model.loadDeals(pipelineId: model.currentPipelineSelection._id)
+            model.loadPipelines {
+                model.loadStages(pipelineId: model.currentPipelineSelection._id) {
+                    model.loadDeals(pipelineId: model.currentPipelineSelection._id)
+                }
+            }
         }
     }
     
     func pipelineSelectionChange(to value: Pipeline) {
         // Reload local pipeline data
-        model.loadStages(pipelineId: value._id)
-        model.loadDeals(pipelineId: value._id)
+        model.loadStages(pipelineId: value._id) {
+            model.loadDeals(pipelineId: value._id)
+        }
     }
 }

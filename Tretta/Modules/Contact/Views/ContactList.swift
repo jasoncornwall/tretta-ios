@@ -13,7 +13,7 @@ struct ContactList: View {
     
     var body: some View {
         List {
-            ForEach(Array(contacts.enumerated()), id: \.element) { index, contact in
+            ForEach(Array(contacts.enumerated()), id: \.element._id) { index, contact in
                 ContactRow(contactName: "\(contact.firstName) \(contact.lastName)", index: index)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())

@@ -17,16 +17,54 @@ class PipelineScreenModel: ObservableObject {
     @Published var stages: [Stage] = []
     @Published var deals: [Deal] = []
     
-    func loadPipelines() {
-        pipelines = PipelineMockData.pipelines
+    func loadPipelines(completion: @escaping EmptyCompletionHandler) {
+//        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+        
+        PipelineApiService.getPipelines(accountId: "testuserid") { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case let .success(pipelines):
+                if !pipelines.isEmpty {
+                    currentPipelineSelection = pipelines[0]
+                }
+                self.pipelines = pipelines
+                completion()
+            case let .failure(error):
+                print("Error fetching pipelines: \(error)")
+            }
+        }
     }
     
-    func loadStages(pipelineId: String) {
-        stages = PipelineMockData.stages.filter { $0.pipelineId == pipelineId }
+    func loadStages(pipelineId: String, completion: @escaping EmptyCompletionHandler) {
+//        stages = PipelineMockData.stages.filter { $0.pipelineId == pipelineId }
+                
+        PipelineApiService.getStages(pipelineId: pipelineId) { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case let .success(stages):
+                self.stages = stages
+                completion()
+            case let .failure(error):
+                print("Error fetching stages: \(error)")
+            }
+        }
     }
     
     func loadDeals(pipelineId: String) {
-        deals = PipelineMockData.deals.filter { $0.pipelineId == pipelineId }
+//        deals = PipelineMockData.deals.filter { $0.pipelineId == pipelineId }
+        
+        PipelineApiService.getDeals(pipelineId: pipelineId) { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case let .success(deals):
+                self.deals = deals
+            case let .failure(error):
+                print("Error fetching deals: \(error)")
+            }
+        }
     }
     
     func getDealsByStage(_ stageId: String) -> [Deal] {
