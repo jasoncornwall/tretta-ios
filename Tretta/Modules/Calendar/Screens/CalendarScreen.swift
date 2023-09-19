@@ -33,9 +33,19 @@ struct CalendarScreen: View {
         }
         .task {
             calendarManager.delegate = self
+            calendarManager.datasource = self
             model.requestCalendarAccess()
         }
     }
+}
+
+extension CalendarScreen: ElegantCalendarDataSource {
+    
+    func calendar(viewForSelectedDate date: Date, dimensions size: CGSize) -> AnyView {
+        let startOfDay = Calendar.current.startOfDay(for: date)
+        return EventListView(events: model.visitsByDay[startOfDay] ?? []).erased
+    }
+    
 }
 
 extension CalendarScreen: ElegantCalendarDelegate {

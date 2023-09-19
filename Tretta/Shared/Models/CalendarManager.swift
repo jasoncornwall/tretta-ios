@@ -31,10 +31,9 @@ class CalendarManager {
     }
     
     func loadEvents() {
-        let monthFromNow = Date().advanced(by: 4 * 7 * 24 * 60 * 60)
-        let predicate = eventStore.predicateForEvents(withStart: Date(), end: monthFromNow, calendars: nil)
-        events = eventStore.events(matching: predicate)
-        print("Loaded Calendar Events: \(events)")
+        let yearFromNow = Date().advanced(by: 12 * 4 * 7 * 24 * 60 * 60)
+        let predicate = eventStore.predicateForEvents(withStart: Date(), end: yearFromNow, calendars: nil)
+        events = eventStore.events(matching: predicate).sorted { $0.startDate < $1.startDate }
     }
     
     func subscribeToCalendarUpdates() {
