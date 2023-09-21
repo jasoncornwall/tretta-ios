@@ -17,10 +17,13 @@ struct EventListView: View {
     }
     
     var body: some View {
-        VStack {
-            ForEach(events, id: \.calendarItemExternalIdentifier) { event in
-                EventCell(event: event)
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack {
+                ForEach(events, id: \.calendarItemExternalIdentifier) { event in
+                    EventCell(event: event)
+                }
             }
+            .padding(.bottom, 24)
         }
     }
     

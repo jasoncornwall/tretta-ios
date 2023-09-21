@@ -35,8 +35,13 @@ struct EventCell: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text("\(event.title)")
                     .font(.system(size: 18, weight: .regular))
-                Text("\(eventStartDate) - \(eventEndDate)")
-                    .font(.system(size: 13, weight: .regular))
+                if event.isAllDay {
+                    Text("All-Day")
+                        .font(.system(size: 13, weight: .regular))
+                } else {
+                    Text("\(eventStartDate) - \(eventEndDate)")
+                        .font(.system(size: 13, weight: .regular))
+                }
             }
         }
     }

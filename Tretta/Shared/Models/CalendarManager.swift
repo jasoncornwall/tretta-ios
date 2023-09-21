@@ -31,8 +31,11 @@ class CalendarManager {
     }
     
     func loadEvents() {
-        let yearFromNow = Date().advanced(by: 12 * 4 * 7 * 24 * 60 * 60)
-        let predicate = eventStore.predicateForEvents(withStart: Date(), end: yearFromNow, calendars: nil)
+        let predicate = eventStore.predicateForEvents(
+            withStart: .daysFromToday(-30*36),
+            end: .daysFromToday(30*36),
+            calendars: nil
+        )
         events = eventStore.events(matching: predicate).sorted { $0.startDate < $1.startDate }
     }
     

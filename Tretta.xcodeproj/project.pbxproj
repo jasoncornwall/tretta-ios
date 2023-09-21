@@ -88,6 +88,7 @@
 		924A3F512AB830B000F5B7D8 /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 924A3F502AB830B000F5B7D8 /* ElegantCalendar.xcassets */; };
 		924A3F532AB93A9400F5B7D8 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F522AB93A9400F5B7D8 /* EventCell.swift */; };
 		924A3F552AB93B9E00F5B7D8 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F542AB93B9E00F5B7D8 /* EventListView.swift */; };
+		924A3F572ABA12A000F5B7D8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F562ABA12A000F5B7D8 /* DateExtension.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -208,6 +209,7 @@
 		924A3F502AB830B000F5B7D8 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = ../../../SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets; sourceTree = BUILT_PRODUCTS_DIR; };
 		924A3F522AB93A9400F5B7D8 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		924A3F542AB93B9E00F5B7D8 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
+		924A3F562ABA12A000F5B7D8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				9239B7C429E667B400BBECE0 /* Colors.swift */,
 				92E001312A10234000603EAB /* BindingOnChangeExtension.swift */,
 				924A3F2E2A6773F700F5B7D8 /* KeyStorage.swift */,
+				924A3F562ABA12A000F5B7D8 /* DateExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -898,6 +901,7 @@
 				92E001322A10234000603EAB /* BindingOnChangeExtension.swift in Sources */,
 				9239B7C529E667B400BBECE0 /* Colors.swift in Sources */,
 				924A3F2A2A5B4A7C00F5B7D8 /* AuthService.swift in Sources */,
+				924A3F572ABA12A000F5B7D8 /* DateExtension.swift in Sources */,
 				9239B7C129E4B2A400BBECE0 /* HexColorExtension.swift in Sources */,
 				9239B7B829E4AB3500BBECE0 /* CustomStringConvertible.swift in Sources */,
 				9241FF6C29FB4F1300F37CCA /* ContactDetailScreen.swift in Sources */,
