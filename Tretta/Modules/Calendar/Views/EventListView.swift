@@ -9,6 +9,7 @@ import EventKit
 import SwiftUI
 
 struct EventListView: View {
+    @State private var selectedEvent: EKEvent?
     
     let events: [EKEvent]
     
@@ -21,10 +22,20 @@ struct EventListView: View {
             VStack {
                 ForEach(events, id: \.calendarItemExternalIdentifier) { event in
                     EventCell(event: event)
+                        .onTapGesture {
+                            selectedEvent = event
+                        }
                 }
             }
             .padding(.bottom, 24)
+            .sheet(item: $selectedEvent, content: { event in
+                EventEditView(eventStore: CalendarManager.shared.eventStore, event: event)
+            })
         }
     }
+    
+}
+
+extension EKEvent: Identifiable {
     
 }

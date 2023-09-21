@@ -89,6 +89,7 @@
 		924A3F532AB93A9400F5B7D8 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F522AB93A9400F5B7D8 /* EventCell.swift */; };
 		924A3F552AB93B9E00F5B7D8 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F542AB93B9E00F5B7D8 /* EventListView.swift */; };
 		924A3F572ABA12A000F5B7D8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F562ABA12A000F5B7D8 /* DateExtension.swift */; };
+		924A3F592ABBF90B00F5B7D8 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F582ABBF90B00F5B7D8 /* EventEditView.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -210,6 +211,7 @@
 		924A3F522AB93A9400F5B7D8 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		924A3F542AB93B9E00F5B7D8 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		924A3F562ABA12A000F5B7D8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		924A3F582ABBF90B00F5B7D8 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 			children = (
 				924A3F522AB93A9400F5B7D8 /* EventCell.swift */,
 				924A3F542AB93B9E00F5B7D8 /* EventListView.swift */,
+				924A3F582ABBF90B00F5B7D8 /* EventEditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -885,6 +888,7 @@
 				9241FF6329F0541800F37CCA /* ContactRow.swift in Sources */,
 				9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */,
 				9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */,
+				924A3F592ABBF90B00F5B7D8 /* EventEditView.swift in Sources */,
 				924A3F3A2A8295B900F5B7D8 /* ContactApiService.swift in Sources */,
 				9241FF5D29F04A7500F37CCA /* HomeRouter.swift in Sources */,
 				9241FF6E29FB545000F37CCA /* ContactDetailActionButton.swift in Sources */,
