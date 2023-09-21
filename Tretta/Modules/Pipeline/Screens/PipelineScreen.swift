@@ -11,6 +11,8 @@ struct PipelineScreen: View {
     @Binding var route: Route
     @StateObject var model: PipelineScreenModel
     
+    @State private var presentedSheet: PipelineSheet?
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -18,7 +20,7 @@ struct PipelineScreen: View {
                     DealSectionHeader(stages: model.stages.map{$0.name}, stageSelection: $model.stageSelection)
                     TabView(selection: $model.stageSelection) {
                         ForEach(Array(model.stages.enumerated()), id: \.element) { index, stage in
-                            DealSectionList(route: $route, deals: model.getDealsByStage(stage._id), stageName: stage.name)
+                            DealSectionList(route: $route, deals: model.getDealsByStage(stage._id ?? ""), stageName: stage.name)
                                 .padding(.top, 4)
                                 .tag(index)
                         }
@@ -44,7 +46,7 @@ struct PipelineScreen: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        print("Plus button tapped.")
+                        presentedSheet = .createPipeline
                     } label: {
                         Image(systemName: "plus")
                             .foregroundColor(.trettaGold)
@@ -60,6 +62,12 @@ struct PipelineScreen: View {
                 model.loadStages(pipelineId: model.currentPipelineSelection._id) {
                     model.loadDeals(pipelineId: model.currentPipelineSelection._id)
                 }
+            }
+        }
+        .sheet(item: $presentedSheet) { sheet in
+            switch sheet {
+            case .createPipeline:
+                CreatePipelineScreen(pipelineId: model.currentPipelineSelection._id)
             }
         }
     }

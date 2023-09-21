@@ -90,6 +90,8 @@
 		924A3F552AB93B9E00F5B7D8 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F542AB93B9E00F5B7D8 /* EventListView.swift */; };
 		924A3F572ABA12A000F5B7D8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F562ABA12A000F5B7D8 /* DateExtension.swift */; };
 		924A3F592ABBF90B00F5B7D8 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F582ABBF90B00F5B7D8 /* EventEditView.swift */; };
+		924A3F5B2ABCA08700F5B7D8 /* CreatePipelineScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F5A2ABCA08700F5B7D8 /* CreatePipelineScreen.swift */; };
+		924A3F5D2ABCAC2400F5B7D8 /* PipelineSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F5C2ABCAC2400F5B7D8 /* PipelineSheet.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -212,6 +214,8 @@
 		924A3F542AB93B9E00F5B7D8 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		924A3F562ABA12A000F5B7D8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		924A3F582ABBF90B00F5B7D8 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
+		924A3F5A2ABCA08700F5B7D8 /* CreatePipelineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePipelineScreen.swift; sourceTree = "<group>"; };
+		924A3F5C2ABCAC2400F5B7D8 /* PipelineSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineSheet.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -654,6 +658,7 @@
 			children = (
 				92E0011F2A01A92F00603EAB /* PipelineScreen.swift */,
 				92E001352A199A7000603EAB /* DealScreen.swift */,
+				924A3F5A2ABCA08700F5B7D8 /* CreatePipelineScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -679,6 +684,7 @@
 				92E0012D2A04180900603EAB /* PipelineMockData.swift */,
 				92E0012F2A0EB82600603EAB /* PipelineScreenModel.swift */,
 				92E001332A17C8D900603EAB /* PipelineRouter.swift */,
+				924A3F5C2ABCAC2400F5B7D8 /* PipelineSheet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -883,10 +889,12 @@
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,
 				924A3F382A80A7EF00F5B7D8 /* ContactApiRouter.swift in Sources */,
 				9241FF4929EE319B00F37CCA /* ChartDataContainer.swift in Sources */,
+				924A3F5B2ABCA08700F5B7D8 /* CreatePipelineScreen.swift in Sources */,
 				9239B7C729E66AE400BBECE0 /* PillButton.swift in Sources */,
 				924A3F282A5B486B00F5B7D8 /* AuthRouter.swift in Sources */,
 				9241FF6329F0541800F37CCA /* ContactRow.swift in Sources */,
 				9239B7C929E745A500BBECE0 /* ClearButton.swift in Sources */,
+				924A3F5D2ABCAC2400F5B7D8 /* PipelineSheet.swift in Sources */,
 				9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */,
 				924A3F592ABBF90B00F5B7D8 /* EventEditView.swift in Sources */,
 				924A3F3A2A8295B900F5B7D8 /* ContactApiService.swift in Sources */,
