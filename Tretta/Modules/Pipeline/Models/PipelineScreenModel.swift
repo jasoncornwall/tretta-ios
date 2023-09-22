@@ -17,11 +17,13 @@ class PipelineScreenModel: ObservableObject {
     @Published var stages: [Stage] = []
     @Published var deals: [Deal] = []
     
-    func loadPipelines(completion: @escaping EmptyCompletionHandler) {
-//        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
-        
-        PipelineApiService.getPipelines(accountId: "testuserid") { [weak self] result in
+    func loadPipelines(completion: @escaping ErrorCompletionHandler) {
+        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+                
+        PipelineApiService.getPipelines(accountId: accountId) { [weak self] result in
             guard let self else { return }
+            
+            print("Load pipelines result: \(result) for accountId: \(accountId)")
             
             switch result {
             case let .success(pipelines):
@@ -29,9 +31,9 @@ class PipelineScreenModel: ObservableObject {
                     currentPipelineSelection = pipelines[0]
                 }
                 self.pipelines = pipelines
-                completion()
+                completion(nil)
             case let .failure(error):
-                print("Error fetching pipelines: \(error)")
+                completion(error)
             }
         }
     }
@@ -41,7 +43,7 @@ class PipelineScreenModel: ObservableObject {
                 
         PipelineApiService.getStages(pipelineId: pipelineId) { [weak self] result in
             guard let self else { return }
-            
+            print("Get Stages result: \(result)")
             switch result {
             case let .success(stages):
                 self.stages = stages

@@ -66,6 +66,15 @@ struct HomeScreen: View {
             .navigationTitle("Dashboard")
             .navigationBarBackButtonHidden(true)
         }
+        .task {
+//            model.loadPipelines { error in
+//                if let error, let statusCode = error.responseCode, statusCode == 500 {
+//                    // Logout and clear access token for 500 response codes
+//                    KeyStorage.shared.set("", forKey: Constants.accessToken)
+//                    route = .onboarding(.signIn)
+//                }
+//            }
+        }
     }
 }
 

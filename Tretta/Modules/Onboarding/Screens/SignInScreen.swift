@@ -40,13 +40,12 @@ struct SignInScreen: View {
                     AuthService.login(email: emailText, password: passwordText) { result in
                         switch result {
                         case let .success(response):
+                            print("LOGIN RESPONSE: \(response)")
                             KeyStorage.shared.set(response.accessToken, forKey: Constants.accessToken)
+                            route = .rootMain(0)
                         case let .failure(error):
                             print("Login Error: \(error)")
                         }
-                    }
-                    withAnimation {
-                        route = .rootMain(0)
                     }
                 }
                 .buttonStyle(PillButton())

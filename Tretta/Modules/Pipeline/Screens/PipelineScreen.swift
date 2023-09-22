@@ -16,13 +16,15 @@ struct PipelineScreen: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if !model.pipelines.isEmpty, !model.stages.isEmpty, !model.deals.isEmpty {
+                if !model.pipelines.isEmpty, !model.stages.isEmpty {
                     DealSectionHeader(stages: model.stages.map{$0.name}, stageSelection: $model.stageSelection)
                     TabView(selection: $model.stageSelection) {
-                        ForEach(Array(model.stages.enumerated()), id: \.element) { index, stage in
-                            DealSectionList(route: $route, deals: model.getDealsByStage(stage._id ?? ""), stageName: stage.name)
-                                .padding(.top, 4)
-                                .tag(index)
+                        if !model.deals.isEmpty {
+                            ForEach(Array(model.stages.enumerated()), id: \.element) { index, stage in
+                                DealSectionList(route: $route, deals: model.getDealsByStage(stage._id ?? ""), stageName: stage.name)
+                                    .padding(.top, 4)
+                                    .tag(index)
+                            }
                         }
                     }.tabViewStyle(.page(indexDisplayMode: .never))
                 } else {
@@ -58,16 +60,22 @@ struct PipelineScreen: View {
         .tint(.trettaGold)
         .foregroundColor(.white)
         .task {
-            model.loadPipelines {
-                model.loadStages(pipelineId: model.currentPipelineSelection._id) {
-                    model.loadDeals(pipelineId: model.currentPipelineSelection._id)
+            model.loadPipelines { error in
+                if let error, let statusCode = error.responseCode, statusCode == 500 {
+                    // Logout and clear access token for 500 response codes
+                    KeyStorage.shared.set("", forKey: Constants.accessToken)
+                    route = .onboarding(.signIn)
+                } else {
+                    model.loadStages(pipelineId: model.currentPipelineSelection._id) {
+                        model.loadDeals(pipelineId: model.currentPipelineSelection._id)
+                    }
                 }
             }
         }
         .sheet(item: $presentedSheet) { sheet in
             switch sheet {
             case .createPipeline:
-                CreatePipelineScreen(pipelineId: model.currentPipelineSelection._id)
+                CreatePipelineScreen()
             }
         }
     }

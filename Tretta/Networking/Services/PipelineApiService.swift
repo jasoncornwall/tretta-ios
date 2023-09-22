@@ -25,6 +25,7 @@ class PipelineApiService {
     
     static func getPipelines(accountId: String, completion: @escaping GetPipelinesCompletionHandler) {
         AF.request(PipelineApiRouter.getPipelines(accountId: accountId))
+            .validate(statusCode: 200..<500)
             .responseDecodable(of: [Pipeline].self, decoder: decoder) { response in
                 completion(response.result)
             }
@@ -32,6 +33,7 @@ class PipelineApiService {
     
     static func createPipeline(pipeline: Pipeline, completion: @escaping CreatePipelineCompletionHandler) {
         AF.request(PipelineApiRouter.createPipeline(pipeline: pipeline))
+            .validate(statusCode: 200..<500)
             .responseDecodable(of: Pipeline.self, decoder: decoder) { response in
                 completion(response.result)
             }
@@ -39,6 +41,7 @@ class PipelineApiService {
     
     static func getStages(pipelineId: String, completion: @escaping GetStagesCompletionHandler) {
         AF.request(PipelineApiRouter.getStages(pipelineId: pipelineId))
+            .validate(statusCode: 200..<500)
             .responseDecodable(of: [Stage].self, decoder: decoder) { response in
                 completion(response.result)
             }
@@ -46,6 +49,7 @@ class PipelineApiService {
     
     static func createStage(stage: Stage, completion: @escaping CreateStageCompletionHandler) {
         AF.request(PipelineApiRouter.createStage(stage: stage))
+            .validate(statusCode: 200..<500)
             .responseDecodable(of: Stage.self, decoder: decoder) { response in
                 completion(response.result)
             }
@@ -53,6 +57,7 @@ class PipelineApiService {
     
     static func getDeals(pipelineId: String, completion: @escaping GetDealsCompletionHandler) {
         AF.request(PipelineApiRouter.getDeals(pipelineId: pipelineId))
+            .validate(statusCode: 200..<500)
             .responseDecodable(of: [Deal].self, decoder: decoder) { response in
                 completion(response.result)
             }
@@ -60,6 +65,7 @@ class PipelineApiService {
     
     static func createDeal(deal: Deal, completion: @escaping CreateDealCompletionHandler) {
         AF.request(PipelineApiRouter.createDeal(deal: deal))
+            .validate(statusCode: 200..<500)
             .responseDecodable(of: Deal.self, decoder: decoder) { response in
                 completion(response.result)
             }

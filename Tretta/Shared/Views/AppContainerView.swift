@@ -56,8 +56,8 @@ struct AppContainerView: View {
         }
         .background(Color.backgroundBlue)
         .preferredColorScheme(.dark)
-        .onAppear {
-            if KeyStorage.shared.getStringValue(forKey: Constants.accessToken) != nil {
+        .task {
+            if let accessToken = KeyStorage.shared.getStringValue(forKey: Constants.accessToken), !accessToken.isEmpty {
                 currentRoute = .rootMain(0)
             }
         }

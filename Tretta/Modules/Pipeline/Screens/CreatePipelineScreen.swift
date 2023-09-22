@@ -17,9 +17,8 @@ struct CreatePipelineScreen: View {
     @State private var stage3Text = ""
     @State private var stage4Text = ""
     @State private var visibleStageCounter = 1
-    
-    let pipelineId: String
-    
+    @State private var showProgressView = false
+        
     var body: some View {
         NavigationStack {
             VStack {
@@ -68,6 +67,51 @@ struct CreatePipelineScreen: View {
                                 .frame(height: 24)
                     }
                     Button("Save New Pipeline") {
+                        showProgressView = true
+                        // Eventually this callback hell will be refactored...eventually.
+                        guard let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) else {
+                            print("AccountId missing!!!")
+                            return
+                        }
+                        // Create the initial pipeline with the accountId
+                        PipelineApiService.createPipeline(pipeline: Pipeline(_id: "", name: pipelineTitleText, userId: accountId)) { pipelineResult in
+                            switch pipelineResult {
+                            case let .success(pipeline):
+                                // Create the first stage and add it to the pipeline.
+                                PipelineApiService.createStage(stage: Stage(_id: "", name: stage1Text, pipelineOrderIdx: 0, pipelineId: pipeline._id)) { firstStageResult in
+                                    switch firstStageResult {
+                                    case .success:
+                                        PipelineApiService.createStage(stage: Stage(_id: "", name: stage2Text, pipelineOrderIdx: 1, pipelineId: pipeline._id)) { secondStageResult in
+                                            switch secondStageResult {
+                                            case .success:
+                                                PipelineApiService.createStage(stage: Stage(_id: "", name: stage3Text, pipelineOrderIdx: 2, pipelineId: pipeline._id)) { thirdStageResult in
+                                                    switch thirdStageResult {
+                                                    case .success:
+                                                        PipelineApiService.createStage(stage: Stage(_id: "", name: stage4Text, pipelineOrderIdx: 3, pipelineId: pipeline._id)) { lastStageResult in
+                                                            switch lastStageResult {
+                                                            case .success:
+                                                                showProgressView = true
+                                                                dismiss()
+                                                            case let .failure(error):
+                                                                print("Error creating stage 4, the last stage: \(error)")
+                                                            }
+                                                        }
+                                                    case let .failure(error):
+                                                        print("Error creating stage 3: \(error)")
+                                                    }
+                                                }
+                                            case let .failure(error):
+                                                print("Error creating stage 2: \(error)")
+                                            }
+                                        }
+                                    case let .failure(error):
+                                        print("Error creating stage 1: \(error)")
+                                    }
+                                }
+                            case let .failure(error):
+                                print("Error creating pipeline: \(error)")
+                            }
+                        }
                         print("Create Pipeline tapped.")
                     }
                     .buttonStyle(ClearButton())
