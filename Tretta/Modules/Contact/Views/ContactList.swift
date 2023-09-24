@@ -10,6 +10,7 @@ import SwiftUI
 struct ContactList: View {
     @Binding var route: Route
     @State var contacts: [Contact]
+    @State private var selectedContact: Contact?
     
     var body: some View {
         List {
@@ -18,11 +19,12 @@ struct ContactList: View {
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
                     .onTapGesture {
-                        withAnimation {
-                            route = .contact(.detail(contact))
-                        }
+                        selectedContact = contact
                     }
             }
         }.listStyle(.plain)
+            .sheet(item: $selectedContact) { contact in
+                ContactDetailScreen(contact: contact, route: $route)
+            }
     }
 }

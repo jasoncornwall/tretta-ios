@@ -12,6 +12,7 @@ struct PipelineScreen: View {
     @StateObject var model: PipelineScreenModel
     
     @State private var presentedSheet: PipelineSheet?
+    @State private var showingOptions = false
     
     var body: some View {
         NavigationStack {
@@ -48,10 +49,19 @@ struct PipelineScreen: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        presentedSheet = .createPipeline
+                        showingOptions.toggle()
                     } label: {
                         Image(systemName: "plus")
                             .foregroundColor(.trettaGold)
+                    }
+                    .confirmationDialog("Select what you'd like to do", isPresented: $showingOptions) {
+                        Button("Create a pipeline") {
+                            presentedSheet = .createPipeline
+                        }
+                        
+                        Button("Create a deal") {
+                            presentedSheet = .createDeal
+                        }
                     }
                 }
             }
@@ -76,6 +86,8 @@ struct PipelineScreen: View {
             switch sheet {
             case .createPipeline:
                 CreatePipelineScreen()
+            case .createDeal:
+                CreateDealScreen()
             }
         }
     }

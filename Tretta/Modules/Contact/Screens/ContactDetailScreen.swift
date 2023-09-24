@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContactDetailScreen: View {
+    @Environment(\.dismiss) private var dismiss
+    
     let contact: Contact
     @Binding var route: Route
     
@@ -15,12 +17,16 @@ struct ContactDetailScreen: View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    Image("")
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
-                        .frame(width: 140, height: 140)
-                        .overlay(Circle().stroke(.black.opacity(0.2), lineWidth: 3))
+                    ZStack {
+                        Image("")
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .frame(width: 140, height: 140)
+                            .overlay(Circle().stroke(.black.opacity(0.2), lineWidth: 4))
+                        Text("\(contact.initials)")
+                            .font(.system(size: 50, weight: .bold))
+                    }
                     Text("\(contact.firstName) \(contact.lastName)")
                         .font(.system(size: 32, weight: .semibold))
                         .padding(.top, 16)
@@ -38,9 +44,9 @@ struct ContactDetailScreen: View {
                             .padding(.top, 16)
                             .padding(.horizontal, 16)
                     }
-                    ContactDetailNoteSection()
-                        .padding(.top, 16)
-                        .padding(.horizontal, 16)
+//                    ContactDetailNoteSection()
+//                        .padding(.top, 16)
+//                        .padding(.horizontal, 16)
                     ContactDetailSummarySection(note: "")
                         .padding(.top, 16)
                         .padding(.horizontal, 16)
@@ -54,22 +60,22 @@ struct ContactDetailScreen: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        route = .rootMain(1)
+                        dismiss()
                     } label: {
                         Image(systemName: "xmark")
                             .foregroundColor(.trettaGold)
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        withAnimation {
-                            print("Edit tapped")
-                        }
-                    } label: {
-                        Text("Edit")
-                            .foregroundColor(.trettaGold)
-                    }
-                }
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button {
+//                        withAnimation {
+//                            print("Edit tapped")
+//                        }
+//                    } label: {
+//                        Text("Edit")
+//                            .foregroundColor(.trettaGold)
+//                    }
+//                }
             }
             .background(Color.backgroundBlue)
             .toolbarBackground(.hidden, for: .navigationBar)

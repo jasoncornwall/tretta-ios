@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Contact: Codable, Hashable, CustomStringConvertible {
+struct Contact: Codable, Hashable, CustomStringConvertible, Identifiable {
+    var id: String? { _id }
     let _id: String
     let firstName: String
     let lastName: String
@@ -21,4 +22,10 @@ struct Contact: Codable, Hashable, CustomStringConvertible {
     var zipCode: String? = nil
     let userId: String
     var orgId: String? = nil
+}
+
+extension Contact {
+    var initials: String {
+        return "\(firstName.prefix(1))\(lastName.prefix(1))"
+    }
 }

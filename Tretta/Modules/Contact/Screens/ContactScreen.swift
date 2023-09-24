@@ -16,13 +16,14 @@ struct ContactScreen: View {
             VStack {
                 Spacer()
                     .frame(height: 1)
-                ContactHeader()
-                    .padding(.bottom, 8)
+//                ContactHeader()
+//                    .padding(.bottom, 8)
                 if !model.contacts.isEmpty {
                     ContactList(route: $route, contacts: model.contacts)
                 } else {
                     EmptyStateView(type: .contact)
                     Spacer()
+                        .frame(maxWidth: .infinity)
                 }
             }
             .background(Color.backgroundBlue)
@@ -31,17 +32,17 @@ struct ContactScreen: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
-                        let mockContact = model.getRandomMockContact(userId: accountId)
-                        
-                        ContactApiService.createContact(contact: mockContact) { result in
-                            switch result {
-                            case let .success(contact):
-                                print("Created contact: \(contact)")
-                            case let .failure(error):
-                                print("Create Contact Error: \(error)")
-                            }
-                        }
+//                        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+//                        let mockContact = model.getRandomMockContact(userId: accountId)
+//
+//                        ContactApiService.createContact(contact: mockContact) { result in
+//                            switch result {
+//                            case let .success(contact):
+//                                print("Created contact: \(contact)")
+//                            case let .failure(error):
+//                                print("Create Contact Error: \(error)")
+//                            }
+//                        }
                     } label: {
                         Image(systemName: "plus")
                             .foregroundColor(.trettaGold)

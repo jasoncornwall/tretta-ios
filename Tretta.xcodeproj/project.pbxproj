@@ -92,6 +92,7 @@
 		924A3F592ABBF90B00F5B7D8 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F582ABBF90B00F5B7D8 /* EventEditView.swift */; };
 		924A3F5B2ABCA08700F5B7D8 /* CreatePipelineScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F5A2ABCA08700F5B7D8 /* CreatePipelineScreen.swift */; };
 		924A3F5D2ABCAC2400F5B7D8 /* PipelineSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F5C2ABCAC2400F5B7D8 /* PipelineSheet.swift */; };
+		924A3F5F2AC0B72500F5B7D8 /* CreateDealScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F5E2AC0B72400F5B7D8 /* CreateDealScreen.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -216,6 +217,7 @@
 		924A3F582ABBF90B00F5B7D8 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
 		924A3F5A2ABCA08700F5B7D8 /* CreatePipelineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePipelineScreen.swift; sourceTree = "<group>"; };
 		924A3F5C2ABCAC2400F5B7D8 /* PipelineSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineSheet.swift; sourceTree = "<group>"; };
+		924A3F5E2AC0B72400F5B7D8 /* CreateDealScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDealScreen.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -659,6 +661,7 @@
 				92E0011F2A01A92F00603EAB /* PipelineScreen.swift */,
 				92E001352A199A7000603EAB /* DealScreen.swift */,
 				924A3F5A2ABCA08700F5B7D8 /* CreatePipelineScreen.swift */,
+				924A3F5E2AC0B72400F5B7D8 /* CreateDealScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -852,6 +855,7 @@
 				924A3F362A71B60A00F5B7D8 /* ContactScreenModel.swift in Sources */,
 				9239B7E129EB591100BBECE0 /* DashboardMetricsSection.swift in Sources */,
 				9241FF5529F027F600F37CCA /* Contact.swift in Sources */,
+				924A3F5F2AC0B72500F5B7D8 /* CreateDealScreen.swift in Sources */,
 				9239B7DD29EA0BDD00BBECE0 /* HomeScreen.swift in Sources */,
 				926F99E329FC01F000632F61 /* ContactDetailAction.swift in Sources */,
 				924A3F2D2A5B857C00F5B7D8 /* SuccessfulLoginResponse.swift in Sources */,

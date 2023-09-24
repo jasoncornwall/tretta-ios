@@ -11,5 +11,5 @@ enum PipelineSheet: String, Identifiable {
     var id: String { rawValue }
     
     case createPipeline
-//    case viewDeal
+    case createDeal
 }
