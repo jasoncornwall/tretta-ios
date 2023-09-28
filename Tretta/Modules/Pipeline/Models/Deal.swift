@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Deal: Codable, Hashable, CustomStringConvertible {
+struct Deal: Codable, Hashable, CustomStringConvertible, Identifiable {
+    var id: String? { _id }
     let _id: String
     let name: String
     let creatorUserId: String

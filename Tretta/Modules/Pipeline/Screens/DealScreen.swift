@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DealScreen: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var sectionSelection: Int = 0
     private let sections = ["Notes", "Details"]
     private let notes = [
@@ -15,7 +18,6 @@ struct DealScreen: View {
         "15 sales reps will be added to the roster next month and 5 engineers will be added next quarter."
     ]
     
-    @Binding var route: Route
     let deal: Deal
     let stageName: String
     
@@ -60,7 +62,7 @@ struct DealScreen: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        route = .rootMain(2)
+                        dismiss()
                     } label: {
                         Image(systemName: "xmark")
                             .foregroundColor(.trettaGold)

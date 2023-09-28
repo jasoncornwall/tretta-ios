@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DealSectionList: View {
-    @Binding var route: Route
     let deals: [Deal]
     let stageName: String
+    @State private var selectedDeal: Deal?
     
     var body: some View {
         if deals.isEmpty {
@@ -24,13 +24,14 @@ struct DealSectionList: View {
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets())
                         .onTapGesture {
-                            withAnimation {
-                                route = .pipeline(.detail(deal: deal, stageName: stageName))
-                            }
+                            selectedDeal = deal
                         }
                 }
                 .background(Color.backgroundBlue)
             }.listStyle(.plain)
+                .sheet(item: $selectedDeal) { deal in
+                    DealScreen(deal: deal, stageName: stageName)
+                }
         }
     }
 }
