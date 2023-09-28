@@ -68,6 +68,7 @@ enum PipelineApiRouter: URLRequestConvertible {
                 "name": deal.name,
                 "creator_user_id": deal.creatorUserId,
                 "stage_id": deal.stageId ?? "",
+                "contact_id": deal.contactId ?? "",
                 "pipeline_id": deal.pipelineId ?? "",
                 "creation_date": "\(Date.now)",
                 "value": "\(deal.value)"

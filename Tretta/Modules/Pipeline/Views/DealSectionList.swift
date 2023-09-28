@@ -13,19 +13,24 @@ struct DealSectionList: View {
     let stageName: String
     
     var body: some View {
-        List {
-            ForEach(Array(deals.enumerated()), id: \.element) { index, deal in
-                DealRow(deal: deal)
-                    .padding(.bottom, 8)
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets())
-                    .onTapGesture {
-                        withAnimation {
-                            route = .pipeline(.detail(deal: deal, stageName: stageName))
+        if deals.isEmpty {
+            EmptyStateView(type: .deal)
+                .padding(.bottom, 24)
+        } else {
+            List {
+                ForEach(Array(deals.enumerated()), id: \.element) { index, deal in
+                    DealRow(deal: deal)
+                        .padding(.bottom, 8)
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(EdgeInsets())
+                        .onTapGesture {
+                            withAnimation {
+                                route = .pipeline(.detail(deal: deal, stageName: stageName))
+                            }
                         }
-                    }
-            }
-            .background(Color.backgroundBlue)
-        }.listStyle(.plain)
+                }
+                .background(Color.backgroundBlue)
+            }.listStyle(.plain)
+        }
     }
 }

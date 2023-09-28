@@ -19,7 +19,7 @@ struct ContactScreen: View {
 //                ContactHeader()
 //                    .padding(.bottom, 8)
                 if !model.contacts.isEmpty {
-                    ContactList(route: $route, contacts: model.contacts)
+                    ContactList(contacts: model.contacts)
                 } else {
                     EmptyStateView(type: .contact)
                     Spacer()

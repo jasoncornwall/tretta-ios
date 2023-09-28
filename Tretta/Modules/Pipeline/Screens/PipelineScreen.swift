@@ -71,12 +71,13 @@ struct PipelineScreen: View {
         .foregroundColor(.white)
         .task {
             model.loadPipelines { error in
-                if let error, let statusCode = error.responseCode, statusCode == 500 {
-                    // Logout and clear access token for 500 response codes
+                if let error, let statusCode = error.responseCode, statusCode == 500 || statusCode == 401 {
+                    // Logout and clear access token for 401/500 response codes
                     KeyStorage.shared.set("", forKey: Constants.accessToken)
                     route = .onboarding(.signIn)
                 } else {
                     model.loadStages(pipelineId: model.currentPipelineSelection._id) {
+                        model.loadContacts()
                         model.loadDeals(pipelineId: model.currentPipelineSelection._id)
                     }
                 }
@@ -87,7 +88,12 @@ struct PipelineScreen: View {
             case .createPipeline:
                 CreatePipelineScreen()
             case .createDeal:
-                CreateDealScreen()
+                let dealScreenModel = CreateDealScreenModel(
+                    pipelineId: model.currentPipelineSelection._id,
+                    contacts: model.contacts,
+                    stages: model.stages
+                )
+                CreateDealScreen(model: dealScreenModel)
             }
         }
     }

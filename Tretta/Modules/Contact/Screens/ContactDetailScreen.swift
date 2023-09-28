@@ -11,7 +11,6 @@ struct ContactDetailScreen: View {
     @Environment(\.dismiss) private var dismiss
     
     let contact: Contact
-    @Binding var route: Route
     
     var body: some View {
         NavigationStack {

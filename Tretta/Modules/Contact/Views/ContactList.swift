@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContactList: View {
-    @Binding var route: Route
     @State var contacts: [Contact]
     @State private var selectedContact: Contact?
     
@@ -24,7 +23,7 @@ struct ContactList: View {
             }
         }.listStyle(.plain)
             .sheet(item: $selectedContact) { contact in
-                ContactDetailScreen(contact: contact, route: $route)
+                ContactDetailScreen(contact: contact)
             }
     }
 }

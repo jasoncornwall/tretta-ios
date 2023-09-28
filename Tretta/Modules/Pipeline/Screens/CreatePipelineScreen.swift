@@ -11,20 +11,19 @@ struct CreatePipelineScreen: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    @State private var pipelineTitleText = ""
+    @State private var pipelineNameText = ""
     @State private var stage1Text = ""
     @State private var stage2Text = ""
     @State private var stage3Text = ""
     @State private var stage4Text = ""
     @State private var visibleStageCounter = 1
-    @State private var showProgressView = false
         
     var body: some View {
         NavigationStack {
             VStack {
                 Spacer()
                     .frame(height: 24)
-                FloatingTextField(title: "Pipeline Title", text: $pipelineTitleText)
+                FloatingTextField(title: "Pipeline Name", text: $pipelineNameText)
                     .padding(.horizontal, 40)
                 HStack {
                     Text("Select your stage names:")
@@ -40,41 +39,39 @@ struct CreatePipelineScreen: View {
                             .padding(.horizontal, 40)
                             .padding(.top, 12)
                             .onChange(of: stage1Text) { newValue in
-                                print("Stage 1 Value: \(newValue)")
+//                                print("Stage 1 Value: \(newValue)")
                             }
                         Spacer()
                             .frame(height: 32)
                             FloatingTextField(title: "Stage 2", text: $stage2Text)
                                 .padding(.horizontal, 40)
                                 .onChange(of: stage2Text) { newValue in
-                                    print("Stage 2 Value: \(newValue)")
+//                                    print("Stage 2 Value: \(newValue)")
                                 }
                             Spacer()
                                 .frame(height: 32)
                             FloatingTextField(title: "Stage 3", text: $stage3Text)
                                 .padding(.horizontal, 40)
                                 .onChange(of: stage3Text) { newValue in
-                                    print("Stage 3 Value: \(newValue)")
+//                                    print("Stage 3 Value: \(newValue)")
                                 }
                             Spacer()
                                 .frame(height: 32)
                             FloatingTextField(title: "Last Stage", text: $stage4Text)
                                 .padding(.horizontal, 40)
                                 .onChange(of: stage4Text) { newValue in
-                                    print("Stage 4 Value: \(newValue)")
+//                                    print("Stage 4 Value: \(newValue)")
                                 }
                             Spacer()
                                 .frame(height: 24)
                     }
                     Button("Save New Pipeline") {
-                        showProgressView = true
                         // Eventually this callback hell will be refactored...eventually.
                         guard let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) else {
-                            print("AccountId missing!!!")
                             return
                         }
                         // Create the initial pipeline with the accountId
-                        PipelineApiService.createPipeline(pipeline: Pipeline(_id: "", name: pipelineTitleText, userId: accountId)) { pipelineResult in
+                        PipelineApiService.createPipeline(pipeline: Pipeline(_id: "", name: pipelineNameText, userId: accountId)) { pipelineResult in
                             switch pipelineResult {
                             case let .success(pipeline):
                                 // Create the first stage and add it to the pipeline.
@@ -90,7 +87,6 @@ struct CreatePipelineScreen: View {
                                                         PipelineApiService.createStage(stage: Stage(_id: "", name: stage4Text, pipelineOrderIdx: 3, pipelineId: pipeline._id)) { lastStageResult in
                                                             switch lastStageResult {
                                                             case .success:
-                                                                showProgressView = true
                                                                 dismiss()
                                                             case let .failure(error):
                                                                 print("Error creating stage 4, the last stage: \(error)")

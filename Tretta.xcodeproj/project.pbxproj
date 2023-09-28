@@ -93,6 +93,7 @@
 		924A3F5B2ABCA08700F5B7D8 /* CreatePipelineScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F5A2ABCA08700F5B7D8 /* CreatePipelineScreen.swift */; };
 		924A3F5D2ABCAC2400F5B7D8 /* PipelineSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F5C2ABCAC2400F5B7D8 /* PipelineSheet.swift */; };
 		924A3F5F2AC0B72500F5B7D8 /* CreateDealScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F5E2AC0B72400F5B7D8 /* CreateDealScreen.swift */; };
+		924A3F612AC3D4EA00F5B7D8 /* CreateDealScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F602AC3D4EA00F5B7D8 /* CreateDealScreenModel.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -218,6 +219,7 @@
 		924A3F5A2ABCA08700F5B7D8 /* CreatePipelineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePipelineScreen.swift; sourceTree = "<group>"; };
 		924A3F5C2ABCAC2400F5B7D8 /* PipelineSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineSheet.swift; sourceTree = "<group>"; };
 		924A3F5E2AC0B72400F5B7D8 /* CreateDealScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDealScreen.swift; sourceTree = "<group>"; };
+		924A3F602AC3D4EA00F5B7D8 /* CreateDealScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDealScreenModel.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -688,6 +690,7 @@
 				92E0012F2A0EB82600603EAB /* PipelineScreenModel.swift */,
 				92E001332A17C8D900603EAB /* PipelineRouter.swift */,
 				924A3F5C2ABCAC2400F5B7D8 /* PipelineSheet.swift */,
+				924A3F602AC3D4EA00F5B7D8 /* CreateDealScreenModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				924A3F3E2AB2BE7A00F5B7D8 /* PipelineApiService.swift in Sources */,
 				924A3F222A56470E00F5B7D8 /* UserRouter.swift in Sources */,
 				924A3F552AB93B9E00F5B7D8 /* EventListView.swift in Sources */,
+				924A3F612AC3D4EA00F5B7D8 /* CreateDealScreenModel.swift in Sources */,
 				9239B7E329EBEC9E00BBECE0 /* RecentDealCard.swift in Sources */,
 				9239B7B629E3B20400BBECE0 /* SignInScreen.swift in Sources */,
 				9241FF5729F02BEF00F37CCA /* ContactScreen.swift in Sources */,

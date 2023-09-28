@@ -16,15 +16,14 @@ class PipelineScreenModel: ObservableObject {
     @Published var pipelines: [Pipeline] = []
     @Published var stages: [Stage] = []
     @Published var deals: [Deal] = []
+    @Published var contacts: [Contact] = []
     
     func loadPipelines(completion: @escaping ErrorCompletionHandler) {
         let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
                 
         PipelineApiService.getPipelines(accountId: accountId) { [weak self] result in
             guard let self else { return }
-            
-            print("Load pipelines result: \(result) for accountId: \(accountId)")
-            
+                        
             switch result {
             case let .success(pipelines):
                 if !pipelines.isEmpty {
@@ -43,7 +42,6 @@ class PipelineScreenModel: ObservableObject {
                 
         PipelineApiService.getStages(pipelineId: pipelineId) { [weak self] result in
             guard let self else { return }
-            print("Get Stages result: \(result)")
             switch result {
             case let .success(stages):
                 self.stages = stages
@@ -65,6 +63,21 @@ class PipelineScreenModel: ObservableObject {
                 self.deals = deals
             case let .failure(error):
                 print("Error fetching deals: \(error)")
+            }
+        }
+    }
+    
+    func loadContacts() {
+//        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+        
+        ContactApiService.getContacts(accountId: "testuserid") { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case let .success(contacts):
+                self.contacts = contacts
+            case let .failure(error):
+                print("Error fetching contacts: \(error)")
             }
         }
     }
