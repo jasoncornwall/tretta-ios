@@ -94,6 +94,9 @@
 		924A3F5D2ABCAC2400F5B7D8 /* PipelineSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F5C2ABCAC2400F5B7D8 /* PipelineSheet.swift */; };
 		924A3F5F2AC0B72500F5B7D8 /* CreateDealScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F5E2AC0B72400F5B7D8 /* CreateDealScreen.swift */; };
 		924A3F612AC3D4EA00F5B7D8 /* CreateDealScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F602AC3D4EA00F5B7D8 /* CreateDealScreenModel.swift */; };
+		924A3F632AC63AB600F5B7D8 /* CreateContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F622AC63AB600F5B7D8 /* CreateContactScreen.swift */; };
+		924A3F652AC63FB400F5B7D8 /* CreateContactScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F642AC63FB400F5B7D8 /* CreateContactScreenModel.swift */; };
+		924A3F672AC6471500F5B7D8 /* ContactSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F662AC6471500F5B7D8 /* ContactSheet.swift */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -220,6 +223,9 @@
 		924A3F5C2ABCAC2400F5B7D8 /* PipelineSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineSheet.swift; sourceTree = "<group>"; };
 		924A3F5E2AC0B72400F5B7D8 /* CreateDealScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDealScreen.swift; sourceTree = "<group>"; };
 		924A3F602AC3D4EA00F5B7D8 /* CreateDealScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDealScreenModel.swift; sourceTree = "<group>"; };
+		924A3F622AC63AB600F5B7D8 /* CreateContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContactScreen.swift; sourceTree = "<group>"; };
+		924A3F642AC63FB400F5B7D8 /* CreateContactScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContactScreenModel.swift; sourceTree = "<group>"; };
+		924A3F662AC6471500F5B7D8 /* ContactSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSheet.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -507,6 +513,7 @@
 			children = (
 				9241FF5629F02BEF00F37CCA /* ContactScreen.swift */,
 				9241FF6B29FB4F1300F37CCA /* ContactDetailScreen.swift */,
+				924A3F622AC63AB600F5B7D8 /* CreateContactScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -533,6 +540,8 @@
 				9241FF6029F04F8F00F37CCA /* ContactMockData.swift */,
 				926F99E229FC01F000632F61 /* ContactDetailAction.swift */,
 				924A3F352A71B60A00F5B7D8 /* ContactScreenModel.swift */,
+				924A3F642AC63FB400F5B7D8 /* CreateContactScreenModel.swift */,
+				924A3F662AC6471500F5B7D8 /* ContactSheet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -865,6 +874,7 @@
 				9239B7B229E3AF3900BBECE0 /* OnboardingRouter.swift in Sources */,
 				92E0011829FCDAE800603EAB /* ContactDetailNoteSection.swift in Sources */,
 				92E0011629FCCE9000603EAB /* ContactDetailSubSection.swift in Sources */,
+				924A3F672AC6471500F5B7D8 /* ContactSheet.swift in Sources */,
 				924A3F4A2AB803A600F5B7D8 /* CalendarRouter.swift in Sources */,
 				924A3F532AB93A9400F5B7D8 /* EventCell.swift in Sources */,
 				9241FF5B29F0496200F37CCA /* ContactRouter.swift in Sources */,
@@ -923,6 +933,7 @@
 				924A3F572ABA12A000F5B7D8 /* DateExtension.swift in Sources */,
 				9239B7C129E4B2A400BBECE0 /* HexColorExtension.swift in Sources */,
 				9239B7B829E4AB3500BBECE0 /* CustomStringConvertible.swift in Sources */,
+				924A3F652AC63FB400F5B7D8 /* CreateContactScreenModel.swift in Sources */,
 				9241FF6C29FB4F1300F37CCA /* ContactDetailScreen.swift in Sources */,
 				9239B7BF29E4AE6A00BBECE0 /* Organization.swift in Sources */,
 				924A3F3E2AB2BE7A00F5B7D8 /* PipelineApiService.swift in Sources */,
@@ -933,6 +944,7 @@
 				9239B7B629E3B20400BBECE0 /* SignInScreen.swift in Sources */,
 				9241FF5729F02BEF00F37CCA /* ContactScreen.swift in Sources */,
 				9241FF6129F04F8F00F37CCA /* ContactMockData.swift in Sources */,
+				924A3F632AC63AB600F5B7D8 /* CreateContactScreen.swift in Sources */,
 				9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */,
 				9268069C2A33AFC800B604CF /* SettingRow.swift in Sources */,
 			);

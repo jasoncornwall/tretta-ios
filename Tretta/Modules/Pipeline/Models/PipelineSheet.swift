@@ -7,9 +7,12 @@
 
 import Foundation
 
-enum PipelineSheet: String, Identifiable {
-    var id: String { rawValue }
+enum PipelineSheet: Hashable, Identifiable {
+    var id: Self {
+        return self
+    }
     
     case createPipeline
     case createDeal
+    case viewDeal(deal: Deal, stageName: String)
 }

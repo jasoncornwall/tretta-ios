@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactList: View {
-    @State var contacts: [Contact]
+    @Binding var contacts: [Contact]
     @State private var selectedContact: Contact?
     
     var body: some View {
@@ -22,8 +22,20 @@ struct ContactList: View {
                     }
             }
         }.listStyle(.plain)
-            .sheet(item: $selectedContact) { contact in
-                ContactDetailScreen(contact: contact)
+        .sheet(item: $selectedContact) { contact in
+            ContactDetailScreen(contact: contact)
+        }
+        .refreshable {
+            let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+            
+            ContactApiService.getContacts(accountId: accountId) { result in
+                switch result {
+                case let .success(contacts):
+                    self.contacts = contacts
+                case let .failure(error):
+                    print("Error fetching contacts: \(error)")
+                }
             }
+        }
     }
 }

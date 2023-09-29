@@ -22,7 +22,11 @@ struct PipelineScreen: View {
                     TabView(selection: $model.stageSelection) {
                         if !model.deals.isEmpty {
                             ForEach(Array(model.stages.enumerated()), id: \.element) { index, stage in
-                                DealSectionList(route: $route, deals: model.getDealsByStage(stage._id ?? ""), stageName: stage.name)
+                                DealSectionList(
+                                    pipelineId: model.currentPipelineSelection._id,
+                                    deals: model.getDealsByStage(stage._id ?? ""),
+                                    stageName: stage.name,
+                                    selectedDeal: $presentedSheet)
                                     .padding(.top, 4)
                                     .tag(index)
                             }
@@ -66,7 +70,7 @@ struct PipelineScreen: View {
                 }
             }
         }
-        .searchable(text: $model.searchText)
+//        .searchable(text: $model.searchText)
         .tint(.trettaGold)
         .foregroundColor(.white)
         .task {
@@ -94,6 +98,8 @@ struct PipelineScreen: View {
                     stages: model.stages
                 )
                 CreateDealScreen(model: dealScreenModel)
+            case let .viewDeal(deal, stageName):
+                DealScreen(deal: deal, stageName: stageName)
             }
         }
     }

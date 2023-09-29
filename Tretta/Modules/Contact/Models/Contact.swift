@@ -19,7 +19,7 @@ struct Contact: Codable, Hashable, CustomStringConvertible, Identifiable {
     var addressLine2: String? = nil
     var city: String? = nil
     var state: String? = nil
-    var zipCode: String? = nil
+    var zipcode: String? = nil
     let userId: String
     var orgId: String? = nil
 }

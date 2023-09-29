@@ -42,7 +42,14 @@ enum ContactApiRouter: URLRequestConvertible {
             let params = [
                 "first_name": contact.firstName,
                 "last_name": contact.lastName,
+                "email": contact.email,
+                "website": contact.website,
                 "phone": contact.phone,
+                "address_line_1": contact.addressLine1,
+                "address_line_2": contact.addressLine2,
+                "city": contact.city,
+                "state": contact.state,
+                "zipcode": contact.zipcode,
                 "user_id": contact.userId
             ]
             do {

@@ -10,6 +10,7 @@ import SwiftUI
 struct ContactScreen: View {
     @Binding var route: Route
     @StateObject var model: ContactScreenModel
+    @State private var presentedSheet: ContactSheet?
     
     var body: some View {
         NavigationStack {
@@ -19,7 +20,7 @@ struct ContactScreen: View {
 //                ContactHeader()
 //                    .padding(.bottom, 8)
                 if !model.contacts.isEmpty {
-                    ContactList(contacts: model.contacts)
+                    ContactList(contacts: $model.contacts)
                 } else {
                     EmptyStateView(type: .contact)
                     Spacer()
@@ -32,17 +33,7 @@ struct ContactScreen: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-//                        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
-//                        let mockContact = model.getRandomMockContact(userId: accountId)
-//
-//                        ContactApiService.createContact(contact: mockContact) { result in
-//                            switch result {
-//                            case let .success(contact):
-//                                print("Created contact: \(contact)")
-//                            case let .failure(error):
-//                                print("Create Contact Error: \(error)")
-//                            }
-//                        }
+                        presentedSheet = .createContact
                     } label: {
                         Image(systemName: "plus")
                             .foregroundColor(.trettaGold)
@@ -54,7 +45,17 @@ struct ContactScreen: View {
         .tint(.trettaGold)
         .foregroundColor(.white)
         .task {
-            model.loadContacts()
+            model.loadContacts { result in
+                if case let .failure(error) = result {
+                    print(error)
+                }
+            }
+        }
+        .sheet(item: $presentedSheet) { sheet in
+            switch sheet {
+            case .createContact:
+                CreateContactScreen(model: CreateContactScreenModel())
+            }
         }
     }
 }

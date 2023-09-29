@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct DealSectionList: View {
-    let deals: [Deal]
+    let pipelineId: String
+    @State var deals: [Deal]
     let stageName: String
-    @State private var selectedDeal: Deal?
+    @Binding var selectedDeal: PipelineSheet?
     
     var body: some View {
         if deals.isEmpty {
@@ -24,14 +25,21 @@ struct DealSectionList: View {
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets())
                         .onTapGesture {
-                            selectedDeal = deal
+                            selectedDeal = .viewDeal(deal: deal, stageName: stageName)
                         }
                 }
                 .background(Color.backgroundBlue)
             }.listStyle(.plain)
-                .sheet(item: $selectedDeal) { deal in
-                    DealScreen(deal: deal, stageName: stageName)
+            .refreshable {
+                PipelineApiService.getDeals(pipelineId: pipelineId) { result in
+                    switch result {
+                    case let .success(updatedDeals):
+                        deals = updatedDeals
+                    case let .failure(error):
+                        print("Error fetching deals: \(error)")
+                    }
                 }
+            }
         }
     }
 }

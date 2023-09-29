@@ -68,9 +68,9 @@ class PipelineScreenModel: ObservableObject {
     }
     
     func loadContacts() {
-//        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
         
-        ContactApiService.getContacts(accountId: "testuserid") { [weak self] result in
+        ContactApiService.getContacts(accountId: accountId) { [weak self] result in
             guard let self else { return }
             
             switch result {
