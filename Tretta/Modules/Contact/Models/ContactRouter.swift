@@ -17,7 +17,8 @@ struct ContactRouter {
         case .contact(.main):
             ContactScreen(route: $route, model: model)
         case .contact(let .detail(contact)):
-            ContactDetailScreen(contact: contact)
+            let detailModel = ContactDetailScreenModel(contact: contact)
+            ContactDetailScreen(model: detailModel)
         default:
             ContactScreen(route: $route, model: model)
         }

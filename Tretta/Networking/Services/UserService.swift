@@ -9,6 +9,7 @@ import Alamofire
 import Foundation
 
 typealias CreateUserCompletionHandler = (Result<User, AFError>) -> Void
+typealias GetUserByEmailCompletionHandler = (Result<User, AFError>) -> Void
 
 class UserService {
     
@@ -27,6 +28,13 @@ class UserService {
 //            .responseString { response in
 //                debugPrint("CREATE USER Response: \(response)")
 //            }
+    }
+    
+    static func getUserByEmail(email: String, completion: @escaping GetUserByEmailCompletionHandler) {
+        AF.request(UserRouter.getUserByEmail(email))
+            .responseDecodable(of: User.self, decoder: decoder) { response in
+                completion(response.result)
+            }
     }
     
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct ContactDetailScreen: View {
     @Environment(\.dismiss) private var dismiss
     
-    let contact: Contact
+    @StateObject var model: ContactDetailScreenModel
     
     var body: some View {
         NavigationStack {
@@ -23,22 +23,22 @@ struct ContactDetailScreen: View {
                             .clipShape(Circle())
                             .frame(width: 140, height: 140)
                             .overlay(Circle().stroke(.black.opacity(0.2), lineWidth: 4))
-                        Text("\(contact.initials)")
+                        Text("\(model.contact.initials)")
                             .font(.system(size: 50, weight: .bold))
                     }
-                    Text("\(contact.firstName) \(contact.lastName)")
+                    Text("\(model.contact.firstName) \(model.contact.lastName)")
                         .font(.system(size: 32, weight: .semibold))
                         .padding(.top, 16)
                     HStack(spacing: 16) {
-                        ContactDetailActionButton(actionType: .message(isEnabled: contact.phone != nil))
-                        ContactDetailActionButton(actionType: .call(isEnabled: contact.phone != nil))
-                        ContactDetailActionButton(actionType: .mail(isEnabled: contact.email != nil))
+                        ContactDetailActionButton(actionType: .message(isEnabled: model.contact.phone != nil))
+                        ContactDetailActionButton(actionType: .call(isEnabled: model.contact.phone != nil))
+                        ContactDetailActionButton(actionType: .mail(isEnabled: model.contact.email != nil))
                     }
                     .padding(.top, 4)
-                    ContactDetailSubSection(sectionType: .phone(contact.phone))
+                    ContactDetailSubSection(sectionType: .phone(model.contact.phone))
                         .padding(.top, 16)
                         .padding(.horizontal, 16)
-                    if let email = contact.email {
+                    if let email = model.contact.email {
                         ContactDetailSubSection(sectionType: .email(email))
                             .padding(.top, 16)
                             .padding(.horizontal, 16)
@@ -46,9 +46,10 @@ struct ContactDetailScreen: View {
 //                    ContactDetailNoteSection()
 //                        .padding(.top, 16)
 //                        .padding(.horizontal, 16)
-                    ContactDetailSummarySection(note: "")
-                        .padding(.top, 16)
-                        .padding(.horizontal, 16)
+//                    ContactDetailSummarySection(note: "")
+//                        .padding(.top, 16)
+//                        .padding(.horizontal, 16)
+                    FileList()
                     Spacer()
                 }
                 .frame(maxWidth: .infinity)
@@ -65,19 +66,32 @@ struct ContactDetailScreen: View {
                             .foregroundColor(.trettaGold)
                     }
                 }
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button {
-//                        withAnimation {
-//                            print("Edit tapped")
-//                        }
-//                    } label: {
-//                        Text("Edit")
-//                            .foregroundColor(.trettaGold)
-//                    }
-//                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        model.showDocumentScanner.toggle()
+                    } label: {
+                        Image(systemName: "doc.viewfinder")
+                            .foregroundColor(.trettaGold)
+                    }
+                }
             }
             .background(Color.backgroundBlue)
             .toolbarBackground(.hidden, for: .navigationBar)
+            .fullScreenCover(isPresented: $model.showDocumentScanner) {
+                DocumentScanner { result in
+                    switch result {
+                    case let .success(pages):
+                        print("Scanned pages: \(pages)")
+                    case let .failure(error):
+                        print("Error scanning documents: \(error)")
+                    }
+                    
+                    model.showDocumentScanner.toggle()
+                } didCancelScanning: {
+                    model.showDocumentScanner.toggle()
+                }
+
+            }
         }
     }
 }

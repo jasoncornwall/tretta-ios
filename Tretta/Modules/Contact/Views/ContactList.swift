@@ -22,9 +22,10 @@ struct ContactList: View {
                     }
             }
         }.listStyle(.plain)
-        .sheet(item: $selectedContact) { contact in
-            ContactDetailScreen(contact: contact)
-        }
+        .fullScreenCover(item: $selectedContact, content: { contact in
+            let model = ContactDetailScreenModel(contact: contact)
+            ContactDetailScreen(model: model)
+        })
         .refreshable {
             let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
             

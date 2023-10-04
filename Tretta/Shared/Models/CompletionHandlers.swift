@@ -9,5 +9,6 @@ import Alamofire
 import Foundation
 
 typealias EmptyCompletionHandler = () -> ()
+typealias StringCompletionHandler = (String?) -> ()
 typealias ErrorCompletionHandler = (AFError?) -> ()
 

@@ -97,6 +97,11 @@
 		924A3F632AC63AB600F5B7D8 /* CreateContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F622AC63AB600F5B7D8 /* CreateContactScreen.swift */; };
 		924A3F652AC63FB400F5B7D8 /* CreateContactScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F642AC63FB400F5B7D8 /* CreateContactScreenModel.swift */; };
 		924A3F672AC6471500F5B7D8 /* ContactSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F662AC6471500F5B7D8 /* ContactSheet.swift */; };
+		924A3F692ACBA87D00F5B7D8 /* FileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F682ACBA87D00F5B7D8 /* FileList.swift */; };
+		924A3F6B2ACBAACD00F5B7D8 /* FileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F6A2ACBAACD00F5B7D8 /* FileRow.swift */; };
+		924A3F6D2ACC974100F5B7D8 /* DocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F6C2ACC974100F5B7D8 /* DocumentScanner.swift */; };
+		924A3F6F2ACCA15600F5B7D8 /* ContactDetailScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F6E2ACCA15600F5B7D8 /* ContactDetailScreenModel.swift */; };
+		924A3F722ACCF3F700F5B7D8 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 924A3F712ACCF3F700F5B7D8 /* JWTDecode */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -226,6 +231,10 @@
 		924A3F622AC63AB600F5B7D8 /* CreateContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContactScreen.swift; sourceTree = "<group>"; };
 		924A3F642AC63FB400F5B7D8 /* CreateContactScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContactScreenModel.swift; sourceTree = "<group>"; };
 		924A3F662AC6471500F5B7D8 /* ContactSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSheet.swift; sourceTree = "<group>"; };
+		924A3F682ACBA87D00F5B7D8 /* FileList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileList.swift; sourceTree = "<group>"; };
+		924A3F6A2ACBAACD00F5B7D8 /* FileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRow.swift; sourceTree = "<group>"; };
+		924A3F6C2ACC974100F5B7D8 /* DocumentScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScanner.swift; sourceTree = "<group>"; };
+		924A3F6E2ACCA15600F5B7D8 /* ContactDetailScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailScreenModel.swift; sourceTree = "<group>"; };
 		926806912A2D0DCC00B604CF /* DealNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNoteList.swift; sourceTree = "<group>"; };
 		926806932A2D0EEC00B604CF /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		926806992A33AE0F00B604CF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -256,6 +265,7 @@
 				921BF3BB2A44CC1200AC5909 /* Lottie in Frameworks */,
 				924A3F4F2AB8282100F5B7D8 /* ElegantCalendar in Frameworks */,
 				924A3F1E2A56103F00F5B7D8 /* Alamofire in Frameworks */,
+				924A3F722ACCF3F700F5B7D8 /* JWTDecode in Frameworks */,
 				924A3F322A67743000F5B7D8 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,7 +423,6 @@
 			children = (
 				921BF3BE2A44D11300AC5909 /* Animations */,
 				9239B7AF29E3AC8A00BBECE0 /* Route.swift */,
-				924A3F4B2AB812EF00F5B7D8 /* CalendarManager.swift */,
 				9239B7BC29E4AD4300BBECE0 /* User.swift */,
 				9239B7BE29E4AE6A00BBECE0 /* Organization.swift */,
 				9239B7CA29E755FD00BBECE0 /* NavigationState.swift */,
@@ -442,6 +451,7 @@
 		9239B7B929E4AC7C00BBECE0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				924A3F4B2AB812EF00F5B7D8 /* CalendarManager.swift */,
 				9239B7B729E4AB3500BBECE0 /* CustomStringConvertible.swift */,
 				9239B7BA29E4AC8F00BBECE0 /* SnakeCaseJSONDecoder.swift */,
 				9239B7C029E4B2A400BBECE0 /* HexColorExtension.swift */,
@@ -528,6 +538,9 @@
 				92E0011529FCCE9000603EAB /* ContactDetailSubSection.swift */,
 				92E0011729FCDAE800603EAB /* ContactDetailNoteSection.swift */,
 				92E0011929FCE02800603EAB /* ContactDetailSummarySection.swift */,
+				924A3F682ACBA87D00F5B7D8 /* FileList.swift */,
+				924A3F6A2ACBAACD00F5B7D8 /* FileRow.swift */,
+				924A3F6C2ACC974100F5B7D8 /* DocumentScanner.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -542,6 +555,7 @@
 				924A3F352A71B60A00F5B7D8 /* ContactScreenModel.swift */,
 				924A3F642AC63FB400F5B7D8 /* CreateContactScreenModel.swift */,
 				924A3F662AC6471500F5B7D8 /* ContactSheet.swift */,
+				924A3F6E2ACCA15600F5B7D8 /* ContactDetailScreenModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -725,6 +739,7 @@
 				924A3F1D2A56103F00F5B7D8 /* Alamofire */,
 				924A3F312A67743000F5B7D8 /* KeychainAccess */,
 				924A3F4E2AB8282100F5B7D8 /* ElegantCalendar */,
+				924A3F712ACCF3F700F5B7D8 /* JWTDecode */,
 			);
 			productName = Tretta;
 			productReference = 9239B77929E3656600BBECE0 /* Tretta.app */;
@@ -803,6 +818,7 @@
 				924A3F1C2A56103F00F5B7D8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				924A3F302A67743000F5B7D8 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				924A3F4D2AB8282100F5B7D8 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
+				924A3F702ACCF3F700F5B7D8 /* XCRemoteSwiftPackageReference "JWTDecode" */,
 			);
 			productRefGroup = 9239B77A29E3656600BBECE0 /* Products */;
 			projectDirPath = "";
@@ -853,6 +869,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9239B7D129E9B75F00BBECE0 /* SignUpNameScreen.swift in Sources */,
+				924A3F6F2ACCA15600F5B7D8 /* ContactDetailScreenModel.swift in Sources */,
 				92E001242A0359BF00603EAB /* DealSectionList.swift in Sources */,
 				9239B7CF29E9B5D600BBECE0 /* AddCompanyScreen.swift in Sources */,
 				9239B7B429E3B1BC00BBECE0 /* AppContainerView.swift in Sources */,
@@ -906,6 +923,7 @@
 				9239B7BD29E4AD4300BBECE0 /* User.swift in Sources */,
 				924A3F382A80A7EF00F5B7D8 /* ContactApiRouter.swift in Sources */,
 				9241FF4929EE319B00F37CCA /* ChartDataContainer.swift in Sources */,
+				924A3F6B2ACBAACD00F5B7D8 /* FileRow.swift in Sources */,
 				924A3F5B2ABCA08700F5B7D8 /* CreatePipelineScreen.swift in Sources */,
 				9239B7C729E66AE400BBECE0 /* PillButton.swift in Sources */,
 				924A3F282A5B486B00F5B7D8 /* AuthRouter.swift in Sources */,
@@ -918,9 +936,11 @@
 				9241FF5D29F04A7500F37CCA /* HomeRouter.swift in Sources */,
 				9241FF6E29FB545000F37CCA /* ContactDetailActionButton.swift in Sources */,
 				9239B7C329E5114300BBECE0 /* FloatingTextField.swift in Sources */,
+				924A3F6D2ACC974100F5B7D8 /* DocumentScanner.swift in Sources */,
 				92E001282A04050E00603EAB /* Stage.swift in Sources */,
 				9239B7CD29E9A4A400BBECE0 /* ResetPasswordScreen.swift in Sources */,
 				92E001302A0EB82700603EAB /* PipelineScreenModel.swift in Sources */,
+				924A3F692ACBA87D00F5B7D8 /* FileList.swift in Sources */,
 				9241FF5F29F04D8300F37CCA /* ContactHeader.swift in Sources */,
 				921BF3B82A43A8E500AC5909 /* EmptyStateType.swift in Sources */,
 				924A3F262A565DD800F5B7D8 /* UserService.swift in Sources */,
@@ -1109,6 +1129,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We use this to sync your calendar events.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We use this to support document scanning.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "We use this to sync your contact data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1140,6 +1161,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We use this to sync your calendar events.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We use this to support document scanning.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "We use this to sync your contact data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1309,6 +1331,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		924A3F702ACCF3F700F5B7D8 /* XCRemoteSwiftPackageReference "JWTDecode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1331,6 +1361,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 924A3F4D2AB8282100F5B7D8 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
 			productName = ElegantCalendar;
+		};
+		924A3F712ACCF3F700F5B7D8 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 924A3F702ACCF3F700F5B7D8 /* XCRemoteSwiftPackageReference "JWTDecode" */;
+			productName = JWTDecode;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

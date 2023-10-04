@@ -5,6 +5,7 @@
 //  Created by Jason C on 4/9/23.
 //
 
+import JWTDecode
 import SwiftUI
 
 struct SignInScreen: View {
@@ -37,25 +38,17 @@ struct SignInScreen: View {
                 Spacer()
                     .frame(height: 48)
                 Button("SIGN IN") {
-                    AuthService.login(email: emailText, password: passwordText) { result in
-                        switch result {
-                        case let .success(response):
-                            print("LOGIN RESPONSE: \(response)")
-                            KeyStorage.shared.set(response.accessToken, forKey: Constants.accessToken)
-                            route = .rootMain(0)
-                        case let .failure(error):
-                            print("Login Error: \(error)")
-                        }
-                    }
+                    // Fetch jwt -> save the jwt -> parse the email within -> fetch/persist the userId -> then sign in.
+                    getAccessToken()
                 }
                 .buttonStyle(PillButton())
-                Button("Forgot password?") {
-                    print("Forgot Pswd tapped.")
-                    withAnimation {
-                        route = .onboarding(.resetPassword)
-                    }
-                }
-                .buttonStyle(ClearButton())
+//                Button("Forgot password?") {
+//                    print("Forgot Pswd tapped.")
+//                    withAnimation {
+//                        route = .onboarding(.resetPassword)
+//                    }
+//                }
+//                .buttonStyle(ClearButton())
             }
             Spacer()
             Button("New here? Register instead.") {
@@ -68,7 +61,6 @@ struct SignInScreen: View {
                 UserService.createUser(user: user) { result in
                     switch result {
                     case let .success(user):
-                        print("Created User: \(user)")
                         KeyStorage.shared.set(user._id, forKey: Constants.accountIdKey)
                     case let .failure(error):
                         print("Create User Error: \(error)")
@@ -82,6 +74,40 @@ struct SignInScreen: View {
             .padding(.bottom, 16)
         }
         .background(Color.backgroundBlue)
+    }
+    
+    private func getAccessToken() {
+        AuthService.login(email: emailText, password: passwordText) { result in
+            switch result {
+            case let .success(response):
+                KeyStorage.shared.set(response.accessToken, forKey: Constants.accessToken)
+                signInWithEmail(emailText)
+            case let .failure(error):
+                print("Login Error: \(error)")
+            }
+        }
+    }
+    
+//    private func getUserEmailFromJwt(token: String, completion: @escaping StringCompletionHandler) {
+//        do {
+//            let jwt = try decode(jwt: token)
+//            print("Token: \(token), jwt: \(jwt), subject: \(jwt.subject)")
+//            completion(jwt.subject)
+//        } catch {
+//            print("Error decoding jwt: \(error)")
+//        }
+//    }
+    
+    private func signInWithEmail(_ email: String) {
+        UserService.getUserByEmail(email: email) { result in
+            switch result {
+            case let .success(user):
+                KeyStorage.shared.set(user._id, forKey: Constants.accountIdKey)
+                route = .rootMain(0)
+            case let .failure(error):
+                print("Error fetching user by email: \(error)")
+            }
+        }
     }
 }
 

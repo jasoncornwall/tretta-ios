@@ -58,6 +58,11 @@ struct ContactScreen: View {
             }
         }
     }
+    
+//    func checkAccessTokenAvailaility() {
+//        let token = KeyStorage.shared.getStringValue(forKey: Constants.accessToken)
+//        print("Current Stored Access Token: \(token)")
+//    }
 }
 
 //struct ContactScreen_Previews: PreviewProvider {

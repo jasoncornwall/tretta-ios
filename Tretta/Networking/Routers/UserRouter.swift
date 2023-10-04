@@ -10,9 +10,12 @@ import Foundation
 
 enum UserRouter: URLRequestConvertible {
     case createUser(user: CreateUserDTO)
+    case getUserByEmail(String)
     
     var method: HTTPMethod {
         switch self {
+        case .getUserByEmail:
+            return .get
         case .createUser:
             return .post
         }
@@ -20,6 +23,8 @@ enum UserRouter: URLRequestConvertible {
     
     var path: String {
         switch self {
+        case let .getUserByEmail(email):
+            return "users/email/\(email)"
         case .createUser:
             return "users"
         }
@@ -31,6 +36,8 @@ enum UserRouter: URLRequestConvertible {
         request.method = method
         
         switch self {
+        case .getUserByEmail:
+            break
         case let .createUser(user):
             let params = [
                 "email": user.email,
@@ -45,7 +52,10 @@ enum UserRouter: URLRequestConvertible {
             }
         }
         
+        let accessToken = KeyStorage.shared.getStringValue(forKey: Constants.accessToken) ?? ""
+        
         request.headers.add(.contentType(Constants.jsonContentType))
+        request.headers.add(.authorization(bearerToken: accessToken))
                 
         return request
     }

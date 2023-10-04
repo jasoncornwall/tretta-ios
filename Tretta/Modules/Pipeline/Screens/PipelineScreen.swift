@@ -76,8 +76,9 @@ struct PipelineScreen: View {
         .task {
             model.loadPipelines { error in
                 if let error, let statusCode = error.responseCode, statusCode == 500 || statusCode == 401 {
-                    // Logout and clear access token for 401/500 response codes
-                    KeyStorage.shared.set("", forKey: Constants.accessToken)
+                    // Logout and clear access token/accountId for 401/500 response codes
+                    KeyStorage.shared.clearValue(forKey: Constants.accessToken)
+                    KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
                     route = .onboarding(.signIn)
                 } else {
                     model.loadStages(pipelineId: model.currentPipelineSelection._id) {
