@@ -18,10 +18,11 @@ struct DocumentScanner: UIViewControllerRepresentable {
         }
         
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
-            var scannedPages: [UIImage] = []
+            var scannedPages: [ScannedPage] = []
             
             for i in 0..<scan.pageCount {
-                scannedPages.append(scan.imageOfPage(at: i))
+                let scannedPage = ScannedPage(title: UUID().uuidString, image: scan.imageOfPage(at: i))
+                scannedPages.append(scannedPage)
             }
             
             scanner.didFinishScanning(.success(scannedPages))
@@ -36,7 +37,7 @@ struct DocumentScanner: UIViewControllerRepresentable {
         }
     }
     
-    var didFinishScanning: ((_ result: Result<[UIImage], Error>) -> Void)
+    var didFinishScanning: ((_ result: Result<[ScannedPage], Error>) -> Void)
     var didCancelScanning: () -> Void
     
     func makeUIViewController(context: Context) -> VNDocumentCameraViewController {

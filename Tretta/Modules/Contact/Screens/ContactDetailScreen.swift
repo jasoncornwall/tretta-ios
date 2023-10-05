@@ -30,8 +30,8 @@ struct ContactDetailScreen: View {
                         .font(.system(size: 32, weight: .semibold))
                         .padding(.top, 16)
                     HStack(spacing: 16) {
-                        ContactDetailActionButton(actionType: .message(isEnabled: model.contact.phone != nil))
-                        ContactDetailActionButton(actionType: .call(isEnabled: model.contact.phone != nil))
+                        ContactDetailActionButton(actionType: .message(isEnabled: true))
+                        ContactDetailActionButton(actionType: .call(isEnabled: true))
                         ContactDetailActionButton(actionType: .mail(isEnabled: model.contact.email != nil))
                     }
                     .padding(.top, 4)
@@ -49,7 +49,7 @@ struct ContactDetailScreen: View {
 //                    ContactDetailSummarySection(note: "")
 //                        .padding(.top, 16)
 //                        .padding(.horizontal, 16)
-                    FileList()
+                    FileList(files: $model.files)
                     Spacer()
                 }
                 .frame(maxWidth: .infinity)
@@ -81,7 +81,7 @@ struct ContactDetailScreen: View {
                 DocumentScanner { result in
                     switch result {
                     case let .success(pages):
-                        print("Scanned pages: \(pages)")
+                        model.saveScannedPages(pages)
                     case let .failure(error):
                         print("Error scanning documents: \(error)")
                     }
@@ -92,6 +92,9 @@ struct ContactDetailScreen: View {
                 }
 
             }
+        }
+        .task {
+            model.fetchLocalFiles()
         }
     }
 }

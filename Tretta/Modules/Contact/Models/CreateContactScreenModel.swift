@@ -26,8 +26,7 @@ class CreateContactScreenModel: ObservableObject {
                 return
             }
             
-            let contact = Contact(
-                _id: "",
+            let contact = CreateContactDTO(
                 firstName: firstName,
                 lastName: lastName,
                 email: email,
@@ -40,7 +39,7 @@ class CreateContactScreenModel: ObservableObject {
                 zipcode: zipCode,
                 userId: accountId
             )
-            
+                        
             ContactApiService.createContact(contact: contact, completion: completion)
     }
     

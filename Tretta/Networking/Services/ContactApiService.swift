@@ -21,13 +21,15 @@ class ContactApiService {
     
     static func getContacts(accountId: String, completion: @escaping GetContactsCompletionHandler) {
         AF.request(ContactApiRouter.getContacts(accountId: accountId))
+            .validate(statusCode: 200..<300)
             .responseDecodable(of: [Contact].self, decoder: decoder) { response in
                 completion(response.result)
             }
     }
     
-    static func createContact(contact: Contact, completion: @escaping CreateContactCompletionHandler) {
+    static func createContact(contact: CreateContactDTO, completion: @escaping CreateContactCompletionHandler) {
         AF.request(ContactApiRouter.createContact(contact: contact))
+            .validate(statusCode: 200..<300)
             .responseDecodable(of: Contact.self, decoder: decoder) { response in
                 completion(response.result)
             }

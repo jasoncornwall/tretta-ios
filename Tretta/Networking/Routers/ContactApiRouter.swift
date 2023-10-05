@@ -10,7 +10,7 @@ import Foundation
 
 enum ContactApiRouter: URLRequestConvertible {
     case getContacts(accountId: String)
-    case createContact(contact: Contact)
+    case createContact(contact: CreateContactDTO)
     
     var method: HTTPMethod {
         switch self {

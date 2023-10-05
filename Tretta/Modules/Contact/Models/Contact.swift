@@ -32,3 +32,17 @@ extension Contact {
 extension Contact: Identifiable {
     var id: String? { _id }
 }
+
+struct CreateContactDTO: Encodable {
+    let firstName: String
+    let lastName: String
+    var email: String? = nil
+    var website: String? = nil
+    let phone: String
+    var addressLine1: String? = nil
+    var addressLine2: String? = nil
+    var city: String? = nil
+    var state: String? = nil
+    var zipcode: String? = nil
+    let userId: String
+}

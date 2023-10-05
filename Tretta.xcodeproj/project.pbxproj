@@ -46,6 +46,8 @@
 		9239B7DF29EB55DC00BBECE0 /* DashboardProgressSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7DE29EB55DC00BBECE0 /* DashboardProgressSection.swift */; };
 		9239B7E129EB591100BBECE0 /* DashboardMetricsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7E029EB591100BBECE0 /* DashboardMetricsSection.swift */; };
 		9239B7E329EBEC9E00BBECE0 /* RecentDealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7E229EBEC9E00BBECE0 /* RecentDealCard.swift */; };
+		9239F4CF2ACE2E77002D7D66 /* ScannedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4CE2ACE2E77002D7D66 /* ScannedPage.swift */; };
+		9239F4D12ACE458C002D7D66 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4D02ACE458C002D7D66 /* PhotoDetailView.swift */; };
 		9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */; };
 		9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4429EE1E6100F37CCA /* ContactCircle.swift */; };
 		9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4629EE238E00F37CCA /* DropdownMenu.swift */; };
@@ -102,6 +104,7 @@
 		924A3F6D2ACC974100F5B7D8 /* DocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F6C2ACC974100F5B7D8 /* DocumentScanner.swift */; };
 		924A3F6F2ACCA15600F5B7D8 /* ContactDetailScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924A3F6E2ACCA15600F5B7D8 /* ContactDetailScreenModel.swift */; };
 		924A3F722ACCF3F700F5B7D8 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 924A3F712ACCF3F700F5B7D8 /* JWTDecode */; };
+		924A3F752ACD0A0500F5B7D8 /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = 924A3F742ACD0A0500F5B7D8 /* Files */; };
 		926806922A2D0DCC00B604CF /* DealNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806912A2D0DCC00B604CF /* DealNoteList.swift */; };
 		926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806932A2D0EEC00B604CF /* NoteRow.swift */; };
 		9268069A2A33AE0F00B604CF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926806992A33AE0F00B604CF /* SettingsScreen.swift */; };
@@ -183,6 +186,8 @@
 		9239B7DE29EB55DC00BBECE0 /* DashboardProgressSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProgressSection.swift; sourceTree = "<group>"; };
 		9239B7E029EB591100BBECE0 /* DashboardMetricsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMetricsSection.swift; sourceTree = "<group>"; };
 		9239B7E229EBEC9E00BBECE0 /* RecentDealCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentDealCard.swift; sourceTree = "<group>"; };
+		9239F4CE2ACE2E77002D7D66 /* ScannedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedPage.swift; sourceTree = "<group>"; };
+		9239F4D02ACE458C002D7D66 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 		9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentContactCard.swift; sourceTree = "<group>"; };
 		9241FF4429EE1E6100F37CCA /* ContactCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCircle.swift; sourceTree = "<group>"; };
 		9241FF4629EE238E00F37CCA /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
@@ -262,6 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				924A3F752ACD0A0500F5B7D8 /* Files in Frameworks */,
 				921BF3BB2A44CC1200AC5909 /* Lottie in Frameworks */,
 				924A3F4F2AB8282100F5B7D8 /* ElegantCalendar in Frameworks */,
 				924A3F1E2A56103F00F5B7D8 /* Alamofire in Frameworks */,
@@ -444,6 +450,7 @@
 				9241FF6629F0D0CD00F37CCA /* RootMainView.swift */,
 				921BF3B52A436ECF00AC5909 /* EmptyStateView.swift */,
 				921BF3BC2A44CF9300AC5909 /* LottieView.swift */,
+				9239F4D02ACE458C002D7D66 /* PhotoDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -556,6 +563,7 @@
 				924A3F642AC63FB400F5B7D8 /* CreateContactScreenModel.swift */,
 				924A3F662AC6471500F5B7D8 /* ContactSheet.swift */,
 				924A3F6E2ACCA15600F5B7D8 /* ContactDetailScreenModel.swift */,
+				9239F4CE2ACE2E77002D7D66 /* ScannedPage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -740,6 +748,7 @@
 				924A3F312A67743000F5B7D8 /* KeychainAccess */,
 				924A3F4E2AB8282100F5B7D8 /* ElegantCalendar */,
 				924A3F712ACCF3F700F5B7D8 /* JWTDecode */,
+				924A3F742ACD0A0500F5B7D8 /* Files */,
 			);
 			productName = Tretta;
 			productReference = 9239B77929E3656600BBECE0 /* Tretta.app */;
@@ -819,6 +828,7 @@
 				924A3F302A67743000F5B7D8 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				924A3F4D2AB8282100F5B7D8 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
 				924A3F702ACCF3F700F5B7D8 /* XCRemoteSwiftPackageReference "JWTDecode" */,
+				924A3F732ACD0A0500F5B7D8 /* XCRemoteSwiftPackageReference "Files" */,
 			);
 			productRefGroup = 9239B77A29E3656600BBECE0 /* Products */;
 			projectDirPath = "";
@@ -897,6 +907,7 @@
 				9241FF5B29F0496200F37CCA /* ContactRouter.swift in Sources */,
 				924A3F2F2A6773F700F5B7D8 /* KeyStorage.swift in Sources */,
 				9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */,
+				9239F4D12ACE458C002D7D66 /* PhotoDetailView.swift in Sources */,
 				9241FF4D29EF6DF000F37CCA /* RecentDealsSection.swift in Sources */,
 				92E0011A29FCE02800603EAB /* ContactDetailSummarySection.swift in Sources */,
 				92E001222A01F1BE00603EAB /* DealSectionHeader.swift in Sources */,
@@ -949,6 +960,7 @@
 				921BF3BD2A44CF9300AC5909 /* LottieView.swift in Sources */,
 				92E001322A10234000603EAB /* BindingOnChangeExtension.swift in Sources */,
 				9239B7C529E667B400BBECE0 /* Colors.swift in Sources */,
+				9239F4CF2ACE2E77002D7D66 /* ScannedPage.swift in Sources */,
 				924A3F2A2A5B4A7C00F5B7D8 /* AuthService.swift in Sources */,
 				924A3F572ABA12A000F5B7D8 /* DateExtension.swift in Sources */,
 				9239B7C129E4B2A400BBECE0 /* HexColorExtension.swift in Sources */,
@@ -1339,6 +1351,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		924A3F732ACD0A0500F5B7D8 /* XCRemoteSwiftPackageReference "Files" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnSundell/Files";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1366,6 +1386,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 924A3F702ACCF3F700F5B7D8 /* XCRemoteSwiftPackageReference "JWTDecode" */;
 			productName = JWTDecode;
+		};
+		924A3F742ACD0A0500F5B7D8 /* Files */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 924A3F732ACD0A0500F5B7D8 /* XCRemoteSwiftPackageReference "Files" */;
+			productName = Files;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
