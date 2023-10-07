@@ -38,14 +38,18 @@ struct ContactDetailActionButton: View {
         .background(Color.homeBodySectionBlue)
         .cornerRadius(8)
         .onTapGesture {
-            isTapped.toggle()
+            if case .call = actionType,
+                let url = URL(string: "tel://\(contact.phone)"),
+                UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                isTapped.toggle()
+            }
         }
         .sheet(isPresented: $isTapped) {
             switch actionType {
-            case .message:
+            case .message, .call:
                 MessageView(contactNumber: contact.phone)
-            case .call:
-                Text("Call")
             case .mail:
                 MailView(contactEmail: contact.email ?? "")
             }
