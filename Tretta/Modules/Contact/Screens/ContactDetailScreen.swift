@@ -30,9 +30,9 @@ struct ContactDetailScreen: View {
                         .font(.system(size: 32, weight: .semibold))
                         .padding(.top, 16)
                     HStack(spacing: 16) {
-                        ContactDetailActionButton(actionType: .message(isEnabled: true))
-                        ContactDetailActionButton(actionType: .call(isEnabled: true))
-                        ContactDetailActionButton(actionType: .mail(isEnabled: model.contact.email != nil))
+                        ContactDetailActionButton(contact: model.contact, actionType: .message(isEnabled: true))
+                        ContactDetailActionButton(contact: model.contact, actionType: .call(isEnabled: true))
+                        ContactDetailActionButton(contact: model.contact, actionType: .mail(isEnabled: model.contact.email != nil && model.canSendMail))
                     }
                     .padding(.top, 4)
                     ContactDetailSubSection(sectionType: .phone(model.contact.phone))

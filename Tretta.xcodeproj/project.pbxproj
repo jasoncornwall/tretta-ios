@@ -48,6 +48,7 @@
 		9239B7E329EBEC9E00BBECE0 /* RecentDealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B7E229EBEC9E00BBECE0 /* RecentDealCard.swift */; };
 		9239F4CF2ACE2E77002D7D66 /* ScannedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4CE2ACE2E77002D7D66 /* ScannedPage.swift */; };
 		9239F4D12ACE458C002D7D66 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4D02ACE458C002D7D66 /* PhotoDetailView.swift */; };
+		9239F4D32AD1B870002D7D66 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4D22AD1B870002D7D66 /* MailView.swift */; };
 		9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */; };
 		9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4429EE1E6100F37CCA /* ContactCircle.swift */; };
 		9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4629EE238E00F37CCA /* DropdownMenu.swift */; };
@@ -188,6 +189,7 @@
 		9239B7E229EBEC9E00BBECE0 /* RecentDealCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentDealCard.swift; sourceTree = "<group>"; };
 		9239F4CE2ACE2E77002D7D66 /* ScannedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedPage.swift; sourceTree = "<group>"; };
 		9239F4D02ACE458C002D7D66 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		9239F4D22AD1B870002D7D66 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentContactCard.swift; sourceTree = "<group>"; };
 		9241FF4429EE1E6100F37CCA /* ContactCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCircle.swift; sourceTree = "<group>"; };
 		9241FF4629EE238E00F37CCA /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 				924A3F682ACBA87D00F5B7D8 /* FileList.swift */,
 				924A3F6A2ACBAACD00F5B7D8 /* FileRow.swift */,
 				924A3F6C2ACC974100F5B7D8 /* DocumentScanner.swift */,
+				9239F4D22AD1B870002D7D66 /* MailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -969,6 +972,7 @@
 				9241FF6C29FB4F1300F37CCA /* ContactDetailScreen.swift in Sources */,
 				9239B7BF29E4AE6A00BBECE0 /* Organization.swift in Sources */,
 				924A3F3E2AB2BE7A00F5B7D8 /* PipelineApiService.swift in Sources */,
+				9239F4D32AD1B870002D7D66 /* MailView.swift in Sources */,
 				924A3F222A56470E00F5B7D8 /* UserRouter.swift in Sources */,
 				924A3F552AB93B9E00F5B7D8 /* EventListView.swift in Sources */,
 				924A3F612AC3D4EA00F5B7D8 /* CreateDealScreenModel.swift in Sources */,
@@ -1146,8 +1150,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1178,8 +1182,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

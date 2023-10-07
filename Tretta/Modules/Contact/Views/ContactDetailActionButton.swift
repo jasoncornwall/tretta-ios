@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContactDetailActionButton: View {
+    let contact: Contact
     let actionType: ContactDetailAction
     @State private var isTapped: Bool = false
     
@@ -37,7 +38,17 @@ struct ContactDetailActionButton: View {
         .background(Color.homeBodySectionBlue)
         .cornerRadius(8)
         .onTapGesture {
-            print("Action type tapped: \(actionType)")
+            isTapped.toggle()
+        }
+        .sheet(isPresented: $isTapped) {
+            switch actionType {
+            case .message:
+                Text("Message")
+            case .call:
+                Text("Call")
+            case .mail:
+                MailView(contactEmail: contact.email ?? "")
+            }
         }
     }
 }

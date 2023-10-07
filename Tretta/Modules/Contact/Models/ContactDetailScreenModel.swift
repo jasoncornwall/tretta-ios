@@ -6,6 +6,7 @@
 //
 
 import Files
+import MessageUI
 import SwiftUI
 
 class ContactDetailScreenModel: ObservableObject {
@@ -13,6 +14,10 @@ class ContactDetailScreenModel: ObservableObject {
     @Published var contact: Contact
     @Published var showDocumentScanner: Bool
     @Published var files: [File] = []
+    
+    var canSendMail: Bool {
+        MFMailComposeViewController.canSendMail()
+    }
     
     init(contact: Contact) {
         self.contact = contact

@@ -56,7 +56,7 @@ class ContactApiService {
                 
                 var contacts: [Contact] = []
                 
-                DispatchQueue.main.async {
+                DispatchQueue.global(qos: .background).async {
                     do {
                         try store.enumerateContacts(with: request, usingBlock: { contact, stopPointer in
                             let localContact = Contact(localContact: contact)
@@ -65,9 +65,13 @@ class ContactApiService {
                         
                         contacts.sort { $0.firstName < $1.firstName }
                         
-                        completion(.success(contacts))
+                        DispatchQueue.main.async {
+                            completion(.success(contacts))
+                        }
                     } catch {
-                        completion(.failure(error))
+                        DispatchQueue.main.async {
+                            completion(.failure(error))
+                        }
                     }
                 }
             } else {
