@@ -5,6 +5,7 @@
 //  Created by Jason C on 4/27/23.
 //
 
+import AlertToast
 import SwiftUI
 
 struct ContactDetailScreen: View {
@@ -38,10 +39,19 @@ struct ContactDetailScreen: View {
                     ContactDetailSubSection(sectionType: .phone(model.contact.phone))
                         .padding(.top, 16)
                         .padding(.horizontal, 16)
+                        .onTapGesture {
+                            UIPasteboard.general.string = model.contact.phone
+                            model.showToast.toggle()
+                            
+                        }
                     if let email = model.contact.email {
                         ContactDetailSubSection(sectionType: .email(email))
                             .padding(.top, 16)
                             .padding(.horizontal, 16)
+                            .onTapGesture {
+                                UIPasteboard.general.string = model.contact.email
+                                model.showToast.toggle()
+                            }
                     }
 //                    ContactDetailNoteSection()
 //                        .padding(.top, 16)
@@ -95,6 +105,9 @@ struct ContactDetailScreen: View {
         }
         .task {
             model.fetchLocalFiles()
+        }
+        .toast(isPresenting: $model.showToast) {
+            AlertToast(displayMode: .hud, type: .regular, title: "Copied!")
         }
     }
 }

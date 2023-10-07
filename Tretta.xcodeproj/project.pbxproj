@@ -50,6 +50,7 @@
 		9239F4D12ACE458C002D7D66 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4D02ACE458C002D7D66 /* PhotoDetailView.swift */; };
 		9239F4D32AD1B870002D7D66 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4D22AD1B870002D7D66 /* MailView.swift */; };
 		9239F4D52AD1C690002D7D66 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4D42AD1C690002D7D66 /* MessageView.swift */; };
+		9239F4D82AD1D207002D7D66 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9239F4D72AD1D207002D7D66 /* AlertToast */; };
 		9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */; };
 		9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4429EE1E6100F37CCA /* ContactCircle.swift */; };
 		9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4629EE238E00F37CCA /* DropdownMenu.swift */; };
@@ -272,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				924A3F752ACD0A0500F5B7D8 /* Files in Frameworks */,
+				9239F4D82AD1D207002D7D66 /* AlertToast in Frameworks */,
 				921BF3BB2A44CC1200AC5909 /* Lottie in Frameworks */,
 				924A3F4F2AB8282100F5B7D8 /* ElegantCalendar in Frameworks */,
 				924A3F1E2A56103F00F5B7D8 /* Alamofire in Frameworks */,
@@ -755,6 +757,7 @@
 				924A3F4E2AB8282100F5B7D8 /* ElegantCalendar */,
 				924A3F712ACCF3F700F5B7D8 /* JWTDecode */,
 				924A3F742ACD0A0500F5B7D8 /* Files */,
+				9239F4D72AD1D207002D7D66 /* AlertToast */,
 			);
 			productName = Tretta;
 			productReference = 9239B77929E3656600BBECE0 /* Tretta.app */;
@@ -835,6 +838,7 @@
 				924A3F4D2AB8282100F5B7D8 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
 				924A3F702ACCF3F700F5B7D8 /* XCRemoteSwiftPackageReference "JWTDecode" */,
 				924A3F732ACD0A0500F5B7D8 /* XCRemoteSwiftPackageReference "Files" */,
+				9239F4D62AD1D207002D7D66 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = 9239B77A29E3656600BBECE0 /* Products */;
 			projectDirPath = "";
@@ -1327,6 +1331,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		9239F4D62AD1D207002D7D66 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		924A3F1C2A56103F00F5B7D8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1374,6 +1386,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 921BF3B92A44CC1200AC5909 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		9239F4D72AD1D207002D7D66 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9239F4D62AD1D207002D7D66 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
 		};
 		924A3F1D2A56103F00F5B7D8 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

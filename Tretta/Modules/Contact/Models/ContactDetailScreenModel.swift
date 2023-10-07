@@ -14,6 +14,7 @@ class ContactDetailScreenModel: ObservableObject {
     @Published var contact: Contact
     @Published var showDocumentScanner: Bool
     @Published var files: [File] = []
+    @Published var showToast = false
     
     var canSendMail: Bool {
         MFMailComposeViewController.canSendMail()
