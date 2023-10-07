@@ -45,11 +45,7 @@ struct ContactScreen: View {
         .tint(.trettaGold)
         .foregroundColor(.white)
         .task {
-            model.loadContacts { result in
-                if case let .failure(error) = result {
-                    print(error)
-                }
-            }
+            model.refreshContacts()
         }
         .sheet(item: $presentedSheet) { sheet in
             switch sheet {

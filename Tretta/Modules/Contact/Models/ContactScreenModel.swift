@@ -12,21 +12,35 @@ class ContactScreenModel: ObservableObject {
     @Published var searchText = ""
     @Published var contacts: [Contact] = []
     
-    func loadContacts(completion: @escaping GetContactsCompletionHandler) {
-        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+    func refreshContacts() {
+        var allContacts: [Contact] = []
         
-        ContactApiService.getContacts(accountId: accountId) { [weak self] result in
-            guard let self else { return }
-            
+        loadContacts { result in
             switch result {
-            case let .success(contacts):
-                self.contacts = contacts
-                completion(.success(contacts))
+            case let .success(remoteContacts):
+                allContacts.append(contentsOf: remoteContacts)
+                ContactApiService.importLocalContacts { importResult in
+                    switch importResult {
+                    case let .success(localContacts):
+                        allContacts.append(contentsOf: localContacts)
+                        
+                        allContacts.sort { $0.firstName < $1.firstName }
+                        self.contacts = allContacts
+                    case let .failure(error):
+                        allContacts.sort { $0.firstName < $1.firstName }
+                        self.contacts = allContacts
+                        print("Error fetching local contacts: \(error)")
+                    }
+                }
             case let .failure(error):
-                completion(.failure(error))
-                print("Error fetching contacts: \(error)")
+                print("Error loading remote contacts: \(error)")
             }
         }
+    }
+    
+    private func loadContacts(completion: @escaping GetContactsCompletionHandler) {
+        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+        ContactApiService.getContacts(accountId: accountId, completion: completion)
     }
         
 //    func getRandomMockContact(userId: String) -> Contact {

@@ -6,9 +6,11 @@
 //
 
 import Alamofire
+import Contacts
 import Foundation
 
 typealias GetContactsCompletionHandler = (Result<[Contact], AFError>) -> Void
+typealias ImportLocalContactsCompletionHandler = (Result<[Contact], Error>) -> Void
 typealias CreateContactCompletionHandler = (Result<Contact, AFError>) -> Void
 
 class ContactApiService {
@@ -33,6 +35,53 @@ class ContactApiService {
             .responseDecodable(of: Contact.self, decoder: decoder) { response in
                 completion(response.result)
             }
+    }
+    
+    static func importLocalContacts(completion: @escaping ImportLocalContactsCompletionHandler) {
+        let store = CNContactStore()
+        store.requestAccess(for: .contacts) { accessGranted, error in
+            if let error {
+                completion(.failure(error))
+            }
+            
+            if accessGranted {
+                let keys = [
+                    CNContactGivenNameKey,
+                    CNContactFamilyNameKey,
+                    CNContactPhoneNumbersKey,
+                    CNContactEmailAddressesKey
+                ] as [CNKeyDescriptor]
+                
+                let request = CNContactFetchRequest(keysToFetch: keys)
+                
+                var contacts: [Contact] = []
+                
+                DispatchQueue.main.async {
+                    do {
+                        try store.enumerateContacts(with: request, usingBlock: { contact, stopPointer in
+                            let localContact = Contact(localContact: contact)
+                            contacts.append(localContact)
+                        })
+                        
+                        contacts.sort { $0.firstName < $1.firstName }
+                        
+                        completion(.success(contacts))
+                    } catch {
+                        completion(.failure(error))
+                    }
+                }
+            } else {
+                completion(.failure(ContactError.importError("Local contact import access denied.")))
+            }
+        }
+    }
+    
+}
+
+extension ContactApiService {
+    
+    enum ContactError: Error {
+        case importError(String)
     }
     
 }

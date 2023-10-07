@@ -5,6 +5,7 @@
 //  Created by Jason C on 4/19/23.
 //
 
+import Contacts
 import Foundation
 
 struct Contact: Codable, Hashable, CustomStringConvertible {
@@ -45,4 +46,19 @@ struct CreateContactDTO: Encodable {
     var state: String? = nil
     var zipcode: String? = nil
     let userId: String
+}
+
+extension Contact {
+    
+    init(localContact: CNContact) {
+        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+                
+        self._id = localContact.identifier
+        self.firstName = localContact.givenName
+        self.lastName = localContact.familyName
+        self.email = localContact.emailAddresses.first?.value as String?
+        self.phone = localContact.phoneNumbers.first?.value.stringValue ?? ""
+        self.userId = accountId
+    }
+    
 }
