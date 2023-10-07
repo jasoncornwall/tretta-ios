@@ -43,7 +43,7 @@ struct ContactDetailActionButton: View {
         .sheet(isPresented: $isTapped) {
             switch actionType {
             case .message:
-                Text("Message")
+                MessageView(contactNumber: contact.phone)
             case .call:
                 Text("Call")
             case .mail:
