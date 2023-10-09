@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContactList: View {
-    @Binding var contacts: [Contact]
+    @State var contacts: [Contact]
+    @State var contactListCopy: [Contact]
     @State private var selectedContact: Contact?
+    @State private var searchText = ""
     
     var body: some View {
         List {
-            ForEach(Array(contacts.enumerated()), id: \.element._id) { index, contact in
+            ForEach(Array(contactListCopy.enumerated()), id: \.element._id) { index, contact in
                 ContactRow(contactName: "\(contact.firstName) \(contact.lastName)", index: index)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
@@ -21,7 +23,17 @@ struct ContactList: View {
                         selectedContact = contact
                     }
             }
-        }.listStyle(.plain)
+        }
+        .listStyle(.plain)
+        .searchable(text: $searchText, prompt: "Look for a contact")
+        .onChange(of: searchText, perform: { newSearchValue in
+            let copy = contacts
+            if !newSearchValue.isEmpty {
+                contactListCopy = copy.filter { $0.firstName.contains(newSearchValue) || $0.lastName.contains(newSearchValue) }
+            } else {
+                contactListCopy = copy
+            }
+        })
         .fullScreenCover(item: $selectedContact, content: { contact in
             let model = ContactDetailScreenModel(contact: contact)
             ContactDetailScreen(model: model)

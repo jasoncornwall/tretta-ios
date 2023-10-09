@@ -20,7 +20,7 @@ struct ContactScreen: View {
 //                ContactHeader()
 //                    .padding(.bottom, 8)
                 if !model.contacts.isEmpty {
-                    ContactList(contacts: $model.contacts)
+                    ContactList(contacts: model.contacts, contactListCopy: model.contacts)
                 } else {
                     EmptyStateView(type: .contact)
                     Spacer()
@@ -41,7 +41,6 @@ struct ContactScreen: View {
                 }
             }
         }
-        .searchable(text: $model.searchText)
         .tint(.trettaGold)
         .foregroundColor(.white)
         .task {
