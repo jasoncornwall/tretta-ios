@@ -38,7 +38,9 @@ struct SettingsScreen: View {
                 HStack {
                     Spacer()
                     Button {
-                        print("Sign out tapped")
+                        KeyStorage.shared.clearValue(forKey: Constants.accessToken)
+                        KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
+                        route = .onboarding(.signIn)
                     } label: {
                         Text("Sign Out")
                             .font(.system(size: 16, weight: .semibold))

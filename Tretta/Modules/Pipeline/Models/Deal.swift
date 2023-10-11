@@ -16,6 +16,6 @@ struct Deal: Codable, Hashable, CustomStringConvertible, Identifiable {
     let contactId: String?
     let value: Int
     let customerCount: Int?
-    let creationDate: String
+    let creationDate: Date
     let pipelineId: String?
 }

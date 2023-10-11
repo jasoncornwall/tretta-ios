@@ -33,10 +33,9 @@ struct PipelineScreen: View {
                         }
                     }.tabViewStyle(.page(indexDisplayMode: .never))
                 } else {
-                    Spacer()
                     EmptyStateView(type: .deal)
-                        .padding(.bottom, 24)
-                    Spacer()
+                        .frame(maxHeight: .infinity)
+                        .padding(.bottom, 200)
                 }
             }
             .frame(maxWidth: .infinity)
@@ -112,3 +111,5 @@ struct PipelineScreen: View {
         }
     }
 }
+
+// TODO: - Remove deal selection when no pipelines have yet been created.

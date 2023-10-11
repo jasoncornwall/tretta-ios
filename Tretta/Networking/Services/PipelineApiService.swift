@@ -19,7 +19,10 @@ class PipelineApiService {
     
     private static let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
         decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
         return decoder
     }()
     

@@ -51,6 +51,7 @@
 		9239F4D32AD1B870002D7D66 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4D22AD1B870002D7D66 /* MailView.swift */; };
 		9239F4D52AD1C690002D7D66 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4D42AD1C690002D7D66 /* MessageView.swift */; };
 		9239F4D82AD1D207002D7D66 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9239F4D72AD1D207002D7D66 /* AlertToast */; };
+		9239F4DA2AD5F18B002D7D66 /* DashboardChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4D92AD5F18A002D7D66 /* DashboardChart.swift */; };
 		9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */; };
 		9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4429EE1E6100F37CCA /* ContactCircle.swift */; };
 		9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4629EE238E00F37CCA /* DropdownMenu.swift */; };
@@ -193,6 +194,7 @@
 		9239F4D02ACE458C002D7D66 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 		9239F4D22AD1B870002D7D66 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		9239F4D42AD1C690002D7D66 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		9239F4D92AD5F18A002D7D66 /* DashboardChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChart.swift; sourceTree = "<group>"; };
 		9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentContactCard.swift; sourceTree = "<group>"; };
 		9241FF4429EE1E6100F37CCA /* ContactCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCircle.swift; sourceTree = "<group>"; };
 		9241FF4629EE238E00F37CCA /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 				9241FF4A29EE358000F37CCA /* DonutChart.swift */,
 				9241FF4C29EF6DF000F37CCA /* RecentDealsSection.swift */,
 				9241FF4E29EF743500F37CCA /* RecentContactsSection.swift */,
+				9239F4D92AD5F18A002D7D66 /* DashboardChart.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 				92E0012C2A04094000603EAB /* DealRow.swift in Sources */,
 				92E0012A2A0405DE00603EAB /* Deal.swift in Sources */,
 				9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */,
+				9239F4DA2AD5F18B002D7D66 /* DashboardChart.swift in Sources */,
 				926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */,
 				9241FF6529F060E800F37CCA /* ContactList.swift in Sources */,
 				9239B7DB29EA0B1100BBECE0 /* DashboardPipelineProgress.swift in Sources */,

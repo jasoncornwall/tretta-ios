@@ -11,28 +11,7 @@ import SwiftUI
 class HomeScreenModel: ObservableObject {
     @Published var currentPipelineSelection = PipelineMockData.pipelines[0]
     @Published var pipelines: [Pipeline] = []
-    
-    var chartData =
-        [
-            DashboardPipelineProgress(
-            stageName: "Done",
-            stageColor: .graphLightBlue,
-            percentage: 0.41,
-            value: 0
-            ),
-            DashboardPipelineProgress(
-             stageName: "Pending",
-             stageColor: .graphYellow,
-             percentage: 0.25,
-             value: 0
-            ),
-            DashboardPipelineProgress(
-                stageName: "Todo",
-                stageColor: .graphGreen,
-                percentage: 0.34,
-                value: 0
-            )
-        ]
+    @Published var deals: [Deal] = []
     
     func loadPipelines(completion: @escaping ErrorCompletionHandler) {
         let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
@@ -49,6 +28,19 @@ class HomeScreenModel: ObservableObject {
                 completion(nil)
             case let .failure(error):
                 completion(error)
+            }
+        }
+    }
+    
+    func loadDeals(pipelineId: String) {
+        PipelineApiService.getDeals(pipelineId: pipelineId) { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case let .success(deals):
+                self.deals = deals
+            case let .failure(error):
+                print("Error fetching deals: \(error)")
             }
         }
     }

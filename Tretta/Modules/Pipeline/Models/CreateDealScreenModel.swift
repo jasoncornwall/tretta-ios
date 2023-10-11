@@ -32,7 +32,7 @@ class CreateDealScreenModel: ObservableObject {
             contactId: contactId,
             value: Int(value) ?? 0,
             customerCount: nil,
-            creationDate: "",
+            creationDate: Date.now,
             pipelineId: self.pipelineId
         )
                 

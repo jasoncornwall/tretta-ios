@@ -13,15 +13,46 @@ struct EmptyStateView: View {
     
     var body: some View {
         VStack {
-            LottieView(name: type.image)
-                .scaledToFill()
-                .frame(width: 250, height: 250)
-            Text(type.title)
-                .font(.system(size: 20, weight: .bold))
-                .padding(.bottom, 2)
-            Text(type.description)
-                .font(.system(size: 14))
-                .foregroundColor(.white.opacity(0.8))
+            switch type {
+            case .homeGraph:
+                ZStack {
+                    LottieView(name: type.image)
+                        .frame(width: 350, height: 350)
+                    VStack {
+                        Text(type.title)
+                            .font(.system(size: 20, weight: .bold))
+                            .padding(.bottom, 2)
+                        Text(type.description)
+                            .font(.system(size: 14))
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+                    .padding(.top, 250)
+                }
+            case .deal:
+                ZStack {
+                    LottieView(name: type.image)
+                        .frame(width: 350, height: 350)
+                    VStack {
+                        Text(type.title)
+                            .font(.system(size: 20, weight: .bold))
+                            .padding(.bottom, 2)
+                        Text(type.description)
+                            .font(.system(size: 14))
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+                    .padding(.top, 250)
+                }
+            default:
+                LottieView(name: type.image)
+                    .scaledToFill()
+                    .frame(width: 250, height: 250)
+                Text(type.title)
+                    .font(.system(size: 20, weight: .bold))
+                    .padding(.bottom, 2)
+                Text(type.description)
+                    .font(.system(size: 14))
+                    .foregroundColor(.white.opacity(0.8))
+            }
         }
     }
 }

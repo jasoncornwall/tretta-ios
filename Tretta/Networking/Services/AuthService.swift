@@ -20,6 +20,7 @@ class AuthService {
     
     static func login(email: String, password: String, completion: @escaping LoginCompletionHandler) {
         AF.request(AuthRouter.login(email: email, password: password))
+            .validate(statusCode: 200..<300)
             .responseDecodable(of: SuccessfulLoginResponse.self, decoder: decoder) { response in
                 completion(response.result)
             }

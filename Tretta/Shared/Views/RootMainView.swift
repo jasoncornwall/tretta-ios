@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RootMainView: View {
     private var route: Binding<Route>
-    @State private var selection: Int
+    @State private var selection: Int = 0
     
     var body: some View {
         TabView(selection: $selection) {
