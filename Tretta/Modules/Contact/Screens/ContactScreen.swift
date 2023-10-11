@@ -23,8 +23,8 @@ struct ContactScreen: View {
                     ContactList(contacts: model.contacts, contactListCopy: model.contacts)
                 } else {
                     EmptyStateView(type: .contact)
-                    Spacer()
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .padding(.bottom, 200)
                 }
             }
             .background(Color.backgroundBlue)

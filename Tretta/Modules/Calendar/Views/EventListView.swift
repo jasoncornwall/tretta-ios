@@ -19,7 +19,7 @@ struct EventListView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack {
+            VStack(alignment: .leading) {
                 ForEach(events, id: \.calendarItemExternalIdentifier) { event in
                     EventCell(event: event)
                         .onTapGesture {

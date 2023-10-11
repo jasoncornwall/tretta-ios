@@ -12,7 +12,7 @@ struct DealScreen: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var sectionSelection: Int = 0
-    private let sections = ["Notes", "Details"]
+    private let sections = ["Room Scans", "Details"]
     private let notes = [
         "Meeting established to discuss potential product integrations. Relevant stakeholders looped in.",
         "15 sales reps will be added to the roster next month and 5 engineers will be added next quarter."
@@ -38,22 +38,28 @@ struct DealScreen: View {
                         .font(.system(size: 16, weight: .semibold))
                 }
                 .padding(.top, 8)
-                VStack {
-                    DealSectionHeader(stages: sections, stageSelection: $sectionSelection)
-                    TabView(selection: $sectionSelection) {
-                        ForEach(Array(sections.enumerated()), id: \.element) { index, _ in
-                            DealNoteList(notes: notes)
-                                .padding(.top, 6)
-                                .tag(index)
-                            
-                            // TODO: Replace this with a DealDetailList view for the deal metadata
-//                            DealNoteList(notes: notes)
-//                                .padding(.top, 4)
-//                                .tag(1)
-                        }
-                    }.tabViewStyle(.page(indexDisplayMode: .never))
-                }
-                .background(Color.backgroundBlue)
+                RoomScanList()
+                Spacer()
+//                VStack {
+//                    DealSectionHeader(stages: sections, stageSelection: $sectionSelection)
+//                    TabView(selection: $sectionSelection) {
+//                        ForEach(Array(sections.enumerated()), id: \.element) { index, _ in
+//                            if index == 0 {
+//
+//                            } else {
+//                                DealNoteList(notes: notes)
+//                                    .padding(.top, 6)
+//                                    .tag(index)
+//                            }
+//
+//                            // TODO: Replace this with a DealDetailList view for the deal metadata
+////                            DealNoteList(notes: notes)
+////                                .padding(.top, 4)
+////                                .tag(1)
+//                        }
+//                    }.tabViewStyle(.page(indexDisplayMode: .never))
+//                }
+//                .background(Color.backgroundBlue)
             }
             .frame(maxWidth: .infinity)
             .background(Color.backgroundBlue)

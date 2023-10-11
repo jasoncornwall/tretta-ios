@@ -82,7 +82,6 @@ struct HomeScreen: View {
                     KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
                     route = .onboarding(.signIn)
                 } else {
-                    print("Pipelines: \(model.pipelines)")
                     model.loadDeals(pipelineId: model.currentPipelineSelection._id)
                 }
             }

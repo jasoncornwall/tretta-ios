@@ -40,7 +40,7 @@ struct PipelineScreen: View {
             }
             .frame(maxWidth: .infinity)
             .background(Color.backgroundBlue)
-            .navigationTitle("Sales Pipeline")
+            .navigationTitle("Property Pipeline")
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
