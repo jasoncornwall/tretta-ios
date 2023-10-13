@@ -30,16 +30,16 @@ struct DealSectionList: View {
                 }
                 .background(Color.backgroundBlue)
             }.listStyle(.plain)
-            .refreshable {
-                PipelineApiService.getDeals(pipelineId: pipelineId) { result in
-                    switch result {
-                    case let .success(updatedDeals):
-                        deals = updatedDeals
-                    case let .failure(error):
-                        print("Error fetching deals: \(error)")
-                    }
-                }
-            }
+//            .refreshable {
+//                PipelineApiService.getDeals(pipelineId: pipelineId) { result in
+//                    switch result {
+//                    case let .success(updatedDeals):
+//                        deals = updatedDeals
+//                    case let .failure(error):
+//                        print("Error fetching deals: \(error)")
+//                    }
+//                }
+//            }
         }
     }
 }

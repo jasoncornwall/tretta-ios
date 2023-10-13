@@ -11,7 +11,7 @@ struct DealScreen: View {
     @Environment(\.dismiss) private var dismiss
     
     @StateObject var model: DealScreenModel
-    
+        
     var body: some View {
         NavigationStack {
             VStack(alignment: .center, spacing: 24) {
@@ -29,7 +29,7 @@ struct DealScreen: View {
                         .font(.system(size: 16, weight: .semibold))
                 }
                 .padding(.top, 8)
-                RoomScanList()
+                RoomScanList(files: $model.files)
                 Spacer()
 //                VStack {
 //                    DealSectionHeader(stages: sections, stageSelection: $sectionSelection)
@@ -67,7 +67,7 @@ struct DealScreen: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        print("show room scanner tapped")
+                        model.showRoomScanner.toggle()
                     } label: {
                         Image(systemName: "viewfinder")
                             .foregroundColor(.trettaGold)
@@ -76,6 +76,39 @@ struct DealScreen: View {
             }
             .background(Color.backgroundBlue)
             .toolbarBackground(.hidden, for: .navigationBar)
+            .fullScreenCover(isPresented: $model.showRoomScanner) {
+                VStack(alignment: .trailing) {
+                    if model.scanningState == .finishedScanning {
+                        Button {
+                            model.showRoomScanner.toggle()
+                        } label: {
+                            Text("Finish")
+                                .foregroundColor(.trettaGold)
+                        }
+                        .padding(.trailing, 8)
+                    } else {
+                        Button {
+                            model.scanningState = .finishedScanning
+                        } label: {
+                            Text("Save Room Scan")
+                                .foregroundColor(.trettaGold)
+                        }
+                        .padding(.trailing, 8)
+                    }
+                    
+                    RoomScanner(scanningState: model.scanningState) { result in
+                        switch result {
+                        case let .success(roomScan):
+                            model.saveScannedRoom(roomScan)
+                        case let .failure(error):
+                            print("Error scanning room: \(error)")
+                        }
+                    }
+                }
+            }
+        }
+        .task {
+            model.fetchLocalFiles()
         }
     }
 }

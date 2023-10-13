@@ -5,12 +5,13 @@
 //  Created by Jason C on 10/11/23.
 //
 
+import Files
 import SwiftUI
 
 struct RoomScanList: View {
     @Environment(\.openURL) var openURL
     
-//    @Binding var files: [RoomScan]
+    @Binding var files: [File]
     @State private var showFile = false
     @State private var selectedImage: UIImage?
     
@@ -24,22 +25,21 @@ struct RoomScanList: View {
                 .frame(height: 1)
                 .foregroundColor(.white.opacity(0.3))
                 .padding(.bottom, 4)
-//            ForEach(files) { file in
-//                Text(file.title)
-////                FileRow(file: file)
-////                    .listRowSeparator(.hidden)
-////                    .listRowInsets(EdgeInsets())
-////                    .onTapGesture {
-////                        do {
-////                            let fileData = try file.read()
-////                            let image = UIImage(data: fileData)
-////                            selectedImage = image
-////                            showFile.toggle()
-////                        } catch {
-////                            print("Error opening file: \(error)")
-////                        }
-////                    }
-//            }
+            ScrollView(.vertical, showsIndicators: false) {
+                ForEach(files) { file in
+                    FileRow(file: file)
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(EdgeInsets())
+                        .onTapGesture {
+                            do {
+                                let fileData = try file.read()
+                                print("Room Scan Data: \(fileData)")
+                            } catch {
+                                print("Error opening file: \(error)")
+                            }
+                        }
+                }
+            }
         }
         .sheet(isPresented: $showFile) {
             if let image = selectedImage {
