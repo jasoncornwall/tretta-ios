@@ -17,7 +17,8 @@ struct PipelineRouter {
         case .pipeline(.main):
             PipelineScreen(route: $route, model: model)
         case .pipeline(let .detail(deal, stageName)):
-            DealScreen(deal: deal, stageName: stageName)
+            let model = DealScreenModel(deal: deal, stageName: stageName)
+            DealScreen(model: model)
         default:
             PipelineScreen(route: $route, model: model)
         }

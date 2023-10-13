@@ -8,33 +8,24 @@
 import SwiftUI
 
 struct DealScreen: View {
-    
     @Environment(\.dismiss) private var dismiss
     
-    @State private var sectionSelection: Int = 0
-    private let sections = ["Room Scans", "Details"]
-    private let notes = [
-        "Meeting established to discuss potential product integrations. Relevant stakeholders looped in.",
-        "15 sales reps will be added to the roster next month and 5 engineers will be added next quarter."
-    ]
-    
-    let deal: Deal
-    let stageName: String
+    @StateObject var model: DealScreenModel
     
     var body: some View {
         NavigationStack {
             VStack(alignment: .center, spacing: 24) {
-                Text("\(deal.name)")
+                Text("\(model.deal.name)")
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(.trettaGold)
                 HStack(alignment: .center) {
-                    Text("\(stageName)")
+                    Text("\(model.stageName)")
                         .font(.system(size: 16, weight: .semibold))
                     Circle()
                         .frame(width: 4, height: 4)
                         .foregroundColor(.white)
                         .padding(.horizontal, 2)
-                    Text("$\(deal.value)")
+                    Text("$\(model.deal.value)")
                         .font(.system(size: 16, weight: .semibold))
                 }
                 .padding(.top, 8)
@@ -74,16 +65,12 @@ struct DealScreen: View {
                             .foregroundColor(.trettaGold)
                     }
                 }
-                if sectionSelection == 0 {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            withAnimation {
-                                print("Add note tapped")
-                            }
-                        } label: {
-                            Text("Add")
-                                .foregroundColor(.trettaGold)
-                        }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        print("show room scanner tapped")
+                    } label: {
+                        Image(systemName: "viewfinder")
+                            .foregroundColor(.trettaGold)
                     }
                 }
             }

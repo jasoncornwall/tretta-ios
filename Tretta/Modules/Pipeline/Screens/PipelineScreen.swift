@@ -87,7 +87,7 @@ struct PipelineScreen: View {
                 }
             }
         }
-        .sheet(item: $presentedSheet) { sheet in
+        .fullScreenCover(item: $presentedSheet, content: { sheet in
             switch sheet {
             case .createPipeline:
                 CreatePipelineScreen()
@@ -99,9 +99,10 @@ struct PipelineScreen: View {
                 )
                 CreateDealScreen(model: dealScreenModel)
             case let .viewDeal(deal, stageName):
-                DealScreen(deal: deal, stageName: stageName)
+                let model = DealScreenModel(deal: deal, stageName: stageName)
+                DealScreen(model: model)
             }
-        }
+        })
     }
     
     func pipelineSelectionChange(to value: Pipeline) {
