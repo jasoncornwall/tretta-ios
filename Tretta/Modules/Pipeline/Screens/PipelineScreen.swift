@@ -92,14 +92,18 @@ struct PipelineScreen: View {
             case .createPipeline:
                 CreatePipelineScreen()
             case .createDeal:
-                let dealScreenModel = CreateDealScreenModel(
+                let model = CreateDealScreenModel(
                     pipelineId: model.currentPipelineSelection._id,
                     contacts: model.contacts,
                     stages: model.stages
                 )
-                CreateDealScreen(model: dealScreenModel)
+                CreateDealScreen(model: model)
             case let .viewDeal(deal, stageName):
-                let model = DealScreenModel(deal: deal, stageName: stageName)
+                let model = DealScreenModel(
+                    deal: deal,
+                    stageName: stageName,
+                    stages: model.stages
+                )
                 DealScreen(model: model)
             }
         })

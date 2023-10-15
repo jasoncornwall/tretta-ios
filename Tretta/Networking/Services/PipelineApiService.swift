@@ -13,7 +13,7 @@ typealias CreatePipelineCompletionHandler = (Result<Pipeline, AFError>) -> Void
 typealias GetStagesCompletionHandler = (Result<[Stage], AFError>) -> Void
 typealias CreateStageCompletionHandler = (Result<Stage, AFError>) -> Void
 typealias GetDealsCompletionHandler = (Result<[Deal], AFError>) -> Void
-typealias CreateDealCompletionHandler = (Result<Deal, AFError>) -> Void
+typealias DealCompletionHandler = (Result<Deal, AFError>) -> Void
 
 class PipelineApiService {
     
@@ -66,8 +66,16 @@ class PipelineApiService {
             }
     }
     
-    static func createDeal(deal: Deal, completion: @escaping CreateDealCompletionHandler) {
+    static func createDeal(deal: Deal, completion: @escaping DealCompletionHandler) {
         AF.request(PipelineApiRouter.createDeal(deal: deal))
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: Deal.self, decoder: decoder) { response in
+                completion(response.result)
+            }
+    }
+    
+    static func updateDealStage(dealId: String, stageId: String, completion: @escaping DealCompletionHandler) {
+        AF.request(PipelineApiRouter.updateDealStage(dealId: dealId, newStageId: stageId))
             .validate(statusCode: 200..<300)
             .responseDecodable(of: Deal.self, decoder: decoder) { response in
                 completion(response.result)

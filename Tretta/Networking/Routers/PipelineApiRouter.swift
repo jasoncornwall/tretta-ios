@@ -15,6 +15,7 @@ enum PipelineApiRouter: URLRequestConvertible {
     case createStage(stage: Stage)
     case getDeals(pipelineId: String)
     case createDeal(deal: Deal)
+    case updateDealStage(dealId: String, newStageId: String)
     
     var method: HTTPMethod {
         switch self {
@@ -22,6 +23,8 @@ enum PipelineApiRouter: URLRequestConvertible {
             return .get
         case .createPipeline, .createStage, .createDeal:
             return .post
+        case .updateDealStage:
+            return .patch
         }
     }
     
@@ -39,6 +42,8 @@ enum PipelineApiRouter: URLRequestConvertible {
             return "deals/pipelines/\(pipelineId)"
         case .createDeal:
             return "deals"
+        case let .updateDealStage(dealId, _):
+            return "deals/\(dealId)"
         }
     }
     
@@ -73,16 +78,20 @@ enum PipelineApiRouter: URLRequestConvertible {
                 "creation_date": "\(Date.now)",
                 "value": "\(deal.value)"
             ]
+        case .updateDealStage(_, let newStageId):
+            params = [
+                "stage_id": newStageId
+            ]
         }
         
         switch self {
         case .getPipelines, .getStages, .getDeals:
             break
-        case .createPipeline, .createStage, .createDeal:
+        case .createPipeline, .createStage, .createDeal, .updateDealStage:
             do {
                 request.httpBody = try JSONEncoder().encode(params)
             } catch {
-                print(error)
+                print("Error encoding pipeline JSON: \(error)")
             }
         }
         

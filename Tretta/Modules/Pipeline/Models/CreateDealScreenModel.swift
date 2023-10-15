@@ -19,7 +19,7 @@ class CreateDealScreenModel: ObservableObject {
         self.stages = stages
     }
     
-    func createDeal(name: String, stageId: String, contactId: String, value: String, completion: @escaping CreateDealCompletionHandler) {
+    func createDeal(name: String, stageId: String, contactId: String, value: String, completion: @escaping DealCompletionHandler) {
         guard let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) else {
             return
         }

@@ -11,6 +11,8 @@ struct DealScreen: View {
     @Environment(\.dismiss) private var dismiss
     
     @StateObject var model: DealScreenModel
+    
+    @State private var showingOptions = false
         
     var body: some View {
         NavigationStack {
@@ -21,6 +23,10 @@ struct DealScreen: View {
                 HStack(alignment: .center) {
                     Text("\(model.stageName)")
                         .font(.system(size: 16, weight: .semibold))
+                        .underline()
+                        .onTapGesture {
+                            showingOptions.toggle()
+                        }
                     Circle()
                         .frame(width: 4, height: 4)
                         .foregroundColor(.white)
@@ -31,26 +37,6 @@ struct DealScreen: View {
                 .padding(.top, 8)
                 RoomScanList(files: $model.files)
                 Spacer()
-//                VStack {
-//                    DealSectionHeader(stages: sections, stageSelection: $sectionSelection)
-//                    TabView(selection: $sectionSelection) {
-//                        ForEach(Array(sections.enumerated()), id: \.element) { index, _ in
-//                            if index == 0 {
-//
-//                            } else {
-//                                DealNoteList(notes: notes)
-//                                    .padding(.top, 6)
-//                                    .tag(index)
-//                            }
-//
-//                            // TODO: Replace this with a DealDetailList view for the deal metadata
-////                            DealNoteList(notes: notes)
-////                                .padding(.top, 4)
-////                                .tag(1)
-//                        }
-//                    }.tabViewStyle(.page(indexDisplayMode: .never))
-//                }
-//                .background(Color.backgroundBlue)
             }
             .frame(maxWidth: .infinity)
             .background(Color.backgroundBlue)
@@ -102,6 +88,16 @@ struct DealScreen: View {
                             model.saveScannedRoom(roomScan)
                         case let .failure(error):
                             print("Error scanning room: \(error)")
+                        }
+                    }
+                }
+            }
+            .confirmationDialog("Which stage should this property be moved to?", isPresented: $showingOptions, titleVisibility: .visible) {
+                ForEach(model.stages) { stage in
+                    Button(stage.name) {
+                        model.updatePropertyStage(stageId: stage._id) { error in
+                            guard error == nil else { return }
+                            dismiss()
                         }
                     }
                 }

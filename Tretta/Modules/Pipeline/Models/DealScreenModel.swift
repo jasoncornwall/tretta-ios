@@ -19,13 +19,15 @@ class DealScreenModel: ObservableObject {
     
     @Published var deal: Deal
     @Published var stageName: String
+    @Published var stages: [Stage]
     @Published var showRoomScanner: Bool
     @Published var scanningState: RoomScannerState = .scanning
     @Published var files: [File] = []
     
-    init(deal: Deal, stageName: String) {
+    init(deal: Deal, stageName: String, stages: [Stage] = []) {
         self.deal = deal
         self.stageName = stageName
+        self.stages = stages.filter { $0._id != deal.stageId }
         self.showRoomScanner = false
     }
     
@@ -56,6 +58,18 @@ class DealScreenModel: ObservableObject {
             try scannedRoom.export(to: folderURL)
         } catch {
             print("Error saving scanned room: \(error)")
+        }
+    }
+    
+    func updatePropertyStage(stageId: String?, completion: @escaping ErrorCompletionHandler) {
+        PipelineApiService.updateDealStage(dealId: self.deal._id, stageId: stageId ?? "") { result in
+            switch result {
+            case let .success(deal):
+                print("Deal updated successfully: \(deal)")
+                completion(nil)
+            case let .failure(error):
+                completion(error)
+            }
         }
     }
 }
