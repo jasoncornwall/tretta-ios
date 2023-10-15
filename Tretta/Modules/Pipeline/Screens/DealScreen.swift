@@ -107,7 +107,7 @@ struct DealScreen: View {
                 }
             }
         }
-        .task {
+        .onAppear {
             model.fetchLocalFiles()
         }
     }

@@ -6,6 +6,8 @@
 //
 
 import Files
+import SceneKit
+import SceneKit.ModelIO
 import SwiftUI
 
 struct RoomScanList: View {
@@ -13,7 +15,7 @@ struct RoomScanList: View {
     
     @Binding var files: [File]
     @State private var showFile = false
-    @State private var selectedImage: UIImage?
+    @State private var selectedFile: File?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -31,21 +33,36 @@ struct RoomScanList: View {
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets())
                         .onTapGesture {
-                            do {
-                                let fileData = try file.read()
-                                print("Room Scan Data: \(fileData)")
-                            } catch {
-                                print("Error opening file: \(error)")
-                            }
+                            selectedFile = file
                         }
                 }
             }
         }
-        .sheet(isPresented: $showFile) {
-            if let image = selectedImage {
-                PhotoDetailView(image: image)
+        .sheet(item: $selectedFile, content: { file in
+            VStack(alignment: .leading) {
+                HStack {
+                    Button {
+                        selectedFile = nil
+                    } label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.trettaGold)
+                    }
+                    .frame(width: 44, height: 44)
+                    .padding(.leading, 8)
+                    .padding(.top, 8)
+                    
+                    Spacer()
+                    
+                    ShareLink(item: file.url) {
+                        Image(systemName: "square.and.arrow.up")
+                            .foregroundColor(.trettaGold)
+                    }
+                    .padding(.trailing, 16)
+                }
+                
+                ARQuickLookView(url: file.url)
             }
-        }
+        })
     }
 }
 

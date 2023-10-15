@@ -51,9 +51,8 @@ class DealScreenModel: ObservableObject {
         do {
             guard let folder = try Folder.documents?.createSubfolderIfNeeded(at: deal._id) else { return }
                         
-            let fileName = "\(UUID().uuidString).usd"
+            let fileName = "\(UUID().uuidString).usdz"
             let folderURL = folder.url.appendingPathComponent(fileName)
-            
             try scannedRoom.export(to: folderURL)
         } catch {
             print("Error saving scanned room: \(error)")
