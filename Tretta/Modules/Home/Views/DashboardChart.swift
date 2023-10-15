@@ -36,8 +36,8 @@ struct DashboardChart: View {
                             x: .value("Deal Name", deal.name),
                             y: .value("Deal Value", deal.value)
                         )
-                        .foregroundStyle(Color.trettaGold.gradient.opacity(0.65))
-                        .cornerRadius(4)
+                        .foregroundStyle(Color.trettaGold.gradient)
+                        .cornerRadius(6)
                     }
                 }
                 .frame(height: 200)
