@@ -52,7 +52,7 @@ class PipelineScreenModel: ObservableObject {
         }
     }
     
-    func loadDeals(pipelineId: String) {
+    func loadDeals(pipelineId: String, completion: @escaping EmptyCompletionHandler) {
 //        deals = PipelineMockData.deals.filter { $0.pipelineId == pipelineId }
         
         PipelineApiService.getDeals(pipelineId: pipelineId) { [weak self] result in
@@ -61,7 +61,9 @@ class PipelineScreenModel: ObservableObject {
             switch result {
             case let .success(deals):
                 self.deals = deals
+                completion()
             case let .failure(error):
+                completion()
                 print("Error fetching deals: \(error)")
             }
         }

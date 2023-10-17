@@ -13,11 +13,21 @@ struct PipelineScreen: View {
     
     @State private var presentedSheet: PipelineSheet?
     @State private var showingOptions = false
+    @State private var loadingState: LoadingState = .loading
     
     var body: some View {
         NavigationStack {
             VStack {
-                if !model.pipelines.isEmpty, !model.stages.isEmpty {
+                switch loadingState {
+                case .loading:
+                    ProgressView()
+                        .controlSize(.large)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                case .empty:
+                    EmptyStateView(type: .deal)
+                        .frame(maxHeight: .infinity)
+                        .padding(.bottom, 200)
+                case .complete:
                     DealSectionHeader(stages: model.stages.map{$0.name}, stageSelection: $model.stageSelection)
                     TabView(selection: $model.stageSelection) {
                         if !model.deals.isEmpty {
@@ -32,10 +42,6 @@ struct PipelineScreen: View {
                             }
                         }
                     }.tabViewStyle(.page(indexDisplayMode: .never))
-                } else {
-                    EmptyStateView(type: .deal)
-                        .frame(maxHeight: .infinity)
-                        .padding(.bottom, 200)
                 }
             }
             .frame(maxWidth: .infinity)
@@ -81,8 +87,10 @@ struct PipelineScreen: View {
                     route = .onboarding(.signIn)
                 } else {
                     model.loadStages(pipelineId: model.currentPipelineSelection._id) {
-                        model.loadContacts()
-                        model.loadDeals(pipelineId: model.currentPipelineSelection._id)
+                        model.loadDeals(pipelineId: model.currentPipelineSelection._id) {
+                            model.loadContacts()
+                            loadingState = !model.deals.isEmpty ? .complete : .empty
+                        }
                     }
                 }
             }
@@ -112,7 +120,9 @@ struct PipelineScreen: View {
     func pipelineSelectionChange(to value: Pipeline) {
         // Reload local pipeline data
         model.loadStages(pipelineId: value._id) {
-            model.loadDeals(pipelineId: value._id)
+            model.loadDeals(pipelineId: value._id) {
+                loadingState = !model.deals.isEmpty ? .complete : .empty
+            }
         }
     }
 }
