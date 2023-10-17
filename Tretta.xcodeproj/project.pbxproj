@@ -56,6 +56,7 @@
 		9239F4DE2AD8C436002D7D66 /* DealScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4DD2AD8C436002D7D66 /* DealScreenModel.swift */; };
 		9239F4E02AD8CDA6002D7D66 /* RoomScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4DF2AD8CDA6002D7D66 /* RoomScanner.swift */; };
 		9239F4E22AD9F9AF002D7D66 /* ARQuickLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4E12AD9F9AF002D7D66 /* ARQuickLookView.swift */; };
+		9239F4E62ADEDC3A002D7D66 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4E52ADEDC3A002D7D66 /* LoadingState.swift */; };
 		9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */; };
 		9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4429EE1E6100F37CCA /* ContactCircle.swift */; };
 		9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4629EE238E00F37CCA /* DropdownMenu.swift */; };
@@ -203,6 +204,7 @@
 		9239F4DD2AD8C436002D7D66 /* DealScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealScreenModel.swift; sourceTree = "<group>"; };
 		9239F4DF2AD8CDA6002D7D66 /* RoomScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomScanner.swift; sourceTree = "<group>"; };
 		9239F4E12AD9F9AF002D7D66 /* ARQuickLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLookView.swift; sourceTree = "<group>"; };
+		9239F4E52ADEDC3A002D7D66 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentContactCard.swift; sourceTree = "<group>"; };
 		9241FF4429EE1E6100F37CCA /* ContactCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCircle.swift; sourceTree = "<group>"; };
 		9241FF4629EE238E00F37CCA /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				921BF3B72A43A8E500AC5909 /* EmptyStateType.swift */,
 				924A3F232A56486F00F5B7D8 /* Constants.swift */,
 				924A3F3F2AB7CB8100F5B7D8 /* CompletionHandlers.swift */,
+				9239F4E52ADEDC3A002D7D66 /* LoadingState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				924A3F2F2A6773F700F5B7D8 /* KeyStorage.swift in Sources */,
 				9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */,
 				9239F4D12ACE458C002D7D66 /* PhotoDetailView.swift in Sources */,
+				9239F4E62ADEDC3A002D7D66 /* LoadingState.swift in Sources */,
 				9241FF4D29EF6DF000F37CCA /* RecentDealsSection.swift in Sources */,
 				92E0011A29FCE02800603EAB /* ContactDetailSummarySection.swift in Sources */,
 				9239F4E02AD8CDA6002D7D66 /* RoomScanner.swift in Sources */,

@@ -11,6 +11,7 @@ struct ContactScreen: View {
     @Binding var route: Route
     @StateObject var model: ContactScreenModel
     @State private var presentedSheet: ContactSheet?
+    @State private var loadingState: LoadingState = .loading
     
     var body: some View {
         NavigationStack {
@@ -19,12 +20,17 @@ struct ContactScreen: View {
                     .frame(height: 1)
 //                ContactHeader()
 //                    .padding(.bottom, 8)
-                if !model.contacts.isEmpty {
-                    ContactList(contacts: model.contacts, contactListCopy: model.contacts)
-                } else {
+                switch loadingState {
+                case .loading:
+                    ProgressView()
+                        .controlSize(.large)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                case .empty:
                     EmptyStateView(type: .contact)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .padding(.bottom, 200)
+                case .complete:
+                    ContactList(contacts: model.contacts, contactListCopy: model.contacts)
                 }
             }
             .background(Color.backgroundBlue)
@@ -44,7 +50,16 @@ struct ContactScreen: View {
         .tint(.trettaGold)
         .foregroundColor(.white)
         .task {
-            model.refreshContacts()
+            model.refreshContacts { error in
+                if let error, let statusCode = error.responseCode, statusCode == 500 || statusCode == 401 {
+                    // Logout and clear access token/accountId for 401/500 response codes
+                    KeyStorage.shared.clearValue(forKey: Constants.accessToken)
+                    KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
+                    route = .onboarding(.signIn)
+                } else {
+                    loadingState = !model.contacts.isEmpty ? .complete : .empty
+                }
+            }
         }
         .sheet(item: $presentedSheet) { sheet in
             switch sheet {
