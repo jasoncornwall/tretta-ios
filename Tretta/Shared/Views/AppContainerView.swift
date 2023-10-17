@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppContainerView: View {
-    @State private var currentRoute: Route = .onboarding(.signIn)
+    @State private var currentRoute: Route = .rootMain(0)
     
     var body: some View {
         ZStack {
@@ -59,6 +59,8 @@ struct AppContainerView: View {
         .task {
             if let accessToken = KeyStorage.shared.getStringValue(forKey: Constants.accessToken), !accessToken.isEmpty {
                 currentRoute = .rootMain(0)
+            } else {
+                currentRoute = .onboarding(.signIn)
             }
         }
     }
