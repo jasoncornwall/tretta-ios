@@ -15,12 +15,15 @@ struct SettingRow: View {
             Rectangle()
                 .frame(height: 0.5)
                 .foregroundColor(.white.opacity(0.2))
-            HStack(spacing: 12) {
-                Image("profile icon")
+            HStack(spacing: 8) {
+                Image(systemName: "message.badge.circle")
+                    .resizable()
+                    .frame(width: 28, height: 28)
+//                    .foregroundColor(.trettaGold)
                 Text(settingTitle)
                     .font(.system(size: 19, weight: .semibold))
                 Spacer()
-                Image("right carat")
+//                Image("right carat")
             }
             .background(Color.homeBodySectionBlue)
             .frame(height: 40)

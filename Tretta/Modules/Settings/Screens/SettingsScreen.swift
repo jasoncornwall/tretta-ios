@@ -17,24 +17,19 @@ struct SettingsScreen: View {
                     .frame(height: 0.5)
                     .foregroundColor(.clear)
                 List {
-                    Section(header: Text("Account").background(.clear)) {
-                        SettingRow(settingTitle: "Profile")
-                    }
-                    
-                    Section(header: Text("App Settings")) {
-                        SettingRow(settingTitle: "Enable Notifications")
-                        SettingRow(settingTitle: "Language")
-                    }
-                    
-                    Section(header: Text("Security")) {
-                        SettingRow(settingTitle: "Password Reset")
-                        SettingRow(settingTitle: "Language")
-                    }
+//                    Section(header: Text("Security")) {
+//                        SettingRow(settingTitle: "Password Reset")
+//                        SettingRow(settingTitle: "Language")
+//                    }
                     
                     Section(header: Text("Support")) {
                         SettingRow(settingTitle: "Contact Us")
+                            .onTapGesture {
+                                
+                            }
                     }
                 }.listStyle(.plain)
+                Spacer()
                 HStack {
                     Spacer()
                     Button {
