@@ -18,7 +18,7 @@ struct FileRow: View {
                 .padding(.top, 12)
                 .padding(.horizontal, 12)
             HStack {
-                Text("\(file.creationDate ?? Date())")
+                Text("\(file.creationDate?.formatted(date: .complete, time: .omitted) ?? Date().formatted(date: .complete, time: .omitted))")
                     .font(.system(size: 11, weight: .semibold))
                 Spacer()
 //                Text("\(file.creationDate ?? Date())")

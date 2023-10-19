@@ -31,7 +31,7 @@ struct CreatePipelineScreen: View {
                         .padding(.leading, 24)
                     Spacer()
                 }
-                .padding(.top, 48)
+                .padding(.top, 24)
                 .padding(.bottom, 16)
                 Group {
                     ScrollView(.vertical, showsIndicators: false) {

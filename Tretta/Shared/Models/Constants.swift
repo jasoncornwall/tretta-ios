@@ -15,4 +15,5 @@ struct Constants {
     static let accessToken = "accessToken"
     static let sendbirdAppId = "62C670F2-6EEE-4DDD-9484-F8EF73396DBC"
     static let sendbirdSupportId = "test-bot-1"
+    static let supportEmail = "trettacrmfeedback@gmail.com"
 }

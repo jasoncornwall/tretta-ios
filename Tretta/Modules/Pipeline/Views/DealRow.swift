@@ -17,7 +17,7 @@ struct DealRow: View {
                 .padding(.top, 12)
                 .padding(.horizontal, 12)
             HStack {
-                Text("Created: \(deal.creationDate)")
+                Text("Created: \(deal.creationDate.formatted(date: .complete, time: .omitted))")
                     .font(.system(size: 11))
                 Spacer()
                 Text("$\(deal.value)")

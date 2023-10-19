@@ -48,13 +48,17 @@ struct CreateContactScreen: View {
                                 .padding(.horizontal, 32)
                                 .padding(.bottom, 24)
                         }
+                        Rectangle()
+                            .frame(height: 1)
+                            .foregroundColor(.white.opacity(0.3))
+                            .padding(.top, 8)
                         HStack {
                             Text("Add an address (optional):")
                                 .font(.system(size: 20, weight: .semibold))
                                 .padding(.leading, 24)
                             Spacer()
                         }
-                        .padding(.top, 48)
+                        .padding(.top, 24)
                         .padding(.bottom, 16)
                         Group {
                             FloatingTextField(title: "Address Line 1", text: $addressLine1Text)
