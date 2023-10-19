@@ -25,7 +25,7 @@ struct ContactList: View {
             }
         }
         .listStyle(.plain)
-        .searchable(text: $searchText, prompt: "Look for a client")
+        .searchable(text: $searchText, prompt: "Look for a client or lead")
         .onChange(of: searchText, perform: { newSearchValue in
             let copy = contacts
             if !newSearchValue.isEmpty {

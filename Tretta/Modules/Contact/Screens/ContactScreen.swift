@@ -61,7 +61,7 @@ struct ContactScreen: View {
                 }
             }
         }
-        .sheet(item: $presentedSheet) { sheet in
+        .fullScreenCover(item: $presentedSheet) { sheet in
             switch sheet {
             case .createContact:
                 CreateContactScreen(model: CreateContactScreenModel())

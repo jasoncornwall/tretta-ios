@@ -25,15 +25,14 @@ struct CreateDealScreen: View {
                     VStack(alignment: .leading) {
                         Spacer()
                             .frame(height: 24)
-                        FloatingTextField(title: "Deal Name", text: $dealNameText)
-                            .padding(.horizontal, 40)
+                        FloatingTextField(title: "Property Name", text: $dealNameText)
+                            .padding(.trailing, 40)
                             .padding(.bottom, 24)
-                        FloatingTextField(title: "Deal Value (eg. $10,000 = 10000)", text: $dealValueText)
-                            .padding(.horizontal, 40)
+                        FloatingTextField(title: "Property Value (eg. $10,000 = 10000)", text: $dealValueText)
+                            .padding(.trailing, 40)
                         HStack {
-                            Text("Select a stage to assign this deal to:")
-                                .font(.system(size: 20, weight: .semibold))
-                                .padding(.leading, 24)
+                            Text("Select a stage to assign this property to:")
+                                .font(.system(size: 21, weight: .semibold))
                             Spacer()
                         }
                         .padding(.top, 48)
@@ -64,37 +63,38 @@ struct CreateDealScreen: View {
                                 }
                             }
                         }
-                        HStack {
-                            Text("Select a contact to add to this deal:")
-                                .font(.system(size: 20, weight: .semibold))
-                                .padding(.leading, 24)
-                            Spacer()
-                        }
-                        .padding(.top, 48)
-                        .padding(.bottom, 16)
-                        if let selectedContact {
-                            Text("\(selectedContact.firstName) \(selectedContact.lastName)")
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 4)
-                                .font(.system(size: 18, weight: .regular))
-                                .foregroundColor(Color.trettaGold)
-                                .background(Color.homeBodySectionBlue)
-                                .cornerRadius(12)
-                                .frame(height: 44)
-                        } else {
-                            Group {
-                                ForEach(model.contacts, id: \._id) { contact in
-                                    Text("\(contact.firstName) \(contact.lastName)")
-                                        .padding(.horizontal, 12)
-                                        .padding(.vertical, 4)
-                                        .font(.system(size: 18, weight: .regular))
-                                        .foregroundColor(.white)
-                                        .background(Color.homeBodySectionBlue)
-                                        .cornerRadius(12)
-                                        .frame(height: 44)
-                                        .onTapGesture {
-                                            self.selectedContact = contact
-                                        }
+                        if !model.contacts.isEmpty {
+                            HStack {
+                                Text("Select a contact to add to this deal:")
+                                    .font(.system(size: 20, weight: .semibold))
+                                Spacer()
+                            }
+                            .padding(.top, 48)
+                            .padding(.bottom, 16)
+                            if let selectedContact {
+                                Text("\(selectedContact.firstName) \(selectedContact.lastName)")
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 4)
+                                    .font(.system(size: 18, weight: .regular))
+                                    .foregroundColor(Color.trettaGold)
+                                    .background(Color.homeBodySectionBlue)
+                                    .cornerRadius(12)
+                                    .frame(height: 44)
+                            } else {
+                                Group {
+                                    ForEach(model.contacts, id: \._id) { contact in
+                                        Text("\(contact.firstName) \(contact.lastName)")
+                                            .padding(.horizontal, 12)
+                                            .padding(.vertical, 4)
+                                            .font(.system(size: 18, weight: .regular))
+                                            .foregroundColor(.white)
+                                            .background(Color.homeBodySectionBlue)
+                                            .cornerRadius(12)
+                                            .frame(height: 44)
+                                            .onTapGesture {
+                                                self.selectedContact = contact
+                                            }
+                                    }
                                 }
                             }
                         }
@@ -102,7 +102,7 @@ struct CreateDealScreen: View {
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.leading, 24)
-                    .navigationTitle("Create Deal")
+                    .navigationTitle("Add a property")
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
                             Button {
@@ -116,7 +116,7 @@ struct CreateDealScreen: View {
                     Spacer()
                 }
                 .background(Color.backgroundBlue)
-                Button("Save New Deal") {
+                Button("Add New Property") {
                     model.createDeal(
                         name: dealNameText,
                         stageId: selectedStage?._id ?? "",

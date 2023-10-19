@@ -13,6 +13,7 @@ struct SignInScreen: View {
     @Binding var route: Route
     @State private var emailText = ""
     @State private var passwordText = ""
+    @State private var showRegistration = false
     
     var body: some View {
         VStack {
@@ -38,7 +39,7 @@ struct SignInScreen: View {
                 Spacer()
                     .frame(height: 48)
                 Button("SIGN IN") {
-                    // Fetch jwt -> save the jwt -> parse the email within -> fetch/persist the userId -> then sign in.
+                    // Fetch jwt -> save the jwt -> then sign in with email.
                     getAccessToken()
                 }
                 .buttonStyle(PillButton())
@@ -52,28 +53,15 @@ struct SignInScreen: View {
             }
             Spacer()
             Button("New here? Register instead.") {
-                let user = CreateUserDTO(
-                    email: "",
-                    password: "",
-                    firstName: "Test",
-                    lastName: "User"
-                )
-                UserService.createUser(user: user) { result in
-                    switch result {
-                    case let .success(user):
-                        KeyStorage.shared.set(user._id, forKey: Constants.accountIdKey)
-                    case let .failure(error):
-                        print("Create User Error: \(error)")
-                    }
-                }
-                withAnimation {
-//                    route = .onboarding(.addCompany)
-                }
+                showRegistration.toggle()
             }
             .buttonStyle(ClearButton())
             .padding(.bottom, 16)
         }
         .background(Color.backgroundBlue)
+        .fullScreenCover(isPresented: $showRegistration) {
+            CreateAccountScreen(route: $route)
+        }
     }
     
     private func getAccessToken() {
@@ -87,16 +75,6 @@ struct SignInScreen: View {
             }
         }
     }
-    
-//    private func getUserEmailFromJwt(token: String, completion: @escaping StringCompletionHandler) {
-//        do {
-//            let jwt = try decode(jwt: token)
-//            print("Token: \(token), jwt: \(jwt), subject: \(jwt.subject)")
-//            completion(jwt.subject)
-//        } catch {
-//            print("Error decoding jwt: \(error)")
-//        }
-//    }
     
     private func signInWithEmail(_ email: String) {
         UserService.getUserByEmail(email: email) { result in

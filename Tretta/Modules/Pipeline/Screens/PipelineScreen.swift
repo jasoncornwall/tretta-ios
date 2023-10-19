@@ -68,8 +68,10 @@ struct PipelineScreen: View {
                             presentedSheet = .createPipeline
                         }
                         
-                        Button("Create a deal") {
-                            presentedSheet = .createDeal
+                        if !model.pipelines.isEmpty {
+                            Button("Add a property") {
+                                presentedSheet = .createDeal
+                            }
                         }
                     }
                 }

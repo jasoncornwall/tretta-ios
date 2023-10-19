@@ -72,8 +72,9 @@ struct SettingsScreen: View {
     }
     
     func getSupportChannel(completion: @escaping (GroupChannel) -> ()) {
+        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
         let params = GroupChannelCreateParams()
-        params.userIds = [Constants.sendbirdSupportId]
+        params.userIds = [Constants.sendbirdSupportId, accountId]
         params.isDistinct = true
         
         GroupChannel.createChannel(params: params) { channel, error in
