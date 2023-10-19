@@ -13,4 +13,6 @@ struct Constants {
     static let keychainService = "com.tretta-crm.keystorage"
     static let accountIdKey = "accountIdKey"
     static let accessToken = "accessToken"
+    static let sendbirdAppId = "62C670F2-6EEE-4DDD-9484-F8EF73396DBC"
+    static let sendbirdSupportId = "test-bot-1"
 }

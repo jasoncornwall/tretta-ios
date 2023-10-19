@@ -5,29 +5,17 @@
 //  Created by Jason C on 4/9/23.
 //
 
+import SendbirdChatSDK
+import SendbirdUIKit
 import SwiftUI
 
 @main
 struct TrettaApp: App {
+    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
         
     var body: some Scene {
         WindowGroup {
             AppContainerView()
-//            NavigationStack(path: $navigationState.routes) {
-//                AppContainerView()
-//                    .navigationDestination(for: Route.self) { selectedRoute in
-//                        switch selectedRoute {
-//                        case let .onboarding(route):
-//                            OnboardingRouter(route: route).setup()
-//                        case .rootMain:
-//                            RootMainView()
-//                        case let .home(route):
-//                            HomeRouter(route: route).setup()
-//                        case let .contact(route):
-//                            ContactRouter(route: route).setup()
-//                        }
-//                    }
-//            }.environmentObject(navigationState)
         }
     }
     
@@ -54,4 +42,32 @@ struct TrettaApp: App {
         let image = UIImage(systemName: "magnifyingglass")
         return image!.withTintColor(.white.withAlphaComponent(0.5), renderingMode: .alwaysOriginal)
     }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        self.initializeSendbird()
+        
+        return true
+    }
+    
+    private func initializeSendbird() {
+        SBUTheme.set(theme: .dark)
+        
+        SendbirdUI.initialize(applicationId: Constants.sendbirdAppId) { error in
+            if let error {
+                print("Sendbird error: \(error)")
+            }
+            
+            let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+            SBUGlobals.currentUser = SBUUser(userId: accountId)
+            
+            let initParams = InitParams(applicationId: Constants.sendbirdAppId)
+            SendbirdChat.initialize(params: initParams)
+            SendbirdChat.connect(userId: accountId)
+        }
+    }
+    
 }

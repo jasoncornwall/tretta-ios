@@ -38,12 +38,16 @@ struct ContactDetailActionButton: View {
         .background(Color.homeBodySectionBlue)
         .cornerRadius(8)
         .onTapGesture {
-            if case .call = actionType,
-                let url = URL(string: "tel://\(contact.phone)"),
-                UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                isTapped.toggle()
+            switch actionType {
+            case .message(let isEnabled), .mail(let isEnabled):
+                if isEnabled {
+                    isTapped.toggle()
+                }
+            case .call:
+                if let url = URL(string: "tel://\(contact.phone)"),
+                   UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
             }
         }
         .sheet(isPresented: $isTapped) {

@@ -5,10 +5,13 @@
 //  Created by Jason C on 6/9/23.
 //
 
+import MessageUI
+import SendbirdChatSDK
 import SwiftUI
 
 struct SettingsScreen: View {
     @Binding var route: Route
+    @State private var presentedSheet: SettingsSheet?
     
     var body: some View {
         NavigationStack {
@@ -17,15 +20,19 @@ struct SettingsScreen: View {
                     .frame(height: 0.5)
                     .foregroundColor(.clear)
                 List {
-//                    Section(header: Text("Security")) {
-//                        SettingRow(settingTitle: "Password Reset")
-//                        SettingRow(settingTitle: "Language")
-//                    }
-                    
                     Section(header: Text("Support")) {
-                        SettingRow(settingTitle: "Contact Us")
+                        if MFMailComposeViewController.canSendMail() {
+                            SettingRow(type: .contactUs)
+                                .onTapGesture {
+                                    presentedSheet = .contactUs
+                                }
+                        }
+                        
+                        SettingRow(type: .assistant)
                             .onTapGesture {
-                                
+                                getSupportChannel { channel in
+                                    presentedSheet = .assistant(channel)
+                                }
                             }
                     }
                 }.listStyle(.plain)
@@ -53,6 +60,30 @@ struct SettingsScreen: View {
             .background(Color.backgroundBlue)
             .navigationTitle("Settings")
             .navigationBarBackButtonHidden(true)
+        }
+        .fullScreenCover(item: $presentedSheet) { sheet in
+            switch sheet {
+            case .contactUs:
+                MailView(contactEmail: "support@trettacrm.io")
+            case let .assistant(channel):
+                SupportChatScreen(channel: channel)
+            }
+        }
+    }
+    
+    func getSupportChannel(completion: @escaping (GroupChannel) -> ()) {
+        let params = GroupChannelCreateParams()
+        params.userIds = [Constants.sendbirdSupportId]
+        params.isDistinct = true
+        
+        GroupChannel.createChannel(params: params) { channel, error in
+            if let error {
+                print("Error creating sendbird channel: \(error)")
+                return
+            }
+
+            guard let channel else { return }
+            completion(channel)
         }
     }
 }

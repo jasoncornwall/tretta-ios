@@ -16,6 +16,7 @@
 		921BF3C62A44D12900AC5909 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 921BF3C12A44D12800AC5909 /* contacts.json */; };
 		921BF3C72A44D12900AC5909 /* deals.json in Resources */ = {isa = PBXBuildFile; fileRef = 921BF3C22A44D12900AC5909 /* deals.json */; };
 		921BF3C82A44D12900AC5909 /* home_recent.json in Resources */ = {isa = PBXBuildFile; fileRef = 921BF3C32A44D12900AC5909 /* home_recent.json */; };
+		9236B5972AE0D98C0004FC6B /* TrettaGroupChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5962AE0D98B0004FC6B /* TrettaGroupChannelViewController.swift */; };
 		9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B77C29E3656600BBECE0 /* TrettaApp.swift */; };
 		9239B78129E3656700BBECE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78029E3656700BBECE0 /* Assets.xcassets */; };
 		9239B78429E3656700BBECE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78329E3656700BBECE0 /* Preview Assets.xcassets */; };
@@ -57,6 +58,9 @@
 		9239F4E02AD8CDA6002D7D66 /* RoomScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4DF2AD8CDA6002D7D66 /* RoomScanner.swift */; };
 		9239F4E22AD9F9AF002D7D66 /* ARQuickLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4E12AD9F9AF002D7D66 /* ARQuickLookView.swift */; };
 		9239F4E62ADEDC3A002D7D66 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4E52ADEDC3A002D7D66 /* LoadingState.swift */; };
+		9239F4E92ADF314B002D7D66 /* SendbirdUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9239F4E82ADF314B002D7D66 /* SendbirdUIKit */; };
+		9239F4EB2ADF688C002D7D66 /* SupportChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4EA2ADF688C002D7D66 /* SupportChatScreen.swift */; };
+		9239F4ED2ADF8509002D7D66 /* SettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239F4EC2ADF8508002D7D66 /* SettingsSheet.swift */; };
 		9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */; };
 		9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4429EE1E6100F37CCA /* ContactCircle.swift */; };
 		9241FF4729EE238E00F37CCA /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9241FF4629EE238E00F37CCA /* DropdownMenu.swift */; };
@@ -162,6 +166,7 @@
 		921BF3C12A44D12800AC5909 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
 		921BF3C22A44D12900AC5909 /* deals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = deals.json; sourceTree = "<group>"; };
 		921BF3C32A44D12900AC5909 /* home_recent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home_recent.json; sourceTree = "<group>"; };
+		9236B5962AE0D98B0004FC6B /* TrettaGroupChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrettaGroupChannelViewController.swift; sourceTree = "<group>"; };
 		9239B77929E3656600BBECE0 /* Tretta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tretta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9239B77C29E3656600BBECE0 /* TrettaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrettaApp.swift; sourceTree = "<group>"; };
 		9239B78029E3656700BBECE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +210,8 @@
 		9239F4DF2AD8CDA6002D7D66 /* RoomScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomScanner.swift; sourceTree = "<group>"; };
 		9239F4E12AD9F9AF002D7D66 /* ARQuickLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLookView.swift; sourceTree = "<group>"; };
 		9239F4E52ADEDC3A002D7D66 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		9239F4EA2ADF688C002D7D66 /* SupportChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportChatScreen.swift; sourceTree = "<group>"; };
+		9239F4EC2ADF8508002D7D66 /* SettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheet.swift; sourceTree = "<group>"; };
 		9241FF4229EE1DAD00F37CCA /* RecentContactCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentContactCard.swift; sourceTree = "<group>"; };
 		9241FF4429EE1E6100F37CCA /* ContactCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCircle.swift; sourceTree = "<group>"; };
 		9241FF4629EE238E00F37CCA /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
@@ -290,6 +297,7 @@
 				924A3F4F2AB8282100F5B7D8 /* ElegantCalendar in Frameworks */,
 				924A3F1E2A56103F00F5B7D8 /* Alamofire in Frameworks */,
 				924A3F722ACCF3F700F5B7D8 /* JWTDecode in Frameworks */,
+				9239F4E92ADF314B002D7D66 /* SendbirdUIKit in Frameworks */,
 				924A3F322A67743000F5B7D8 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,6 +690,7 @@
 			isa = PBXGroup;
 			children = (
 				926806992A33AE0F00B604CF /* SettingsScreen.swift */,
+				9239F4EA2ADF688C002D7D66 /* SupportChatScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -690,6 +699,7 @@
 			isa = PBXGroup;
 			children = (
 				9268069B2A33AFC800B604CF /* SettingRow.swift */,
+				9236B5962AE0D98B0004FC6B /* TrettaGroupChannelViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -697,6 +707,7 @@
 		926806982A33AD6900B604CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9239F4EC2ADF8508002D7D66 /* SettingsSheet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -776,6 +787,7 @@
 				924A3F712ACCF3F700F5B7D8 /* JWTDecode */,
 				924A3F742ACD0A0500F5B7D8 /* Files */,
 				9239F4D72AD1D207002D7D66 /* AlertToast */,
+				9239F4E82ADF314B002D7D66 /* SendbirdUIKit */,
 			);
 			productName = Tretta;
 			productReference = 9239B77929E3656600BBECE0 /* Tretta.app */;
@@ -857,6 +869,7 @@
 				924A3F702ACCF3F700F5B7D8 /* XCRemoteSwiftPackageReference "JWTDecode" */,
 				924A3F732ACD0A0500F5B7D8 /* XCRemoteSwiftPackageReference "Files" */,
 				9239F4D62AD1D207002D7D66 /* XCRemoteSwiftPackageReference "AlertToast" */,
+				9239F4E72ADF314B002D7D66 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */,
 			);
 			productRefGroup = 9239B77A29E3656600BBECE0 /* Products */;
 			projectDirPath = "";
@@ -917,6 +930,7 @@
 				9241FF4529EE1E6100F37CCA /* ContactCircle.swift in Sources */,
 				9239F4DA2AD5F18B002D7D66 /* DashboardChart.swift in Sources */,
 				926806942A2D0EEC00B604CF /* NoteRow.swift in Sources */,
+				9239F4EB2ADF688C002D7D66 /* SupportChatScreen.swift in Sources */,
 				9241FF6529F060E800F37CCA /* ContactList.swift in Sources */,
 				9239B7DB29EA0B1100BBECE0 /* DashboardPipelineProgress.swift in Sources */,
 				92E0012E2A04180900603EAB /* PipelineMockData.swift in Sources */,
@@ -979,7 +993,9 @@
 				924A3F592ABBF90B00F5B7D8 /* EventEditView.swift in Sources */,
 				924A3F3A2A8295B900F5B7D8 /* ContactApiService.swift in Sources */,
 				9241FF5D29F04A7500F37CCA /* HomeRouter.swift in Sources */,
+				9236B5972AE0D98C0004FC6B /* TrettaGroupChannelViewController.swift in Sources */,
 				9241FF6E29FB545000F37CCA /* ContactDetailActionButton.swift in Sources */,
+				9239F4ED2ADF8509002D7D66 /* SettingsSheet.swift in Sources */,
 				9239B7C329E5114300BBECE0 /* FloatingTextField.swift in Sources */,
 				924A3F6D2ACC974100F5B7D8 /* DocumentScanner.swift in Sources */,
 				92E001282A04050E00603EAB /* Stage.swift in Sources */,
@@ -1363,6 +1379,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		9239F4E72ADF314B002D7D66 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sendbird/sendbird-uikit-ios-spm";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		924A3F1C2A56103F00F5B7D8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1415,6 +1439,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9239F4D62AD1D207002D7D66 /* XCRemoteSwiftPackageReference "AlertToast" */;
 			productName = AlertToast;
+		};
+		9239F4E82ADF314B002D7D66 /* SendbirdUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9239F4E72ADF314B002D7D66 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */;
+			productName = SendbirdUIKit;
 		};
 		924A3F1D2A56103F00F5B7D8 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

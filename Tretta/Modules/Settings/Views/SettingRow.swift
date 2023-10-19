@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingRow: View {
-    let settingTitle: String
+    let type: RowType
     
     var body: some View {
         VStack {
@@ -16,11 +16,10 @@ struct SettingRow: View {
                 .frame(height: 0.5)
                 .foregroundColor(.white.opacity(0.2))
             HStack(spacing: 8) {
-                Image(systemName: "message.badge.circle")
+                Image(systemName: type.imageName)
                     .resizable()
                     .frame(width: 28, height: 28)
-//                    .foregroundColor(.trettaGold)
-                Text(settingTitle)
+                Text(type.title)
                     .font(.system(size: 19, weight: .semibold))
                 Spacer()
 //                Image("right carat")
@@ -36,4 +35,31 @@ struct SettingRow: View {
         .listRowInsets(EdgeInsets())
         .background(Color.homeBodySectionBlue)
     }
+}
+
+extension SettingRow {
+    
+    enum RowType {
+        case contactUs
+        case assistant
+        
+        var imageName: String {
+            switch self {
+            case .contactUs:
+                return "envelope.circle"
+            case .assistant:
+                return "message.badge.circle"
+            }
+        }
+        
+        var title: String {
+            switch self {
+            case .contactUs:
+                return "Contact Us"
+            case .assistant:
+                return "Smart Assistant"
+            }
+        }
+    }
+    
 }
