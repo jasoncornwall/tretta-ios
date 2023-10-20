@@ -87,24 +87,30 @@ struct CreatePipelineScreen: View {
                                                         PipelineApiService.createStage(stage: Stage(_id: "", name: stage4Text, pipelineOrderIdx: 3, pipelineId: pipeline._id)) { lastStageResult in
                                                             switch lastStageResult {
                                                             case .success:
+                                                                AnalyticsManager.shared.log(.createPipelineSucceeded)
                                                                 dismiss()
                                                             case let .failure(error):
+                                                                AnalyticsManager.shared.log(.createPipelineFailed(reason: error.localizedDescription))
                                                                 print("Error creating stage 4, the last stage: \(error)")
                                                             }
                                                         }
                                                     case let .failure(error):
+                                                        AnalyticsManager.shared.log(.createPipelineFailed(reason: error.localizedDescription))
                                                         print("Error creating stage 3: \(error)")
                                                     }
                                                 }
                                             case let .failure(error):
+                                                AnalyticsManager.shared.log(.createPipelineFailed(reason: error.localizedDescription))
                                                 print("Error creating stage 2: \(error)")
                                             }
                                         }
                                     case let .failure(error):
+                                        AnalyticsManager.shared.log(.createPipelineFailed(reason: error.localizedDescription))
                                         print("Error creating stage 1: \(error)")
                                     }
                                 }
                             case let .failure(error):
+                                AnalyticsManager.shared.log(.createPipelineFailed(reason: error.localizedDescription))
                                 print("Error creating pipeline: \(error)")
                             }
                         }

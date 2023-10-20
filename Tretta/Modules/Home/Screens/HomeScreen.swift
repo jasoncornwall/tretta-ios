@@ -72,6 +72,8 @@ struct HomeScreen: View {
             .background(Color.backgroundBlue)
         }
         .task {
+            AnalyticsManager.shared.log(.homeScreenViewed)
+            
             model.loadPipelines { error in
                 if let error, let statusCode = error.responseCode, statusCode == 500 || statusCode == 401 {
                     // Logout and clear access token/accountId for 401/500 response codes

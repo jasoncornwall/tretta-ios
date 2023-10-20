@@ -24,12 +24,15 @@ struct SettingsScreen: View {
                         if MFMailComposeViewController.canSendMail() {
                             SettingRow(type: .contactUs)
                                 .onTapGesture {
+                                    AnalyticsManager.shared.log(.feedbackInitiated)
                                     presentedSheet = .contactUs
                                 }
                         }
                         
                         SettingRow(type: .assistant)
                             .onTapGesture {
+                                AnalyticsManager.shared.log(.smartAssistantInitiated)
+                                
                                 getSupportChannel { channel in
                                     presentedSheet = .assistant(channel)
                                 }
@@ -40,6 +43,7 @@ struct SettingsScreen: View {
                 HStack {
                     Spacer()
                     Button {
+                        AnalyticsManager.shared.log(.signOutTapped)
                         KeyStorage.shared.clearValue(forKey: Constants.accessToken)
                         KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
                         route = .onboarding(.signIn)

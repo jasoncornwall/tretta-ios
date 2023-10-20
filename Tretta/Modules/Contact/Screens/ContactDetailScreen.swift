@@ -78,6 +78,7 @@ struct ContactDetailScreen: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
+                        AnalyticsManager.shared.log(.documentScanInitiated)
                         model.showDocumentScanner.toggle()
                     } label: {
                         Image(systemName: "doc.viewfinder")
@@ -91,8 +92,10 @@ struct ContactDetailScreen: View {
                 DocumentScanner { result in
                     switch result {
                     case let .success(pages):
+                        AnalyticsManager.shared.log(.documentScanSucceeded)
                         model.saveScannedPages(pages)
                     case let .failure(error):
+                        AnalyticsManager.shared.log(.documentScanFailed(reason: error.localizedDescription))
                         print("Error scanning documents: \(error)")
                     }
                     

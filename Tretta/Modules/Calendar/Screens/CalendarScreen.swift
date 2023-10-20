@@ -34,6 +34,8 @@ struct CalendarScreen: View {
                 ))
         }
         .task {
+            AnalyticsManager.shared.log(.calendarScreenViewed)
+            
             calendarManager.datasource = self
             model.requestCalendarAccess()
         }

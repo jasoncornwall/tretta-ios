@@ -18,6 +18,8 @@
 		921BF3C82A44D12900AC5909 /* home_recent.json in Resources */ = {isa = PBXBuildFile; fileRef = 921BF3C32A44D12900AC5909 /* home_recent.json */; };
 		9236B5972AE0D98C0004FC6B /* TrettaGroupChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5962AE0D98B0004FC6B /* TrettaGroupChannelViewController.swift */; };
 		9236B59A2AE219CA0004FC6B /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5992AE219CA0004FC6B /* BuildConfiguration.swift */; };
+		9236B5A52AE334AF0004FC6B /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5A42AE334AF0004FC6B /* AnalyticsEvent.swift */; };
+		9236B5A72AE33A570004FC6B /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5A62AE33A570004FC6B /* AnalyticsManager.swift */; };
 		9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B77C29E3656600BBECE0 /* TrettaApp.swift */; };
 		9239B78129E3656700BBECE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78029E3656700BBECE0 /* Assets.xcassets */; };
 		9239B78429E3656700BBECE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78329E3656700BBECE0 /* Preview Assets.xcassets */; };
@@ -168,6 +170,8 @@
 		9236B5962AE0D98B0004FC6B /* TrettaGroupChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrettaGroupChannelViewController.swift; sourceTree = "<group>"; };
 		9236B5982AE219950004FC6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9236B5992AE219CA0004FC6B /* BuildConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
+		9236B5A42AE334AF0004FC6B /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
+		9236B5A62AE33A570004FC6B /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		9239B77929E3656600BBECE0 /* Tretta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tretta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9239B77C29E3656600BBECE0 /* TrettaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrettaApp.swift; sourceTree = "<group>"; };
 		9239B78029E3656700BBECE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -330,6 +334,15 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		9236B5A32AE3345A0004FC6B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				9236B5A42AE334AF0004FC6B /* AnalyticsEvent.swift */,
+				9236B5A62AE33A570004FC6B /* AnalyticsManager.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		9239B77029E3656600BBECE0 = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +454,7 @@
 		9239B7AC29E3A11B00BBECE0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9236B5A32AE3345A0004FC6B /* Analytics */,
 				9239B7B929E4AC7C00BBECE0 /* Helpers */,
 				9239B7AD29E3AC4000BBECE0 /* Models */,
 				9239B7AE29E3AC4D00BBECE0 /* Views */,
@@ -943,10 +957,12 @@
 				92E0011829FCDAE800603EAB /* ContactDetailNoteSection.swift in Sources */,
 				92E0011629FCCE9000603EAB /* ContactDetailSubSection.swift in Sources */,
 				924A3F672AC6471500F5B7D8 /* ContactSheet.swift in Sources */,
+				9236B5A52AE334AF0004FC6B /* AnalyticsEvent.swift in Sources */,
 				924A3F4A2AB803A600F5B7D8 /* CalendarRouter.swift in Sources */,
 				924A3F532AB93A9400F5B7D8 /* EventCell.swift in Sources */,
 				9241FF5B29F0496200F37CCA /* ContactRouter.swift in Sources */,
 				924A3F2F2A6773F700F5B7D8 /* KeyStorage.swift in Sources */,
+				9236B5A72AE33A570004FC6B /* AnalyticsManager.swift in Sources */,
 				9241FF4329EE1DAD00F37CCA /* RecentContactCard.swift in Sources */,
 				9239F4D12ACE458C002D7D66 /* PhotoDetailView.swift in Sources */,
 				9239F4E62ADEDC3A002D7D66 /* LoadingState.swift in Sources */,

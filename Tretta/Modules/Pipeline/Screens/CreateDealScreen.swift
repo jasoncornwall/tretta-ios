@@ -124,9 +124,11 @@ struct CreateDealScreen: View {
                         value: dealValueText) { result in
                             switch result {
                             case .success:
+                                AnalyticsManager.shared.log(.addPropertySucceeded)
                                 print(result)
                                 dismiss()
                             case let .failure(error):
+                                AnalyticsManager.shared.log(.addPropertyFailed(reason: error.localizedDescription))
                                 print("Error creating deal: \(error)")
                             }
                     }

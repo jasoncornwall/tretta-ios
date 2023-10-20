@@ -107,9 +107,12 @@ struct CreateContactScreen: View {
                         zipCode: zipCodeText) { result in
                             switch result {
                             case .success:
+                                AnalyticsManager.shared.log(.createContactSucceeded)
+                                
                                 print(result)
                                 dismiss()
                             case let .failure(error):
+                                AnalyticsManager.shared.log(.createContactFailed(reason: error.localizedDescription))
                                 print("Error creating contact: \(error)")
                             }
                     }

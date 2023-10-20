@@ -50,6 +50,8 @@ struct ContactScreen: View {
         .tint(.trettaGold)
         .foregroundColor(.white)
         .task {
+            AnalyticsManager.shared.log(.contactScreenViewed)
+            
             model.refreshContacts { error in
                 if let error, let statusCode = error.responseCode, statusCode == 500 || statusCode == 401 {
                     // Logout and clear access token/accountId for 401/500 response codes

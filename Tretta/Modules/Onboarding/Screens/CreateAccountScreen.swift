@@ -102,8 +102,10 @@ struct CreateAccountScreen: View {
             switch result {
             case let .success(user):
                 KeyStorage.shared.set(user._id, forKey: Constants.accountIdKey)
+                AnalyticsManager.shared.log(.createAccountSucceeded)
                 completion()
             case let .failure(error):
+                AnalyticsManager.shared.log(.createAccountFailed(reason: error.localizedDescription))
                 print("Create User Error: \(error)")
             }
         }

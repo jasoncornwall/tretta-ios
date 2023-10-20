@@ -53,6 +53,7 @@ struct DealScreen: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
+                        AnalyticsManager.shared.log(.roomScanInitiated)
                         model.showRoomScanner.toggle()
                     } label: {
                         Image(systemName: "viewfinder")
@@ -85,8 +86,10 @@ struct DealScreen: View {
                     RoomScanner(scanningState: model.scanningState) { result in
                         switch result {
                         case let .success(roomScan):
+                            AnalyticsManager.shared.log(.roomScanSucceeded)
                             model.saveScannedRoom(roomScan)
                         case let .failure(error):
+                            AnalyticsManager.shared.log(.roomScanFailed(reason: error.localizedDescription))
                             print("Error scanning room: \(error)")
                         }
                     }

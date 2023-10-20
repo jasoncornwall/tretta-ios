@@ -62,6 +62,9 @@ struct SignInScreen: View {
         .fullScreenCover(isPresented: $showRegistration) {
             CreateAccountScreen(route: $route)
         }
+        .task {
+            AnalyticsManager.shared.log(.signInScreenViewed)
+        }
     }
     
     private func getAccessToken() {
@@ -72,6 +75,7 @@ struct SignInScreen: View {
                 signInWithEmail(emailText)
             case let .failure(error):
                 print("Login Error: \(error)")
+                AnalyticsManager.shared.log(.signInFailed(reason: error.localizedDescription))
             }
         }
     }
@@ -80,9 +84,12 @@ struct SignInScreen: View {
         UserService.getUserByEmail(email: email) { result in
             switch result {
             case let .success(user):
+                AnalyticsManager.shared.log(.signInSucceeded)
+                
                 KeyStorage.shared.set(user._id, forKey: Constants.accountIdKey)
                 route = .rootMain(0)
             case let .failure(error):
+                AnalyticsManager.shared.log(.signInFailed(reason: error.localizedDescription))
                 print("Error fetching user by email: \(error)")
             }
         }
