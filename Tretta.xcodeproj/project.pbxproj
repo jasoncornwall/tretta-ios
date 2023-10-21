@@ -21,6 +21,7 @@
 		9236B5A52AE334AF0004FC6B /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5A42AE334AF0004FC6B /* AnalyticsEvent.swift */; };
 		9236B5A72AE33A570004FC6B /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5A62AE33A570004FC6B /* AnalyticsManager.swift */; };
 		9236B5A92AE3964D0004FC6B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5A82AE3964D0004FC6B /* WebView.swift */; };
+		9236B5AC2AE39E4B0004FC6B /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = 9236B5AB2AE39E4B0004FC6B /* Mixpanel */; };
 		9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B77C29E3656600BBECE0 /* TrettaApp.swift */; };
 		9239B78129E3656700BBECE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78029E3656700BBECE0 /* Assets.xcassets */; };
 		9239B78429E3656700BBECE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78329E3656700BBECE0 /* Preview Assets.xcassets */; };
@@ -302,6 +303,7 @@
 				924A3F4F2AB8282100F5B7D8 /* ElegantCalendar in Frameworks */,
 				924A3F1E2A56103F00F5B7D8 /* Alamofire in Frameworks */,
 				924A3F722ACCF3F700F5B7D8 /* JWTDecode in Frameworks */,
+				9236B5AC2AE39E4B0004FC6B /* Mixpanel in Frameworks */,
 				9239F4E92ADF314B002D7D66 /* SendbirdUIKit in Frameworks */,
 				924A3F322A67743000F5B7D8 /* KeychainAccess in Frameworks */,
 			);
@@ -804,6 +806,7 @@
 				924A3F742ACD0A0500F5B7D8 /* Files */,
 				9239F4D72AD1D207002D7D66 /* AlertToast */,
 				9239F4E82ADF314B002D7D66 /* SendbirdUIKit */,
+				9236B5AB2AE39E4B0004FC6B /* Mixpanel */,
 			);
 			productName = Tretta;
 			productReference = 9239B77929E3656600BBECE0 /* Tretta.app */;
@@ -886,6 +889,7 @@
 				924A3F732ACD0A0500F5B7D8 /* XCRemoteSwiftPackageReference "Files" */,
 				9239F4D62AD1D207002D7D66 /* XCRemoteSwiftPackageReference "AlertToast" */,
 				9239F4E72ADF314B002D7D66 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */,
+				9236B5AA2AE39E4B0004FC6B /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
 			);
 			productRefGroup = 9239B77A29E3656600BBECE0 /* Products */;
 			projectDirPath = "";
@@ -1395,6 +1399,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		9236B5AA2AE39E4B0004FC6B /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		9239F4D62AD1D207002D7D66 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elai950/AlertToast.git";
@@ -1458,6 +1470,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 921BF3B92A44CC1200AC5909 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		9236B5AB2AE39E4B0004FC6B /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9236B5AA2AE39E4B0004FC6B /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
 		};
 		9239F4D72AD1D207002D7D66 /* AlertToast */ = {
 			isa = XCSwiftPackageProductDependency;

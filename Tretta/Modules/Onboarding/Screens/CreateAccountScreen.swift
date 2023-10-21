@@ -81,7 +81,9 @@ struct CreateAccountScreen: View {
                 }
                 Button("Sign Up") {
                     registerUser {
-                        route = .rootMain(0)
+                        getAccessTokenAndSignIn {
+                            route = .rootMain(0)
+                        }
                     }
                 }
                 .buttonStyle(PillButton())
@@ -107,6 +109,19 @@ struct CreateAccountScreen: View {
             case let .failure(error):
                 AnalyticsManager.shared.log(.createAccountFailed(reason: error.localizedDescription))
                 print("Create User Error: \(error)")
+            }
+        }
+    }
+    
+    private func getAccessTokenAndSignIn(completion: @escaping EmptyCompletionHandler) {
+        AuthService.login(email: emailText, password: passwordText) { result in
+            switch result {
+            case let .success(response):
+                KeyStorage.shared.set(response.accessToken, forKey: Constants.accessToken)
+                completion()
+            case let .failure(error):
+                print("Login Error: \(error)")
+                AnalyticsManager.shared.log(.signInFailed(reason: error.localizedDescription))
             }
         }
     }

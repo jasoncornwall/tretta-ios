@@ -34,4 +34,13 @@ struct Constants {
             return "test-bot-1"
         }
     }
+    
+    static var mixpanelToken: String {
+        switch BuildConfiguration.shared.environment {
+        case .staging:
+            return "83d149469203010a65abb930157f701a"
+        case .production:
+            return "9542d2efbfc6a7b374e354ee736a9d02"
+        }
+    }
 }

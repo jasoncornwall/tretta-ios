@@ -16,6 +16,10 @@ struct User: Codable, CustomStringConvertible {
     let orgId: String?
 }
 
+extension User: Identifiable {
+    var id: String? { _id }
+}
+
 struct CreateUserDTO: Encodable {
     let email: String
     let password: String

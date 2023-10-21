@@ -21,6 +21,7 @@ class UserService {
     
     static func createUser(user: CreateUserDTO, completion: @escaping CreateUserCompletionHandler) {
         AF.request(UserRouter.createUser(user: user))
+            .validate(statusCode: 200..<300)
             .responseDecodable(of: User.self, decoder: decoder) { response in
                 completion(response.result)
             }
@@ -32,6 +33,7 @@ class UserService {
     
     static func getUserByEmail(email: String, completion: @escaping GetUserByEmailCompletionHandler) {
         AF.request(UserRouter.getUserByEmail(email))
+            .validate(statusCode: 200..<300)
             .responseDecodable(of: User.self, decoder: decoder) { response in
                 completion(response.result)
             }

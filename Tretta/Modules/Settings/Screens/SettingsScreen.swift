@@ -80,7 +80,7 @@ struct SettingsScreen: View {
         .fullScreenCover(item: $presentedSheet) { sheet in
             switch sheet {
             case .contactUs:
-                MailView(contactEmail: "support@trettacrm.io")
+                MailView(contactEmail: Constants.supportEmail)
             case let .assistant(channel):
                 SupportChatScreen(channel: channel)
             case .privacyPolicy:

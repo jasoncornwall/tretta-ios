@@ -5,6 +5,7 @@
 //  Created by Jason C on 4/9/23.
 //
 
+import Mixpanel
 import SendbirdChatSDK
 import SendbirdUIKit
 import SwiftUI
@@ -49,6 +50,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         self.initializeSendbird()
+        
+        Mixpanel.initialize(token: Constants.mixpanelToken, trackAutomaticEvents: false)
         
         return true
     }
