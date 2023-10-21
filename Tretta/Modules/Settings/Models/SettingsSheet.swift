@@ -15,4 +15,6 @@ enum SettingsSheet: Hashable, Identifiable {
     
     case contactUs
     case assistant(GroupChannel)
+    case privacyPolicy
+    case terms
 }

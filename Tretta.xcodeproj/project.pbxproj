@@ -20,6 +20,7 @@
 		9236B59A2AE219CA0004FC6B /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5992AE219CA0004FC6B /* BuildConfiguration.swift */; };
 		9236B5A52AE334AF0004FC6B /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5A42AE334AF0004FC6B /* AnalyticsEvent.swift */; };
 		9236B5A72AE33A570004FC6B /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5A62AE33A570004FC6B /* AnalyticsManager.swift */; };
+		9236B5A92AE3964D0004FC6B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236B5A82AE3964D0004FC6B /* WebView.swift */; };
 		9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B77C29E3656600BBECE0 /* TrettaApp.swift */; };
 		9239B78129E3656700BBECE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78029E3656700BBECE0 /* Assets.xcassets */; };
 		9239B78429E3656700BBECE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78329E3656700BBECE0 /* Preview Assets.xcassets */; };
@@ -172,6 +173,7 @@
 		9236B5992AE219CA0004FC6B /* BuildConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
 		9236B5A42AE334AF0004FC6B /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		9236B5A62AE33A570004FC6B /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		9236B5A82AE3964D0004FC6B /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		9239B77929E3656600BBECE0 /* Tretta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tretta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9239B77C29E3656600BBECE0 /* TrettaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrettaApp.swift; sourceTree = "<group>"; };
 		9239B78029E3656700BBECE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				921BF3BC2A44CF9300AC5909 /* LottieView.swift */,
 				9239F4D02ACE458C002D7D66 /* PhotoDetailView.swift */,
 				9239F4E12AD9F9AF002D7D66 /* ARQuickLookView.swift */,
+				9236B5A82AE3964D0004FC6B /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -983,6 +986,7 @@
 				9239B7CB29E755FD00BBECE0 /* NavigationState.swift in Sources */,
 				92E001342A17C8D900603EAB /* PipelineRouter.swift in Sources */,
 				924A3F462AB7FD0900F5B7D8 /* CalendarScreenModel.swift in Sources */,
+				9236B5A92AE3964D0004FC6B /* WebView.swift in Sources */,
 				924A3F242A56486F00F5B7D8 /* Constants.swift in Sources */,
 				9239B7DF29EB55DC00BBECE0 /* DashboardProgressSection.swift in Sources */,
 				9241FF4B29EE358000F37CCA /* DonutChart.swift in Sources */,

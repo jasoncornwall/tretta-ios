@@ -38,6 +38,18 @@ struct SettingsScreen: View {
                                 }
                             }
                     }
+                    
+                    Section(header: Text("Legal")) {
+                        SettingRow(type: .privacyPolicy)
+                            .onTapGesture {
+                                presentedSheet = .privacyPolicy
+                            }
+                        
+                        SettingRow(type: .terms)
+                            .onTapGesture {
+                                presentedSheet = .terms
+                            }
+                    }
                 }.listStyle(.plain)
                 Spacer()
                 HStack {
@@ -71,6 +83,35 @@ struct SettingsScreen: View {
                 MailView(contactEmail: "support@trettacrm.io")
             case let .assistant(channel):
                 SupportChatScreen(channel: channel)
+            case .privacyPolicy:
+                NavigationStack {
+                    WebView(url: Constants.privacyPolicyURL)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button {
+                                    presentedSheet = nil
+                                } label: {
+                                    Image(systemName: "xmark")
+                                        .foregroundColor(.trettaGold)
+                                }
+                            }
+                        }
+                }.background(Color.backgroundBlue)
+    
+            case .terms:
+                NavigationStack {
+                    WebView(url: Constants.termsAndConditionsURL)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button {
+                                    presentedSheet = nil
+                                } label: {
+                                    Image(systemName: "xmark")
+                                        .foregroundColor(.trettaGold)
+                                }
+                            }
+                        }
+                }.background(Color.backgroundBlue)
             }
         }
     }

@@ -42,6 +42,8 @@ extension SettingRow {
     enum RowType {
         case contactUs
         case assistant
+        case privacyPolicy
+        case terms
         
         var imageName: String {
             switch self {
@@ -49,6 +51,10 @@ extension SettingRow {
                 return "envelope.circle"
             case .assistant:
                 return "message.badge.circle"
+            case .privacyPolicy:
+                return "building.columns.circle"
+            case .terms:
+                return "newspaper.circle"
             }
         }
         
@@ -58,6 +64,10 @@ extension SettingRow {
                 return "Contact Us"
             case .assistant:
                 return "Smart Assistant"
+            case .privacyPolicy:
+                return "Privacy Policy"
+            case .terms:
+                return "Terms & Conditions"
             }
         }
     }
