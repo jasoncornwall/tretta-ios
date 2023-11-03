@@ -4,7 +4,7 @@
 //
 //  Created by Jason C on 4/19/23.
 //
-
+import RevenueCat
 import SwiftUI
 
 struct RootMainView: View {
@@ -71,6 +71,10 @@ struct RootMainView: View {
         UITabBar.appearance().scrollEdgeAppearance = appearance
         self.route = route
         self.selection = selection
+        
+        let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+        Purchases.logLevel = BuildConfiguration.shared.environment == .staging ? .debug : .error
+        Purchases.configure(withAPIKey: Constants.revenueCatAPIKey, appUserID: accountId)
     }
 }
 

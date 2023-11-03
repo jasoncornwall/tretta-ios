@@ -5,6 +5,8 @@
 //  Created by Jason C on 4/14/23.
 //
 
+import RevenueCat
+import RevenueCatUI
 import SwiftUI
 
 struct HomeScreen: View {
@@ -85,6 +87,22 @@ struct HomeScreen: View {
                         loadingState = !model.deals.isEmpty ? .complete : .empty
                     }
                 }
+            }
+        }
+//        .debugRevenueCatOverlay()
+        .presentPaywallIfNeeded(
+            requiredEntitlementIdentifier: Constants.requiredEntitlementIdentifier,
+            purchaseCompleted: { customerInfo in
+//                print("Purchase completed: \(customerInfo.entitlements)")
+        }, restoreCompleted: { customerInfo in
+//            print("Restome completed: \(customerInfo.entitlements)")
+        }) {
+            // In prod we should logout the user if they refuse to pay.
+            if BuildConfiguration.shared.environment == .production {
+                AnalyticsManager.shared.log(.cancelPaymentTapped)
+                KeyStorage.shared.clearValue(forKey: Constants.accessToken)
+                KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
+                route = .onboarding(.signIn)
             }
         }
     }

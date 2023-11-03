@@ -32,6 +32,7 @@ enum AnalyticsEvent {
     case feedbackInitiated
     case smartAssistantInitiated
     case signOutTapped
+    case cancelPaymentTapped
 }
 
 extension AnalyticsEvent {

@@ -13,9 +13,11 @@ struct Constants {
     static let accountIdKey = "accountIdKey"
     static let accessToken = "accessToken"
     static let sendbirdAppId = "62C670F2-6EEE-4DDD-9484-F8EF73396DBC"
-    static let supportEmail = "trettacrmfeedback@gmail.com"
+    static let supportEmail = "support@trettacrm.com"
     static let privacyPolicyURL = URL(string: "https://www.termsfeed.com/live/80881f4c-e03d-44f5-bc66-24bb9012d96d")!
     static let termsAndConditionsURL = URL(string: "https://www.termsfeed.com/live/c5d02ed1-35ee-42b8-a093-ae6ac031685e")!
+    static let revenueCatAPIKey = "appl_kCDLHllHYyEFfxoRKRPVOFjwtlu"
+    static let requiredEntitlementIdentifier = "pro"
     
     static var baseURL: URL {
         switch BuildConfiguration.shared.environment {
