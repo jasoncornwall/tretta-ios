@@ -1191,6 +1191,8 @@
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We use this to sync your calendar events.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use this to support document scanning.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "We use this to sync your contact data.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use this to support sending voice messages to our support.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We use this to support photo upload capabilities for you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
@@ -1321,6 +1323,8 @@
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We use this to sync your calendar events.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use this to support document scanning.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "We use this to sync your contact data.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use this to support sending voice messages to our support.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We use this to support photo upload capabilities for you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
