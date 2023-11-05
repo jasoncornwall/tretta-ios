@@ -5,6 +5,8 @@
 //  Created by Jason C on 6/9/23.
 //
 
+import RevenueCat
+import RevenueCatUI
 import MessageUI
 import SendbirdChatSDK
 import SwiftUI
@@ -143,6 +145,7 @@ struct SettingsScreen: View {
                 }.background(Color.backgroundBlue)
             }
         }
+        .presentPaywallIfNeeded(requiredEntitlementIdentifier: Constants.requiredEntitlementIdentifier)
     }
     
     func getSupportChannel(completion: @escaping (GroupChannel) -> ()) {
