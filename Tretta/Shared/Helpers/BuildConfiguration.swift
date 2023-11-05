@@ -8,8 +8,8 @@
 import Foundation
 
 enum BuildEnvironment: String {
-    case staging = "Staging"
-    case production = "Production"
+    case staging = "Debug"
+    case production = "Release"
 }
 
 class BuildConfiguration {
@@ -22,7 +22,7 @@ class BuildConfiguration {
             environment = .staging
             return
         }
-        
+                
         environment = BuildEnvironment(rawValue: currentConfiguration) ?? .staging
     }
 }
