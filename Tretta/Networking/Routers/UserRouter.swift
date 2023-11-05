@@ -11,6 +11,7 @@ import Foundation
 enum UserRouter: URLRequestConvertible {
     case createUser(user: CreateUserDTO)
     case getUserByEmail(String)
+    case deleteUser(String)
     
     var method: HTTPMethod {
         switch self {
@@ -18,6 +19,8 @@ enum UserRouter: URLRequestConvertible {
             return .get
         case .createUser:
             return .post
+        case .deleteUser:
+            return .delete
         }
     }
     
@@ -27,6 +30,8 @@ enum UserRouter: URLRequestConvertible {
             return "users/email/\(email)"
         case .createUser:
             return "users"
+        case let .deleteUser(accountId):
+            return "users/\(accountId)"
         }
     }
     
@@ -36,7 +41,7 @@ enum UserRouter: URLRequestConvertible {
         request.method = method
         
         switch self {
-        case .getUserByEmail:
+        case .getUserByEmail, .deleteUser:
             break
         case let .createUser(user):
             let params = [

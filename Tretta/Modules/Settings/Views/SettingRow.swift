@@ -44,6 +44,7 @@ extension SettingRow {
         case assistant
         case privacyPolicy
         case terms
+        case signOut
         
         var imageName: String {
             switch self {
@@ -55,6 +56,8 @@ extension SettingRow {
                 return "building.columns.circle"
             case .terms:
                 return "newspaper.circle"
+            case .signOut:
+                return "power.circle"
             }
         }
         
@@ -68,6 +71,8 @@ extension SettingRow {
                 return "Privacy Policy"
             case .terms:
                 return "Terms & Conditions"
+            case .signOut:
+                return "Sign Out"
             }
         }
     }

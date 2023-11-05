@@ -39,4 +39,12 @@ class UserService {
             }
     }
     
+    static func deleteUserAccount(accountId: String, completion: @escaping CreateUserCompletionHandler) {
+        AF.request(UserRouter.deleteUser(accountId))
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: User.self, decoder: decoder) { response in
+                completion(response.result)
+            }
+    }
+    
 }

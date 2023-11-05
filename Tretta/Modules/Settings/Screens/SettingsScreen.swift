@@ -12,6 +12,8 @@ import SwiftUI
 struct SettingsScreen: View {
     @Binding var route: Route
     @State private var presentedSheet: SettingsSheet?
+    @State private var showingSignOutOptions = false
+    @State private var showingAccountDeletionOptions = false
     
     var body: some View {
         NavigationStack {
@@ -50,19 +52,46 @@ struct SettingsScreen: View {
                                 presentedSheet = .terms
                             }
                     }
+                    
+                    Section(header: Text("Account")) {
+                        SettingRow(type: .signOut)
+                            .onTapGesture {
+                                showingSignOutOptions.toggle()
+                            }
+                            .confirmationDialog("Are you sure?", isPresented: $showingSignOutOptions, titleVisibility: .visible) {
+                                Button("Sign Out") {
+                                    AnalyticsManager.shared.log(.signOutTapped)
+                                    KeyStorage.shared.clearValue(forKey: Constants.accessToken)
+                                    KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
+                                    route = .onboarding(.signIn)
+                                }
+                                
+                                Button("Cancel", role: .cancel) {}
+                            }
+                    }
                 }.listStyle(.plain)
                 Spacer()
                 HStack {
                     Spacer()
                     Button {
-                        AnalyticsManager.shared.log(.signOutTapped)
-                        KeyStorage.shared.clearValue(forKey: Constants.accessToken)
-                        KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
-                        route = .onboarding(.signIn)
+                        showingAccountDeletionOptions.toggle()
                     } label: {
-                        Text("Sign Out")
+                        Text("Delete Account")
                             .font(.system(size: 16, weight: .semibold))
                             .foregroundColor(.cancelRed)
+                    }
+                    .confirmationDialog("Are you sure you want to delete your account?", isPresented: $showingAccountDeletionOptions, titleVisibility: .visible) {
+                        Button("Delete Account", role: .destructive) {
+                            let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+                            UserService.deleteUserAccount(accountId: accountId) { _ in
+                                AnalyticsManager.shared.log(.deleteAccountTapped)
+                                KeyStorage.shared.clearValue(forKey: Constants.accessToken)
+                                KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
+                                route = .onboarding(.signIn)
+                            }
+                        }
+                        
+                        Button("Cancel", role: .cancel) {}
                     }
                     Spacer()
                 }
