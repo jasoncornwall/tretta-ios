@@ -97,13 +97,15 @@ struct HomeScreen: View {
         }, restoreCompleted: { customerInfo in
 //            print("Restome completed: \(customerInfo.entitlements)")
         }) {
+            /// Decided to opt for commenting out this code to avoid unnecessary friction for users that fully intend to pay, since this block seems to be
+            /// erroneously called after successful payments too.
             // In prod we should logout the user if they refuse to pay.
-            if BuildConfiguration.shared.environment == .production {
-                AnalyticsManager.shared.log(.cancelPaymentTapped)
-                KeyStorage.shared.clearValue(forKey: Constants.accessToken)
-                KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
-                route = .onboarding(.signIn)
-            }
+//            if BuildConfiguration.shared.environment == .production {
+//                AnalyticsManager.shared.log(.cancelPaymentTapped)
+//                KeyStorage.shared.clearValue(forKey: Constants.accessToken)
+//                KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
+//                route = .onboarding(.signIn)
+//            }
         }
     }
     
