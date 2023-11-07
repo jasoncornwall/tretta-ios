@@ -90,23 +90,32 @@ struct HomeScreen: View {
             }
         }
 //        .debugRevenueCatOverlay()
-        .presentPaywallIfNeeded(
-            requiredEntitlementIdentifier: Constants.requiredEntitlementIdentifier,
-            purchaseCompleted: { customerInfo in
-//                print("Purchase completed: \(customerInfo.entitlements)")
-        }, restoreCompleted: { customerInfo in
-//            print("Restome completed: \(customerInfo.entitlements)")
-        }) {
-            /// Decided to opt for commenting out this code to avoid unnecessary friction for users that fully intend to pay, since this block seems to be
-            /// erroneously called after successful payments too.
-            // In prod we should logout the user if they refuse to pay.
-//            if BuildConfiguration.shared.environment == .production {
-//                AnalyticsManager.shared.log(.cancelPaymentTapped)
-//                KeyStorage.shared.clearValue(forKey: Constants.accessToken)
-//                KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
-//                route = .onboarding(.signIn)
-//            }
+        .presentPaywallIfNeeded { customerInfo in
+            return customerInfo.entitlements.active.keys.contains(Constants.requiredEntitlementIdentifier)
+        } purchaseCompleted: { customerInfo in
+                print("Purchase completed: \(customerInfo.entitlements)")
+        } restoreCompleted: { customerInfo in
+            // Paywall will be dismissed automatically if "pro" is now active.
+            print("Purchases restored: \(customerInfo.entitlements)")
         }
+//        .presentPaywallIfNeeded(
+//            requiredEntitlementIdentifier: Constants.requiredEntitlementIdentifier,
+//            purchaseCompleted: { customerInfo in
+//                return customerInfo.entitlements.active.keys.contains("pro")
+////                print("Purchase completed: \(customerInfo.entitlements)")
+//        }, restoreCompleted: { customerInfo in
+////            print("Restome completed: \(customerInfo.entitlements)")
+//        }) {
+//            /// Decided to opt for commenting out this code to avoid unnecessary friction for users that fully intend to pay, since this block seems to be
+//            /// erroneously called after successful payments too.
+//            // In prod we should logout the user if they refuse to pay.
+////            if BuildConfiguration.shared.environment == .production {
+////                AnalyticsManager.shared.log(.cancelPaymentTapped)
+////                KeyStorage.shared.clearValue(forKey: Constants.accessToken)
+////                KeyStorage.shared.clearValue(forKey: Constants.accountIdKey)
+////                route = .onboarding(.signIn)
+////            }
+//        }
     }
     
     func pipelineSelectionChange(to value: Pipeline) {

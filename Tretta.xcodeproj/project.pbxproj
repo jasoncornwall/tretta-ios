@@ -25,7 +25,6 @@
 		9239086B2AF2EA870006570C /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 9239086A2AF2EA870006570C /* RevenueCat */; };
 		9239086D2AF2EA870006570C /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9239086C2AF2EA870006570C /* RevenueCatUI */; };
 		923908702AF2EACE0006570C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9239086F2AF2EACE0006570C /* StoreKit.framework */; };
-		923908722AF3E54F0006570C /* StoreKit Test File.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 923908712AF3E54F0006570C /* StoreKit Test File.storekit */; };
 		923908742AF3E8E20006570C /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 923908732AF3E8E20006570C /* StoreKitTestCertificate.cer */; };
 		9239B77D29E3656600BBECE0 /* TrettaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239B77C29E3656600BBECE0 /* TrettaApp.swift */; };
 		9239B78129E3656700BBECE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9239B78029E3656700BBECE0 /* Assets.xcassets */; };
@@ -181,7 +180,6 @@
 		9236B5A62AE33A570004FC6B /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		9236B5A82AE3964D0004FC6B /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		9239086F2AF2EACE0006570C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		923908712AF3E54F0006570C /* StoreKit Test File.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "StoreKit Test File.storekit"; sourceTree = "<group>"; };
 		923908732AF3E8E20006570C /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		9239B77929E3656600BBECE0 /* Tretta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tretta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9239B77C29E3656600BBECE0 /* TrettaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrettaApp.swift; sourceTree = "<group>"; };
@@ -369,7 +367,6 @@
 		9239B77029E3656600BBECE0 = {
 			isa = PBXGroup;
 			children = (
-				923908712AF3E54F0006570C /* StoreKit Test File.storekit */,
 				923908732AF3E8E20006570C /* StoreKitTestCertificate.cer */,
 				924A3F502AB830B000F5B7D8 /* ElegantCalendar.xcassets */,
 				9239B77B29E3656600BBECE0 /* Tretta */,
@@ -933,7 +930,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				924A3F512AB830B000F5B7D8 /* ElegantCalendar.xcassets in Resources */,
-				923908722AF3E54F0006570C /* StoreKit Test File.storekit in Resources */,
 				921BF3C62A44D12900AC5909 /* contacts.json in Resources */,
 				921BF3C72A44D12900AC5909 /* deals.json in Resources */,
 				9239B78429E3656700BBECE0 /* Preview Assets.xcassets in Resources */,
@@ -1205,9 +1201,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jasoncornwall.Tretta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1338,9 +1337,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jasoncornwall.Tretta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
