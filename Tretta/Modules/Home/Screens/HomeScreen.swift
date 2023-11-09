@@ -91,7 +91,8 @@ struct HomeScreen: View {
         }
 //        .debugRevenueCatOverlay()
         .presentPaywallIfNeeded { customerInfo in
-            return customerInfo.entitlements.active.keys.contains(Constants.requiredEntitlementIdentifier)
+            let accountId = KeyStorage.shared.getStringValue(forKey: Constants.accountIdKey) ?? ""
+            return customerInfo.entitlements.active.keys.contains(Constants.requiredEntitlementIdentifier) || accountId == Constants.appReviewerAccountId
         } purchaseCompleted: { customerInfo in
                 print("Purchase completed: \(customerInfo.entitlements)")
         } restoreCompleted: { customerInfo in

@@ -18,6 +18,7 @@ struct Constants {
     static let termsAndConditionsURL = URL(string: "https://www.termsfeed.com/live/c5d02ed1-35ee-42b8-a093-ae6ac031685e")!
     static let revenueCatAPIKey = "appl_kCDLHllHYyEFfxoRKRPVOFjwtlu"
     static let requiredEntitlementIdentifier = "pro"
+    static let appReviewerAccountId = "6547cfc34c57cf181ebb704d"
     
     static var baseURL: URL {
         switch BuildConfiguration.shared.environment {
